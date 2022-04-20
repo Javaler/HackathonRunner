@@ -1,0 +1,36 @@
+.column{
+    border-radius: 5px;
+    padding: 20px;
+    padding-top: 10px;
+    background-color: #fff;
+    box-shadow: inset;
+    margin-bottom: 60px;
+}
+
+body{
+    width:500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #c4c4c4;
+}
+
+input[type="submit"]{
+    color: #fff;
+    background-color: blue;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom:0px;
+    width: 400px;
+    height:50px;
+    transition: .2s;
+}
+
+input[type="submit"]:hover{
+    background-color: #4444ff;
+}
+
+.center{
+    text-align: center;
+}
