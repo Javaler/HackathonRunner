@@ -1,6 +1,8 @@
 package com.example.demo.form;
 
-//@Data
+import lombok.Data;
+
+@Data
 public class QuestionForm {
 
 	private int hackathon;
