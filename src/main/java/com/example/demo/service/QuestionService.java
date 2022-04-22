@@ -9,7 +9,7 @@ public class QuestionService {
 
 	public String createAnalysisResult(QuestionForm questionForm) {
 		
-		String analysisResult = ""; 
+		String analysisResult = "test"; 
 		
 		// 診断アルゴリズム
 		
