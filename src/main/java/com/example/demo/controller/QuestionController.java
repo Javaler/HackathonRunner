@@ -46,7 +46,6 @@ public class QuestionController {
 			
 			mav.setViewName("result");
 			mav.addObject("analysisResult", analysisResult);
-			System.out.print(analysisResult);
 		//}
 		
 		return mav;

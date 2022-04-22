@@ -11,83 +11,83 @@
     <form action="/showQuestionResult" method="post">
         <div class="column">
             <p>ハッカソン経験</p>
-            <input type="radio" id="hackathon-no" value="no" name="hackathon"/>
+            <input type="radio" id="hackathon-no" value=0 name="hackathon"/>
             <label for="hackathon-no">なし</label><br/>
-            <input type="radio" id="hackathon-yes" value="yes" name="hackathon"/>
+            <input type="radio" id="hackathon-yes" value=1 name="hackathon"/>
             <label for="hackathon-yes">あり</label>
         </div>
         <div class="column">
             <p>チーム開発経験</p>
-            <input type="radio" id="team-no" value="no" name="team"/>
+            <input type="radio" id="team-no" value=0 name="team"/>
             <label for="team-no">なし</label><br/>
-            <input type="radio" id="team-yes" value="yes" name="team"/>
+            <input type="radio" id="team-yes" value=1 name="team"/>
             <label for="team-yes">あり</label>
         </div>
         <div class="column">
             <p>成果物</p>
-            <input type="radio" id="deliverable-no" value="no" name="deliverable"/>
+            <input type="radio" id="deliverable-no" value=0 name="deliverable"/>
             <label for="deliverable-no">なし</label><br/>
-            <input type="radio" id="deliverable-yes" value="yes" name="deliverable"/>
+            <input type="radio" id="deliverable-yes" value=1 name="deliverable"/>
             <label for="deliverable-yes">あり</label>
         </div>
         <div class="column">
             <p>Git,GitHub使用経験</p>
-            <input type="radio" id="git-no" value="no" name="git"/>
+            <input type="radio" id="git-no" value=0 name="git"/>
             <label for="git-no">なし</label><br/>
-            <input type="radio" id="git-yes" value="yes" name="git"/>
+            <input type="radio" id="git-yes" value=1 name="git"/>
             <label for="git-yes">あり(clone, push, add, commit, push, pull, request, mergeが分かる)</label>
         </div>
         <div class="column">
             <p>動画編集経験</p>
-            <input type="radio" id="movie-no" value="no" name="movie"/>
+            <input type="radio" id="movie-no" value=0 name="movie"/>
             <label for="movie-no">なし</label><br/>
-            <input type="radio" id="movie-yes" value="yes" name="movie"/>
+            <input type="radio" id="movie-yes" value=1 name="movie"/>
             <label for="movie-yes">あり</label>
         </div>
         <div class="column">
             <p>プレゼン経験</p>
-            <input type="radio" id="presentation-no" value="no" name="presentation"/>
+            <input type="radio" id="presentation-no" value=0 name="presentation"/>
             <label for="presentation-no">なし</label><br/>
-            <input type="radio" id="presentation-yes" value="yes" name="presentation"/>
+            <input type="radio" id="presentation-yes" value=1 name="presentation"/>
             <label for="presentation-yes">あり</label>
         </div>
         <div class="column">
             <p>デザインスキル</p>
-            <input type="radio" id="design-no" value="no" name="design"/>
+            <input type="radio" id="design-no" value=0 name="design"/>
             <label for="design-no">なし</label><br/>
-            <input type="radio" id="design-yes-1" value="yes-1" name="design"/>
+            <input type="radio" id="design-yes-1" value=1 name="design"/>
             <label for="design-yes-1">あり(Figma, AdobeXDの基礎レベルorデザイン知識あり)</label><br/>
-            <input type="radio" id="design-yes-2" value="yes-2" name="design"/>
+            <input type="radio" id="design-yes-2" value=2 name="design"/>
             <label for="design-yes-2">あり(コンポーネント機能を使いこなせる)</label>
         </div>
         <div class="column">
             <p>フロントエンド言語</p>
-            <input type="radio" id="frontend-no" value="no" name="frontend"/>
+            <input type="radio" id="frontend-no" value=0 name="frontend"/>
             <label for="frontend-no">なし</label><br/>
-            <input type="radio" id="frontend-yes-1" value="yes-1" name="frontend"/>
+            <input type="radio" id="frontend-yes-1" value=1 name="frontend"/>
             <label for="frontend-yes-1">JavaScript基礎レベル</label><br/>
-            <input type="radio" id="frontend-yes-2" value="yes-2" name="frontend"/>
+            <input type="radio" id="frontend-yes-2" value=2 name="frontend"/>
             <label for="frontend-yes-2">JavaScriptのフレームワーク(React.js, Vue.js, Angular.js)</label>
         </div>
         <div class="column">
             <p>バックエンド言語の基礎</p>
-            <input type="radio" id="backend-no" value="no" name="backend"/>
+            <input type="radio" id="backend-no" value=0 name="backend"/>
             <label for="backend-no">なし</label><br/>
-            <input type="radio" id="backend-yes" value="yes" name="backend"/>
+            <input type="radio" id="backend-yes" value=1 name="backend"/>
             <label for="backend-yes">あり(Go, Java, PHP, Python, Ruby,...)</label>
         </div>
         <div class="column">
             <p>インフラ経験</p>
-            <input type="radio" id="infrastructure-no" value="no" name="infrastructure"/>
+            <input type="radio" id="infrastructure-no" value=0 name="infrastructure"/>
             <label for="infrastructure-no">なし</label><br/>
-            <input type="radio" id="infrastructure-yes" value="yes" name="infrastructure"/>
+            <input type="radio" id="infrastructure-yes" value=1 name="infrastructure"/>
             <label for="infrastructure-yes">あり(Heroku, Firebase, AWS, GCP, Azure)</label>
         </div>
         <div class="column">
             <p>機械学習利用経験</p>
-            <input type="radio" id="machine-learning-no" value="no" name="machine-learning"/>
+            <input type="radio" id="machine-learning-no" value=0 name="machineLearning"/>
             <label for="machine-learning-no">モデル作成経験なし</label><br/>
-            <input type="radio" id="machine-learning-yes" value="yes" name="machine-learning"/>
+            <input type="radio" id="machine-learning-yes" value=1 name="machineLearning"/>
             <label for="machine-learning-yes">Python, C# でのAPI利用経験orモデル作成経験あり</label>
         </div>
         <div class="center">
