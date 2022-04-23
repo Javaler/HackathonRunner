@@ -30,23 +30,14 @@ public class QuestionController {
 	
 	@PostMapping("/showQuestionResult")
 	public ModelAndView showQuestionResult(ModelAndView mav,
-			@ModelAttribute @Validated QuestionForm questionForm,
-			BindingResult result) {
-		
-		if(result.hasErrors()) {
-			// 入力エラーあり
-			
-			mav.setViewName("questionForm");
-			mav.addObject("questionForm", questionForm);
-		} else {
-			// エラーなし
-			
+			@ModelAttribute QuestionForm questionForm) {
+					
 			String analysisResult = questionService.createAnalysisResult(questionForm); 
 			
 			mav.setViewName("questionResult");
 			mav.addObject("analysisResult", analysisResult);
-		}
 		
 		return mav;
+		
 	}
 }
