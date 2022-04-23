@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #F18C16;
+    padding: 10px;
+    margin: 0;
+}
+
+.app_name{
+    color: #fff;
+    font-size: 42px;
+    vertical-align: top;
+}
+
+.app_icon{
+    vertical-align: top;
+}
