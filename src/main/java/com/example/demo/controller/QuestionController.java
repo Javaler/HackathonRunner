@@ -33,21 +33,22 @@ public class QuestionController {
 			@ModelAttribute @Validated QuestionForm questionForm,
 			BindingResult result) {
 		
-		//if(result.hasErrors()) {
+		if(result.hasErrors()) {
 			// 入力エラーあり
 			
-			//mav.setViewName("questionForm"
-			//		+ "");
-			//mav.addObject("questionForm", questionForm);
-		//} else {
+			mav.setViewName("questionForm"
+					+ "");
+			mav.addObject("questionForm", questionForm);
+		} else {
 			// エラーなし
 			
 			String analysisResult = questionService.createAnalysisResult(questionForm); 
 			
-			mav.setViewName("result");
+			mav.setViewName("questionResult");
 			mav.addObject("analysisResult", analysisResult);
-		//}
 		
+		}
 		return mav;
+		
 	}
 }
