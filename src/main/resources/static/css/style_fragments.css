@@ -2,6 +2,7 @@
     background-color: #F18C16;
     padding: 10px;
     margin: 0;
+    margin-bottom: 30px;
 }
 
 .app_name{
@@ -12,4 +13,8 @@
 
 .app_icon{
     vertical-align: top;
+}
+
+.home_link{
+    text-decoration: none;
 }
