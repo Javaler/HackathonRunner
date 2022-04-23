@@ -90,9 +90,11 @@
             <input type="radio" id="machine-learning-yes" value="yes" name="machine-learning"/>
             <label for="machine-learning-yes">Python, C# でのAPI利用経験orモデル作成経験あり</label>
         </div>
-        <div class="center">
-            <input type="submit"/>
-        </div>
+        <input type="submit" id="submit-button"/>
     </form>
+    <div class="center">
+        <button id="send-button">送信</button>
+    </div>
+    <script th:src="@{/js/questionForm.js}"></script>
 </body>
 </html>

@@ -14,9 +14,9 @@ body{
     background-color: #c4c4c4;
 }
 
-input[type="submit"]{
+button{
     color: #fff;
-    background-color: blue;
+    background-color: #F18C16;
     border: 0px;
     border-radius: 5px;
     margin-left: auto;
@@ -27,10 +27,18 @@ input[type="submit"]{
     transition: .2s;
 }
 
-input[type="submit"]:hover{
-    background-color: #4444ff;
+button:hover{
+    background-color: #f49f3e;
 }
 
 .center{
     text-align: center;
+}
+
+#submit-button{
+    display: none;
+}
+
+.valid{
+    border: #ff0000 solid 2px;
 }
