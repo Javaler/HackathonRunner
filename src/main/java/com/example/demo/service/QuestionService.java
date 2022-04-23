@@ -26,7 +26,8 @@ public class QuestionService {
 		
 		//アルゴリズム0
 		if(git==0) {
-			analysisResult += "Git, GitHubの勉強をしましょう。";
+			analysisResult += "Git, GitHubの勉強をしましょう。" + "<br/>";
+			
 		}
 		
 		
@@ -34,75 +35,77 @@ public class QuestionService {
 			if(team==0) {
 				if(portfolio==0) {
 					//アルゴリズム1 ハッカソン、チーム開発、成果物全てなしと成果物がなくハッカソン経験がない人
-					analysisResult += "当日はスライド作成やアイデアを2、3個出せるように準備しておきましょう。";
+					analysisResult +="当日はスライド作成やアイデアを2、3個出せるように準備しておきましょう。" + "<br/>";
 					
 				}else {
 					//アルゴリズム4　ハッカソン経験とチーム開発経験なしだが成果物はある
 					analysisResult += " Git, GitHubを使ったチーム開発方法を調べましょう。"
-							+ "チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。";
+							+ "チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。"
+								+ "<br/>";
 				}
 			}else {
 				//アルゴリズム2　ハッカソン経験なしだがチーム開発経験あり
-				analysisResult += "チームにハッカソン経験者がいないならリーダーの役割を担いましょう。";
+				analysisResult += "チームにハッカソン経験者がいないならリーダーの役割を担いましょう。" + "<br/>";
 				
 			}
 			
 		}else {
 			//アルゴリズム3　ハッカソン経験あり
 			analysisResult += " どんどん次のハッカソンに参加して、賞を目指しましょう！"
-					+ "今までリーダーの経験がなければリーダーの役割を担ってPMしてみましょう。";
+					+ "今までリーダーの経験がなければリーダーの役割を担ってPMしてみましょう。" + "<br/>";
 		}
 				
 		//アルゴリズム5　成果物ありでGit,GitHub経験なし
 		if(portfolio==1 && git==0) {
 			analysisResult += "Git, GitHubの勉強をしましょう。"
-								+"チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。";
+								+"チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。"
+								 + "<br/>";
 		}
 		
 		//アルゴリズム6　動画編集経験あり
 		if(movie==1) {
-			analysisResult += "動画編集できることを伝えましょう。プレゼン資料作成などで役に立つはずです。";
+			analysisResult += "動画編集できることを伝えましょう。プレゼン資料作成などで役に立つはずです。" + "<br/>";
 		}
 		
 		//アルゴリズム7　プレゼン経験あり
 		if(presentation==1) {
-			analysisResult += "プレゼン資料の作成や発表を積極的に担当しましょう。ハッカソンではプレゼンの出来も評価対象です。";
+			analysisResult += "プレゼン資料の作成や発表を積極的に担当しましょう。ハッカソンではプレゼンの出来も評価対象です。" + "<br/>";
 		}
 		
 		
 		//アルゴリズム8　デザインツールの基礎知識あり
 		if(design==1) {
-			analysisResult += "チームにデザインツールの応用レベルの人がいれば、その人のサポート役を担いましょう。" ;
+			analysisResult += "チームにデザインツールの応用レベルの人がいれば、その人のサポート役を担いましょう。" + "<br/>";
 		}
 		
 		//アルゴリズム9　デザインツールの応用レベル
 		if(design==2) {
-			analysisResult += "デザイン作成ができることを伝えましょう。" ;
+			analysisResult += "デザイン作成ができることを伝えましょう。" + "<br/>";
 		}
 		
 		//アルゴリズム10　JavaScriptの基礎
 		if(frontend==1) {
-			analysisResult += "JavaScriptのフレームワークを使える人がいれば、その人のサポート役を担いましょう。";
+			analysisResult += "JavaScriptのフレームワークを使える人がいれば、その人のサポート役を担いましょう。" + "<br/>";
 		}
 		
 		//アルゴリズム11 JavaScriptのフレームワークを使える
 		if(frontend==2) {
-			analysisResult += "フロントエンドの開発を行えることを伝えましょう。";
+			analysisResult += "フロントエンドの開発を行えることを伝えましょう。" + "<br/>";
 		}
 		
 		//アルゴリズム12 バックエンド言語の基礎あり
 		if(backend==1) {
-			analysisResult += "使えるバックエンド言語を伝えましょう。";
+			analysisResult += "使えるバックエンド言語を伝えましょう。" + "<br/>";
 		}
 		
 		//アルゴリズム13 インフラ経験あり
 		if(infrastructure==1) {
-			analysisResult += "使えるインフラツールを伝えましょう。";
+			analysisResult += "使えるインフラツールを伝えましょう。" + "<br/>";
 		}
 		
 		//アルゴリズム14 機械学習 API 利用経験orモデル作成経験あり
 		if(machinelearning==1) {
-			analysisResult += "機械学習を組み込めることを伝えましょう。";
+			analysisResult += "機械学習を組み込めることを伝えましょう。" + "<br/>";
 		}
 		
 		//アルゴリズム15 技術的技能なし
@@ -110,7 +113,7 @@ public class QuestionService {
 				&& design==0 && frontend==0
 					&& backend==0 && infrastructure==0
 						&& machinelearning==0) {
-			analysisResult += "これらのプログラミング言語(JavaScript, PHP, Rubyなど)から1つ選び、勉強しておきましょう。";
+			analysisResult += "これらのプログラミング言語(JavaScript, PHP, Rubyなど)から1つ選び、勉強しておきましょう。" + "<br/>";
 		}
 			
 		
