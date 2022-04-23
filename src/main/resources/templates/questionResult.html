@@ -17,16 +17,15 @@
     <nav th:replace="fragments :: navbar_area"></nav>
 
     <h1>診断結果</h1>
-    <p id="result-text">
-        ハッカソン参加への準備: Git, GitHubの勉強をしましょう。
-        当日: スライド作成や案を2, 3個出しましょう。
-    </p>
-    <span th:text="${analysisResult}"></span>
+    
+    <span th:utext="${analysisResult}"></span>
+    <!-- 
     <h2>
         おすすめのハッカソン
     </h2>
     <div id="hackathon-list">
 
     </div>
+    -->
 </body>
 </html>
