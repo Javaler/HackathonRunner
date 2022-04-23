@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div th:fragment="navbar_area" class="navbar">
+        <a th:href="@{/}">
+            <img th:src="@{/icons/app_icon.svg}" class="app-icon" width="56px" height="56px"/>
+            <span class="app_name">
+                <b><i>HackathonRunner</i></b>
+            </span>
+        </a>
+    </div>
+</body>
+</html>
