@@ -1,7 +1,10 @@
-body{
+#main{
     margin-right: auto;
     margin-left: auto;
     width: 500px;
+}
+
+#result-header{
     text-align: center;
 }
 
