@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>診断結果</title>
-    <link rel="stylesheet" href="style_result.css"/>
+    
+        <title>診断結果 - HackathonRunner</title>
+
+    <link rel="stylesheet" th:href="@{/css/style_result.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style_fragments.css}" />
+
+    <link rel="icon" th:href="@{/icons/favicon.ico}" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/icons/app_icon.svg}">
 </head>
 <body>
-    <h1>診断結果</h1>
+    <nav th:replace="fragments :: navbar_area"></nav>
+
+    <div id="main">
+    <h1 id="result-header">診断結果</h1>
     
+    <!--  
     <span th:utext="${analysisResult}"></span>
-    <!-- 
+     -->
+     <ul th:utext="${analysisResult}"></ul>
+    </div>  
+    <!--  
     <h2>
         おすすめのハッカソン
     </h2>
