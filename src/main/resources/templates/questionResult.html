@@ -15,10 +15,12 @@
 </head>
 <body>
     <nav th:replace="fragments :: navbar_area"></nav>
-    
-    <h1>診断結果</h1>
+
+    <div id="main">
+    <h1 id="result-header">診断結果</h1>
     
     <span th:utext="${analysisResult}"></span>
+    </div>
     <!-- 
     <h2>
         おすすめのハッカソン
