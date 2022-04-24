@@ -12,7 +12,6 @@ public class HomeController {
 	public ModelAndView showHome(ModelAndView mav) {
 		
 		mav.setViewName("home");
-		mav.addObject("home");
 		
 		return mav;
 	}
