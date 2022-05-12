@@ -137,9 +137,20 @@ button.bg-primary:focus {
 }
 
 .text-primary {
-    color: #F18C16 !important;
+    color: hsl(32, 89%, 52%) !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
     color: #c7710c !important;
+}
+
+.form-check-input:focus{
+    border-color:#f8c58b;
+    outline:0;
+    box-shadow:0 0 0 .25rem rgba(253, 141, 13, 0.25)
+}
+
+.form-check-input:checked{
+    background-color:#f28c18;
+    border-color:#f28c18;
 }
