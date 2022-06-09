@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -14,4 +15,35 @@
         </div>
     </nav>
 </body>
+=======
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav th:fragment="navbar_area" class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold fs-2 text-light me-auto" th:href="@{/}">
+                <img th:src="@{/icons/app_icon.svg}" class="app-icon" width="56px" height="56px"/>
+                <span><i>HackathonRunner</i></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				        <span class="navbar-toggler-icon"></span>
+				    </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		            <ul class="navbar-nav ms-auto">
+		                <li class="nav-item m-2">
+		                    <a class="btn btn-outline-light btn-lg" th:href="@{/showQuestion}">診断する</a>
+		                </li>
+		                <li class="nav-item m-2">
+		                    <a class="btn btn-outline-light btn-lg" href="#">投稿する</a>
+		                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+>>>>>>> d1a410a4dd29ec924a466c17f75cc5f102f5ff23
 </html>
