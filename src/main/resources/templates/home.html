@@ -17,18 +17,23 @@
 <body>
     <nav th:replace="fragments :: navbar_area"></nav>
 
-    <div class="text-center">
-        <p class="fs-4 m-5">
-            回答の技術レベルからハッカソン当日までに<br/>
-            準備しておきたいことや当日の役割を診断！
-        </p>
-
-        <div>
-            <a href="/showQuestion">
-                <button class="btn btn-primary btn-lg px-5">
-                    診断を開始する
-                </button>
-            </a>
+    <div>
+        <div class="card m-4 mx-auto w-75">
+            <div class="card-body">
+                <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                <span>user name</span>
+                <h5 class="card-title">ハッカソン参加経験</h5>
+                <p class="card-text">1回</p>
+                <h5 class="card-title">成果物</h5>
+                <p class="card-text">ハッカソン補助アプリ</p>
+                <h5 class="card-title">参加したハッカソン</h5>
+                <p class="card-text">初めてのハッカソン</p>
+                <h5 class="card-title">作品名</h5>
+                <p class="card-text">HackathonRunner</p>
+                <div class="text-end">
+                    <button class="btn btn-primary">参考になった</button>
+                </div>
+            </div>
         </div>
     </div>
 
