@@ -20,17 +20,11 @@
     <div class="mx-auto" style="max-width:600px">
         <h1 class="text-center m-4">診断結果</h1>
         
-        <ul th:utext="${analysisResult}"></ul>
+        <ul class="list-group">
+					  <li class="list-group-item" th:text="${analysisResult}"></li>
+				</ul>
     </div>
-  
-    <!-- 
-    <h2>
-        おすすめのハッカソン
-    </h2>
-    <div id="hackathon-list">
-        
-    </div>
-    -->
+      
     
     <!--bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
