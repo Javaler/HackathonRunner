@@ -110,7 +110,7 @@ public class QuestionService {
 				&& design==0 && frontend==0
 					&& backend==0 && infrastructure==0
 						&& machinelearning==0) {
-			analysisResult += "<li>これらのプログラミング言語(JavaScript, PHP, Rubyなど)から1つ選び、勉強しておきましょう。</li>";
+			analysisResult += "<li>プログラミング言語(JavaScript, PHP, Rubyなどから1つ)を勉強しておきましょう。</li>";
 		}
 			
 		return analysisResult;
