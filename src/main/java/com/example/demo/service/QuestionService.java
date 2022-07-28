@@ -115,4 +115,55 @@ public class QuestionService {
 			
 		return analysisResult;
 	}
+	
+	public int[] createHackathonScore(QuestionForm questionForm) {
+		
+		int[] score = new int[3];
+		int programpoint;
+		int teampoint;
+		int gitpoint;
+		int hackathon = questionForm.getHackathon();
+		int team = questionForm.getTeam();
+		int portfolio = questionForm.getPortfolio();
+		int git = questionForm.getGit();
+		int movie = questionForm.getMovie();
+		int presentation = questionForm.getPresentation();
+		int design = questionForm.getDesign();
+		int frontend = questionForm.getFrontend();
+		int backend = questionForm.getBackend();
+		int infrastructure = questionForm.getInfrastructure();
+		int machinelearning = questionForm.getMachineLearning();
+		
+		
+		//プログラミング経験値算出
+		//なし
+		if(frontend == 0 && backend == 0 && machinelearning == 0 && portfolio == 0) {
+			programpoint = 1;
+		}
+		
+		//授業、趣味、独学でプログラミングの基礎を学んだことがある
+		if(frontend == 1 || backend == 1 || machinelearning == 1 && portfolio == 0) {
+			programpoint = 2;
+		}
+		
+		//簡単なツール（アプリ）を作ったことがある
+		if(portfolio == 1) {
+			programpoint = 3;
+		}
+		
+		//ツール（アプリ）を公開したことがある
+		if(portfolio == 2) {
+			programpoint = 4;
+		}
+		
+		//ツール（アプリ）開発で、設計・実装・テストを経験したがある
+		if(portfolio == 3) {
+			programpoint = 5;
+		}
+		
+		
+		
+		
+		return score;
+	}
 }
