@@ -119,19 +119,15 @@ public class QuestionService {
 	public int[] createHackathonScore(QuestionForm questionForm) {
 		
 		int[] score = new int[3];
-		int programpoint;
-		int teampoint;
-		int gitpoint;
+		int programpoint = 0;
+		int teampoint = 0;
+		int gitpoint = 0;
 		int hackathon = questionForm.getHackathon();
 		int team = questionForm.getTeam();
 		int portfolio = questionForm.getPortfolio();
 		int git = questionForm.getGit();
-		int movie = questionForm.getMovie();
-		int presentation = questionForm.getPresentation();
-		int design = questionForm.getDesign();
 		int frontend = questionForm.getFrontend();
 		int backend = questionForm.getBackend();
-		int infrastructure = questionForm.getInfrastructure();
 		int machinelearning = questionForm.getMachineLearning();
 		
 		
@@ -161,8 +157,62 @@ public class QuestionService {
 			programpoint = 5;
 		}
 		
+		//チーム開発経験値算出
+		//なし
+		if(hackathon == 0 && team == 0) {
+			teampoint = 1;
+		}
 		
+		//知人（友人、研究室仲間）との開発経験
+		if(hackathon == 0 && team == 1) {
+			teampoint = 2;
+		}
 		
+		//ハッカソンなど、即席チームでの開発経験 1, 2回
+		if(hackathon == 1 && !(team == 2)) {
+			teampoint = 3;
+		}
+		
+		//ハッカソンなど、即席チームでの開発経験 3回以上
+		if(hackathon == 2 && !(team == 2)) {
+			teampoint = 3;
+		}
+		
+		//インターン・アルバイトでのチーム開発経験
+		if(team == 2) {
+			teampoint = 4;
+		}
+		
+		//Git, GitHub経験値算出
+		//なし
+		if(git == 0) {
+			gitpoint = 1;
+		}
+		
+		//fork, clone コマンドを使ったことがある
+		if(git == 1) {
+			gitpoint = 2;
+		}
+		
+		//push コマンドを使ったことがある
+		if(git == 2) {
+			gitpoint = 3;
+		}
+		
+		//add, commit コマンドを使ったことがある
+		if(git == 3) {
+			gitpoint = 4;
+		}
+		
+		//pull, branch, checkout, merge(pull request) コマンドを使ったことがある
+		if(git == 4) {
+			gitpoint = 5;
+		}
+		
+		//算出値格納
+		score[0] = programpoint;
+		score[1] = teampoint;
+		score[2] = gitpoint;
 		
 		return score;
 	}
