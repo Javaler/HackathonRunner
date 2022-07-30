@@ -133,81 +133,39 @@ public class QuestionService {
 		
 		//プログラミング経験値算出
 		//なし
-		if(frontend == 0 && backend == 0 && machinelearning == 0 && portfolio == 0) {
-			programpoint = 1;
-		}
-		
 		//授業、趣味、独学でプログラミングの基礎を学んだことがある
-		if(frontend == 1 || backend == 1 || machinelearning == 1 && portfolio == 0) {
-			programpoint = 2;
+		if(portfolio == 0) {
+			if(frontend == 0 && backend == 0 && machinelearning == 0) {
+				programpoint = 1;
+			} else {
+				programpoint = 2;
+			}
 		}
 		
 		//簡単なツール（アプリ）を作ったことがある
-		if(portfolio == 1) {
-			programpoint = 3;
-		}
-		
 		//ツール（アプリ）を公開したことがある
-		if(portfolio == 2) {
-			programpoint = 4;
-		}
-		
 		//ツール（アプリ）開発で、設計・実装・テストを経験したがある
-		if(portfolio == 3) {
-			programpoint = 5;
+		if(portfolio > 0) {
+			programpoint = portfolio + 2;
 		}
 		
-		//チーム開発経験値算出
-		//なし
-		if(hackathon == 0 && team == 0) {
-			teampoint = 1;
-		}
-		
-		//知人（友人、研究室仲間）との開発経験
-		if(hackathon == 0 && team == 1) {
-			teampoint = 2;
-		}
-		
-		//ハッカソンなど、即席チームでの開発経験 1, 2回
-		if(hackathon == 1 && !(team == 2)) {
-			teampoint = 3;
-		}
-		
-		//ハッカソンなど、即席チームでの開発経験 3回以上
-		if(hackathon == 2 && !(team == 2)) {
-			teampoint = 3;
-		}
-		
-		//インターン・アルバイトでのチーム開発経験
-		if(team == 2) {
-			teampoint = 4;
-		}
+		//チーム開発経験値算出		
+		if(hackathon == 0) {
+			if(team == 0) {
+				teampoint = 1;				//なし
+			} else {
+				teampoint = 2;				//知人（友人、研究室仲間）との開発経験
+			}
+		} else {
+			if(team == 2) {
+				teampoint = 4;				//インターン・アルバイトでのチーム開発経験
+			} else {
+				teampoint = hackathon + 2;	//ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
+			}
+		}		
 		
 		//Git, GitHub経験値算出
-		//なし
-		if(git == 0) {
-			gitpoint = 1;
-		}
-		
-		//fork, clone コマンドを使ったことがある
-		if(git == 1) {
-			gitpoint = 2;
-		}
-		
-		//push コマンドを使ったことがある
-		if(git == 2) {
-			gitpoint = 3;
-		}
-		
-		//add, commit コマンドを使ったことがある
-		if(git == 3) {
-			gitpoint = 4;
-		}
-		
-		//pull, branch, checkout, merge(pull request) コマンドを使ったことがある
-		if(git == 4) {
-			gitpoint = 5;
-		}
+		gitpoint = git + 1;
 		
 		//算出値格納
 		score[0] = programpoint;
