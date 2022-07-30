@@ -110,9 +110,68 @@ public class QuestionService {
 				&& design==0 && frontend==0
 					&& backend==0 && infrastructure==0
 						&& machinelearning==0) {
-			analysisResult += "<li>これらのプログラミング言語(JavaScript, PHP, Rubyなど)から1つ選び、勉強しておきましょう。</li>";
+			analysisResult += "<li>プログラミング言語(JavaScript, PHP, Rubyなどから1つ)を勉強しておきましょう。</li>";
 		}
 			
 		return analysisResult;
+	}
+	
+	public int[] createHackathonScore(QuestionForm questionForm) {
+		
+		int[] score = new int[3];
+		int programpoint = 0;
+		int teampoint = 0;
+		int gitpoint = 0;
+		int hackathon = questionForm.getHackathon();
+		int team = questionForm.getTeam();
+		int portfolio = questionForm.getPortfolio();
+		int git = questionForm.getGit();
+		int frontend = questionForm.getFrontend();
+		int backend = questionForm.getBackend();
+		int machinelearning = questionForm.getMachineLearning();
+		
+		
+		//プログラミング経験値算出
+		//なし
+		//授業、趣味、独学でプログラミングの基礎を学んだことがある
+		if(portfolio == 0) {
+			if(frontend == 0 && backend == 0 && machinelearning == 0) {
+				programpoint = 0;
+			} else {
+				programpoint = 1;
+			}
+		}
+		
+		//簡単なツール（アプリ）を作ったことがある
+		//ツール（アプリ）を公開したことがある
+		//ツール（アプリ）開発で、設計・実装・テストを経験したがある
+		if(portfolio > 0) {
+			programpoint = portfolio + 1;
+		}
+		
+		//チーム開発経験値算出		
+		if(hackathon == 0) {
+			if(team == 0) {
+				teampoint = 0;				//なし
+			} else {
+				teampoint = 1;				//知人（友人、研究室仲間）との開発経験
+			}
+		} else {
+			if(team == 2) {
+				teampoint = 4;				//インターン・アルバイトでのチーム開発経験
+			} else {
+				teampoint = hackathon + 1;	//ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
+			}
+		}		
+		
+		//Git, GitHub経験値算出
+		gitpoint = git;
+		
+		//算出値格納
+		score[0] = programpoint;
+		score[1] = teampoint;
+		score[2] = gitpoint;
+		
+		return score;
 	}
 }
