@@ -136,9 +136,9 @@ public class QuestionService {
 		//授業、趣味、独学でプログラミングの基礎を学んだことがある
 		if(portfolio == 0) {
 			if(frontend == 0 && backend == 0 && machinelearning == 0) {
-				programpoint = 1;
+				programpoint = 0;
 			} else {
-				programpoint = 2;
+				programpoint = 1;
 			}
 		}
 		
@@ -146,26 +146,26 @@ public class QuestionService {
 		//ツール（アプリ）を公開したことがある
 		//ツール（アプリ）開発で、設計・実装・テストを経験したがある
 		if(portfolio > 0) {
-			programpoint = portfolio + 2;
+			programpoint = portfolio + 1;
 		}
 		
 		//チーム開発経験値算出		
 		if(hackathon == 0) {
 			if(team == 0) {
-				teampoint = 1;				//なし
+				teampoint = 0;				//なし
 			} else {
-				teampoint = 2;				//知人（友人、研究室仲間）との開発経験
+				teampoint = 1;				//知人（友人、研究室仲間）との開発経験
 			}
 		} else {
 			if(team == 2) {
 				teampoint = 4;				//インターン・アルバイトでのチーム開発経験
 			} else {
-				teampoint = hackathon + 2;	//ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
+				teampoint = hackathon + 1;	//ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
 			}
 		}		
 		
 		//Git, GitHub経験値算出
-		gitpoint = git + 1;
+		gitpoint = git;
 		
 		//算出値格納
 		score[0] = programpoint;
