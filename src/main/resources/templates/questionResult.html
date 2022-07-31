@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>診断結果 - HackathonRunner</title>
-    
-    <!--bootstrap css-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/bootstrap_hackathon_runner_theme_color.css}"/>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" th:href="@{/icons/favicon.ico}" id="favicon">
-    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/icons/app_icon.svg}">
+	<title>診断結果 - HackathonRunner</title>
+
+	<!--bootstrap css-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/bootstrap_hackathon_runner_theme_color.css}" />
+
+	<link rel="icon" th:href="@{/icons/favicon.ico}" id="favicon">
+	<link rel="apple-touch-icon" sizes="180x180" th:href="@{/icons/app_icon.svg}">
 </head>
-<body>
-    <nav th:replace="fragments :: navbar_area"></nav>
 
-    <div class="mx-auto" style="max-width:600px">
-        <h1 class="text-center m-4">診断結果</h1>
-        
-        <ul th:utext="${analysisResult}"></ul>
-    </div>
-  
-    <!-- 
-    <h2>
-        おすすめのハッカソン
-    </h2>
-    <div id="hackathon-list">
-        
-    </div>
-    -->
-    
-    <!--bootstrap js-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<body>
+	<nav th:replace="fragments :: navbar_area"></nav>
+
+	<div class="mx-auto" style="max-width:800px">
+		<h1 class="text-center m-4">診断結果</h1>
+
+		<ul class="list-group mb-5">
+			<li class="list-group-item" th:text="${analysisResult}"></li>
+		</ul>
+
+		<canvas id="myRaderChart"></canvas>
+	</div>
+
+
+	<!-- chart.js CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+
+	<script>
+		var chartData = [2, 1, 4]; 
+	</script>
+	<script th:src="@{/js/questionResult.js}"></script>
+
+
+	<!--bootstrap js-->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossorigin="anonymous"></script>
 </body>
+
 </html>
