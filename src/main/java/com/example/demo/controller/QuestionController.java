@@ -16,7 +16,6 @@ import lombok.AllArgsConstructor;
 public class QuestionController {
 	
 	private final QuestionService questionService;
-
 		
 	@GetMapping("/showQuestion")
 	public ModelAndView showQuestion(ModelAndView mav) {
@@ -31,10 +30,12 @@ public class QuestionController {
 	public ModelAndView showQuestionResult(ModelAndView mav,
 			@ModelAttribute QuestionForm questionForm) {
 					
-			String analysisResult = questionService.createAnalysisResult(questionForm); 
+			String analysisResult = questionService.createAnalysisResult(questionForm);
+			int[] hackathonScore = questionService.createHackathonScore(questionForm);
 			
 			mav.setViewName("questionResult");
 			mav.addObject("analysisResult", analysisResult);
+			mav.addObject("hackathonScore", hackathonScore);
 		
 		return mav;
 		
