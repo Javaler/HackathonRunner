@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.form.QuestionForm;
@@ -7,10 +10,10 @@ import com.example.demo.form.QuestionForm;
 @Service
 public class QuestionService {
 
-	public String createAnalysisResult(QuestionForm questionForm) {
+	public List<String> createAnalysisResult(QuestionForm questionForm) {
 		
 		 
-		String analysisResult ="";
+		List<String> analysisResult = new ArrayList<>();
 		int hackathon = questionForm.getHackathon();
 		int team = questionForm.getTeam();
 		int portfolio = questionForm.getPortfolio();
@@ -26,7 +29,7 @@ public class QuestionService {
 		
 		//アルゴリズム0
 		if(git==0) {
-			analysisResult += "<li>Git, GitHubの勉強をしましょう。</li>";
+			analysisResult.add("Git, GitHubの勉強をしましょう。");
 			
 		}
 		
@@ -35,74 +38,74 @@ public class QuestionService {
 			if(team==0) {
 				if(portfolio==0) {
 					//アルゴリズム1 ハッカソン、チーム開発、成果物全てなしと成果物がなくハッカソン経験がない人
-					analysisResult +="<li>当日はスライド作成やアイデアを2、3個出せるように準備しておきましょう。</li>";
+					analysisResult.add("当日はスライド作成やアイデアを2、3個出せるように準備しておきましょう。");
 					
 				}else {
 					//アルゴリズム4　ハッカソン経験とチーム開発経験なしだが成果物はある
-					analysisResult += "<li>Git, GitHubを使ったチーム開発方法を調べましょう。</li>"
-							+ "<li>チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。</li>";
+					analysisResult.add("Git, GitHubを使ったチーム開発方法を調べましょう。");
+					analysisResult.add("チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。");
 				}
 			}else {
 				//アルゴリズム2　ハッカソン経験なしだがチーム開発経験あり
-				analysisResult += "<li>チームにハッカソン経験者がいないならリーダーの役割を担いましょう。</li>";
+				analysisResult.add("チームにハッカソン経験者がいないならリーダーの役割を担いましょう。");
 				
 			}
 			
 		}else {
 			//アルゴリズム3　ハッカソン経験あり
-			analysisResult += "<li>どんどん次のハッカソンに参加して、賞を目指しましょう！</li>"
-					+ "<li>今までリーダーの経験がなければリーダーの役割を担ってPMしてみましょう。</li>";
+			analysisResult.add("どんどん次のハッカソンに参加して、賞を目指しましょう！");
+			analysisResult.add("今までリーダーの経験がなければリーダーの役割を担ってPMしてみましょう。");
 		}
 				
 		//アルゴリズム5　成果物ありでGit,GitHub経験なし
 		if(portfolio==1 && git==0) {
-			analysisResult +="<li>チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。</li>";
+			analysisResult.add("チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。");
 		}
 		
 		//アルゴリズム6　動画編集経験あり
 		if(movie==1) {
-			analysisResult += "<li>動画編集できることを伝えましょう。プレゼン資料作成などで役に立つはずです。</li>";
+			analysisResult.add("動画編集できることを伝えましょう。プレゼン資料作成などで役に立つはずです。");
 		}
 		
 		//アルゴリズム7　プレゼン経験あり
 		if(presentation==1) {
-			analysisResult += "<li>プレゼン資料の作成や発表を積極的に担当しましょう。ハッカソンではプレゼンの出来も評価対象です。</li>";
+			analysisResult.add("プレゼン資料の作成や発表を積極的に担当しましょう。ハッカソンではプレゼンの出来も評価対象です。");
 		}
 		
 		
 		//アルゴリズム8　デザインツールの基礎知識あり
 		if(design==1) {
-			analysisResult += "<li>チームにデザインツールの応用レベルの人がいれば、その人のサポート役を担いましょう。</li>";
+			analysisResult.add("チームにデザインツールの応用レベルの人がいれば、その人のサポート役を担いましょう。");
 		}
 		
 		//アルゴリズム9　デザインツールの応用レベル
 		if(design==2) {
-			analysisResult += "<li>デザイン作成ができることを伝えましょう。</li>";
+			analysisResult.add("デザイン作成ができることを伝えましょう。");
 		}
 		
 		//アルゴリズム10　JavaScriptの基礎
 		if(frontend==1) {
-			analysisResult += "<li>JavaScriptのフレームワークを使える人がいれば、その人のサポート役を担いましょう。</li>";
+			analysisResult.add("JavaScriptのフレームワークを使える人がいれば、その人のサポート役を担いましょう。");
 		}
 		
 		//アルゴリズム11 JavaScriptのフレームワークを使える
 		if(frontend==2) {
-			analysisResult += "<li>フロントエンドの開発を行えることを伝えましょう。</li>";
+			analysisResult.add("フロントエンドの開発を行えることを伝えましょう。");
 		}
 		
 		//アルゴリズム12 バックエンド言語の基礎あり
 		if(backend==1) {
-			analysisResult += "<li>使えるバックエンド言語を伝えましょう。</li>";
+			analysisResult.add("使えるバックエンド言語を伝えましょう。");
 		}
 		
 		//アルゴリズム13 インフラ経験あり
 		if(infrastructure==1) {
-			analysisResult += "<li>使えるインフラツールを伝えましょう。</li>";
+			analysisResult.add("使えるインフラツールを伝えましょう。");
 		}
 		
 		//アルゴリズム14 機械学習 API 利用経験orモデル作成経験あり
 		if(machinelearning==1) {
-			analysisResult += "<li>機械学習を組み込めることを伝えましょう。</li>";
+			analysisResult.add("機械学習を組み込めることを伝えましょう。");
 		}
 		
 		//アルゴリズム15 技術的技能なし
@@ -110,7 +113,7 @@ public class QuestionService {
 				&& design==0 && frontend==0
 					&& backend==0 && infrastructure==0
 						&& machinelearning==0) {
-			analysisResult += "<li>プログラミング言語(JavaScript, PHP, Rubyなどから1つ)を勉強しておきましょう。</li>";
+			analysisResult.add("プログラミング言語(JavaScript, PHP, Rubyなどから1つ)を勉強しておきましょう。");
 		}
 			
 		return analysisResult;
