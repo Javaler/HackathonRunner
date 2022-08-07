@@ -17,19 +17,28 @@
 <body>
     <nav th:replace="fragments :: navbar_area"></nav>
 
-    <div>
         <div class="card m-4 mx-auto w-75">
             <div class="card-body">
                 <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-                <span>user name</span>
-                <h5 class="card-title">ハッカソン参加経験</h5>
-                <p class="card-text">1回</p>
-                <h5 class="card-title">成果物</h5>
-                <p class="card-text">ハッカソン補助アプリ</p>
-                <h5 class="card-title">参加したハッカソン</h5>
-                <p class="card-text">初めてのハッカソン</p>
-                <h5 class="card-title">作品名</h5>
-                <p class="card-text">HackathonRunner</p>
+                <span class="fw-bold">user name</span>
+                <table>
+                    <tr>
+                        <td class="fw-bold">ハッカソン参加経験</td>
+                        <td>1回</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">成果物</td>
+                        <td>ハッカソン補助アプリ</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">参加したハッカソン</td>
+                        <td>初めてのハッカソン</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">作品名</td>
+                        <td>HackathonRunner</td>
+                    </tr>
+                </table>
                 <div class="text-end">
                     <button class="btn btn-primary">参考になった</button>
                 </div>
