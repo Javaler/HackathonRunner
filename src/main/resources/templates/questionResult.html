@@ -20,11 +20,11 @@
 <body>
 	<nav th:replace="fragments :: navbar_area"></nav>
 
-	<div class="mx-auto" style="max-width:800px">
+	<div class="mx-auto" style="max-width:860px">
 		<h1 class="text-center m-4">診断結果</h1>
 
 		<ul class="list-group mb-5">
-			<li class="list-group-item" th:text="${analysisResult}"></li>
+			<li class="list-group-item" th:each="result : ${analysisResult}" th:text="${result}"></li>
 		</ul>
 
 		<canvas id="myRaderChart"></canvas>
@@ -34,8 +34,8 @@
 	<!-- chart.js CDN -->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 
-	<script>
-		var chartData = [2, 1, 4]; 
+	<script th:inline="javascript">
+		const chartData = /*[[${hackathonScore}]]*/"hackathonScore";
 	</script>
 	<script th:src="@{/js/questionResult.js}"></script>
 
