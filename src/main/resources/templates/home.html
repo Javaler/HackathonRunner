@@ -17,18 +17,60 @@
 <body>
     <nav th:replace="fragments :: navbar_area"></nav>
 
-    <div class="text-center">
-        <p class="fs-4 m-5">
-            回答の技術レベルからハッカソン当日までに<br/>
-            準備しておきたいことや当日の役割を診断！
-        </p>
+        <div class="card m-4 mx-auto w-75">
+            <div class="card-body">
+                <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                <span class="fw-bold">user name</span>
+                <table>
+                    <tr>
+                        <td class="align-top fw-bold">ハッカソン参加経験</td>
+                        <td class="align-top px-1">1回</td>
+                    </tr>
+                    <tr>
+                        <td class="align-top fw-bold">成果物</td>
+                        <td class="align-top px-1">ハッカソン補助アプリ</td>
+                    </tr>
+                    <tr>
+                        <td class="align-top fw-bold">参加したハッカソン</td>
+                        <td class="align-top px-1">初めてのハッカソン</td>
+                    </tr>
+                    <tr>
+                        <td class="align-top align-top fw-bold">作品名</td>
+                        <td class="align-top px-1">HackathonRunner</td>
+                    </tr>
+                </table>
+                <div class="text-end">
+                    <button class="btn btn-primary">参考になった</button>
+                </div>
+            </div>
+        </div>
 
-        <div>
-            <a href="/showQuestion">
-                <button class="btn btn-primary btn-lg px-5">
-                    診断を開始する
-                </button>
-            </a>
+        <div class="card m-4 mx-auto w-75">
+            <div class="card-body">
+                <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                <span class="fw-bold">user name</span>
+                <table>
+                    <tr>
+                        <td class="align-top fw-bold">ハッカソン参加経験</td>
+                        <td class="align-top px-1">1回</td>
+                    </tr>
+                    <tr>
+                        <td class="align-top fw-bold">成果物</td>
+                        <td class="align-top px-1">ハッカソン補助アプリ</td>
+                    </tr>
+                    <tr>
+                        <td class="align-top fw-bold">参加したハッカソン</td>
+                        <td class="align-top px-1">初めてのハッカソン</td>
+                    </tr>
+                    <tr>
+                        <td class="align-top align-top fw-bold">作品名</td>
+                        <td class="align-top px-1">HackathonRunner</td>
+                    </tr>
+                </table>
+                <div class="text-end">
+                    <button class="btn btn-outline-primary">参考になった</button>
+                </div>
+            </div>
         </div>
     </div>
 
