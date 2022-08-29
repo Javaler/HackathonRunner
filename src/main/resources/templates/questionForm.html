@@ -19,120 +19,186 @@
 
     <div class="mx-5">
         <form class="needs-validated" action="/showQuestionResult" method="post" novalidate>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">1. ハッカソン参加経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="hackathon-no" value=0 name="hackathon"/>
-                <label for="hackathon-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="hackathon-yes-1" value=1 name="hackathon"/>
-                <label for="hackathon-yes-1">1, 2回</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="hackathon-yes-2" value=2 name="hackathon"/>
-                <label for="hackathon-yes-2">3回以上</label><br/>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>1. ハッカソン参加経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="hackathon-no" value=0 name="hackathon" required/>
+                    <label for="hackathon-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="hackathon-yes-1" value=1 name="hackathon" required/>
+                    <label for="hackathon-yes-1">1, 2回</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="hackathon-yes-2" value=2 name="hackathon" required/>
+                    <label for="hackathon-yes-2">3回以上</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">2. チーム開発経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="team-no" value=0 name="team"/>
-                <label for="team-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="team-yes-1" value=1 name="team"/>
-                <label for="team-yes-1">知人（友人、研究室仲間）との開発経験あり</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="team-yes-2" value=2 name="team"/>
-                <label for="team-yes-2">インターン・アルバイトでのチーム開発経験あり</label><br/>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>2. チーム開発経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" required id="team-no" value=0 name="team"/>
+                    <label for="team-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" required id="team-yes-1" value=1 name="team"/>
+                    <label for="team-yes-1">知人（友人、研究室仲間）との開発経験あり</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" required id="team-yes-2" value=2 name="team"/>
+                    <label for="team-yes-2">インターン・アルバイトでのチーム開発経験あり</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">3. ツール（アプリ）開発経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="deliverable-no" value=0 name="portfolio"/>
-                <label for="deliverable-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="deliverable-yes-1" value=1 name="portfolio"/>
-                <label for="deliverable-yes-1">簡単なツール（アプリ）を作ったことがある</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="deliverable-yes-2" value=2 name="portfolio"/>
-                <label for="deliverable-yes-2">ツール（アプリ）を公開したことがある</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="deliverable-yes-3" value=3 name="portfolio"/>
-                <label for="deliverable-yes-3">ツール（アプリ）開発で、設計・実装・テストを経験したがある</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>3. ツール（アプリ）開発経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="deliverable-no" value=0 name="portfolio"/>
+                    <label for="deliverable-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="deliverable-yes-1" value=1 name="portfolio"/>
+                    <label for="deliverable-yes-1">簡単なツール（アプリ）を作ったことがある</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="deliverable-yes-2" value=2 name="portfolio"/>
+                    <label for="deliverable-yes-2">ツール（アプリ）を公開したことがある</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="deliverable-yes-3" value=3 name="portfolio"/>
+                    <label for="deliverable-yes-3">ツール（アプリ）開発で、設計・実装・テストを経験したがある</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">4. Git,GitHub使用経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="git-no" value=0 name="git"/>
-                <label for="git-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="git-yes-1" value=1 name="git"/>
-                <label for="git-yes-1">clone または fork をしたことがある</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="git-yes-2" value=2 name="git"/>
-                <label for="git-yes-2">push したことがある</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="git-yes-3" value=3 name="git"/>
-                <label for="git-yes-3">add, commit したことがある</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="git-yes-4" value=4 name="git"/>
-                <label for="git-yes-4">pull, branch, checkout, merge や pull request をしたことがある</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>4. Git,GitHub使用経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="git-no" value=0 name="git"/>
+                    <label for="git-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="git-yes-1" value=1 name="git"/>
+                    <label for="git-yes-1">clone または fork をしたことがある</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="git-yes-2" value=2 name="git"/>
+                    <label for="git-yes-2">push したことがある</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="git-yes-3" value=3 name="git"/>
+                    <label for="git-yes-3">add, commit したことがある</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="git-yes-4" value=4 name="git"/>
+                    <label for="git-yes-4">pull, branch, checkout, merge や pull request をしたことがある</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">5. 動画編集経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="movie-no" value=0 name="movie"/>
-                <label for="movie-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="movie-yes" value=1 name="movie"/>
-                <label for="movie-yes">あり</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>5. 動画編集経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="movie-no" value=0 name="movie"/>
+                    <label for="movie-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="movie-yes" value=1 name="movie"/>
+                    <label for="movie-yes">あり</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">6. プレゼン経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="presentation-no" value=0 name="presentation"/>
-                <label for="presentation-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="presentation-yes" value=1 name="presentation"/>
-                <label for="presentation-yes">あり</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>6. プレゼン経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="presentation-no" value=0 name="presentation"/>
+                    <label for="presentation-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="presentation-yes" value=1 name="presentation"/>
+                    <label for="presentation-yes">あり</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">7. デザインスキル</p>
-                <input type="radio" class="form-check-input ms-1"  required id="design-no" value=0 name="design"/>
-                <label for="design-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="design-yes-1" value=1 name="design"/>
-                <label for="design-yes-1">あり(Figma, AdobeXDの基礎レベルorデザイン知識あり)</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="design-yes-2" value=2 name="design"/>
-                <label for="design-yes-2">あり(コンポーネント機能を使いこなせる)</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>7. デザインスキル</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="design-no" value=0 name="design"/>
+                    <label for="design-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="design-yes-1" value=1 name="design"/>
+                    <label for="design-yes-1">あり(Figma, AdobeXDの基礎レベルorデザイン知識あり)</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="design-yes-2" value=2 name="design"/>
+                    <label for="design-yes-2">あり(コンポーネント機能を使いこなせる)</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">8. フロントエンド言語</p>
-                <input type="radio" class="form-check-input ms-1"  required id="frontend-no" value=0 name="frontend"/>
-                <label for="frontend-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="frontend-yes-1" value=1 name="frontend"/>
-                <label for="frontend-yes-1">JavaScript基礎レベル</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="frontend-yes-2" value=2 name="frontend"/>
-                <label for="frontend-yes-2">JavaScriptのフレームワーク(React.js, Vue.js, Angular.js)</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>8. フロントエンド言語</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="frontend-no" value=0 name="frontend"/>
+                    <label for="frontend-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="frontend-yes-1" value=1 name="frontend"/>
+                    <label for="frontend-yes-1">JavaScript基礎レベル</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="frontend-yes-2" value=2 name="frontend"/>
+                    <label for="frontend-yes-2">JavaScriptのフレームワーク(React.js, Vue.js, Angular.js)</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">9. バックエンド言語の基礎</p>
-                <input type="radio" class="form-check-input ms-1"  required id="backend-no" value=0 name="backend"/>
-                <label for="backend-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="backend-yes" value=1 name="backend"/>
-                <label for="backend-yes">あり(Go, Java, PHP, Python, Ruby,...)</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>9. バックエンド言語の基礎</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="backend-no" value=0 name="backend"/>
+                    <label for="backend-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="backend-yes" value=1 name="backend"/>
+                    <label for="backend-yes">あり(Go, Java, PHP, Python, Ruby,...)</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">10. インフラ経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="infrastructure-no" value=0 name="infrastructure"/>
-                <label for="infrastructure-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="infrastructure-yes" value=1 name="infrastructure"/>
-                <label for="infrastructure-yes">あり(Heroku, Firebase, AWS, GCP, Azure)</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>10. インフラ経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="infrastructure-no" value=0 name="infrastructure"/>
+                    <label for="infrastructure-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="infrastructure-yes" value=1 name="infrastructure"/>
+                    <label for="infrastructure-yes">あり(Heroku, Firebase, AWS, GCP, Azure)</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <div class="form-check my-5 border border-light bg-white bg-white rounded">
-                <p class="ms-1">11. データ分析・画像処理経験</p>
-                <input type="radio" class="form-check-input ms-1"  required id="machine-learning-no" value=0 name="machineLearning"/>
-                <label for="machine-learning-no">なし</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="machine-learning-yes-1" value=1 name="machineLearning"/>
-                <label for="machine-learning-yes-1">画像処理ライブラリ(OpenCV)の利用したことがある</label><br/>
-                <input type="radio" class="form-check-input ms-1"  required id="machine-learning-yes-2" value=2 name="machineLearning"/>
-                <label for="machine-learning-yes-2">機械学習を用いたAPI(AWS, Azure, GCP)の利用したことがある</label>
-                <div class="invalid-feedback">この質問は必須です。</div>
+            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                <p>11. データ分析・画像処理経験</p>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="machine-learning-no" value=0 name="machineLearning"/>
+                    <label for="machine-learning-no">なし</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="machine-learning-yes-1" value=1 name="machineLearning"/>
+                    <label for="machine-learning-yes-1">画像処理ライブラリ(OpenCV)の利用したことがある</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input"  required id="machine-learning-yes-2" value=2 name="machineLearning"/>
+                    <label for="machine-learning-yes-2">機械学習を用いたAPI(AWS, Azure, GCP)の利用したことがある</label>
+                    <div class="invalid-feedback">この質問は必須です。</div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary px-4 mb-5">診断する</button>
+            <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
+                <strong>未入力の質問があります。</strong>
+            </div>
+            <button type="submit" class="btn btn-primary px-4 mt-3 mb-5">診断する</button>
         </form>
     </div>
 
     <script th:src="@{/js/questionForm.js}"></script>
-
 
     <!--bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

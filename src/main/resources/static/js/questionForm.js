@@ -1,6 +1,16 @@
 const forms=document.querySelectorAll('form.needs-validated');
+const alert = document.getElementById('not-entered-alert');
 
 for(const form of forms){
+    form.addEventListener("input", (e)=>{
+        if(form.checkValidity()){
+            alert.style.display = 'none'
+        } else {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }, false);
+
     form.addEventListener('submit',(e)=>{
         console.log('validation');
         if(!form.checkValidity()){
@@ -8,5 +18,6 @@ for(const form of forms){
             e.stopPropagation();
         }
         form.classList.add('was-validated');
-    },false);
+        alert.style.display = 'block'
+    }, false);
 }
