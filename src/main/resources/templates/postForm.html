@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
         <div class="progress mx-5">
             <div id="progress-bar" class="progress-bar" style="width:0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <form class="needs-validated" action="/showPostResult" method="post" novalidate>
+        <form class="needs-validated" th:action="@{/post}" th:object="${postForm}" method="post" novalidate>
             <div id="question-page0">
                 <div class="my-3 p-3 border border-light bg-white bg-white rounded">
                     <p>1. ハッカソン参加経験</p>
@@ -200,24 +200,27 @@
             <div id="question-page1" style="display:none">
                 <div class="mb-3">
                     <label class="form-label" for="name">名前</label>
-                    <input class="form-control" id="name" type="text" name="name" required/><br/>
+                    <input class="form-control" id="name" type="text" name="name" required/>
                     <div class="invalid-feedback">この質問は必須です。</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="work">作品説明</label>
-                    <textarea class="form-control" id="work" type="text" name="work" rows="3" required></textarea><br/>
+                    <textarea class="form-control" id="work" name="work" rows="3" required></textarea>
                     <div class="invalid-feedback">この質問は必須です。</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="event">ハッカソン説明</label>
-                    <textarea class="form-control" id="event" type="text" name="event" rows="3" required></textarea><br/>
+                    <textarea class="form-control" id="event" name="event" rows="3" required></textarea>
                     <div class="invalid-feedback">この質問は必須です。</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="comment">コメント</label>
-                    <textarea class="form-control" id="comment" type="text" name="comment" rows="3" required></textarea><br/>
+                    <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
                     <div class="invalid-feedback">この質問は必須です。</div>
                 </div>
+                <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
+	                <strong>未入力の項目があります。</strong>
+	            </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-primary px-4 mb-5" onclick="changePage(0)">前へ</button>
                     <button type="submit" class="btn btn-primary px-4 mb-5">投稿</button>
