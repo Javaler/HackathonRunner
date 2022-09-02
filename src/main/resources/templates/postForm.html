@@ -19,7 +19,7 @@
         <div class="progress mx-5">
             <div id="progress-bar" class="progress-bar" style="width:0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <form class="needs-validated" action="/showPostResult" method="post" novalidate>
+        <form class="needs-validated" th:action="@{/post}" th:object="${postForm}" method="post" novalidate>
             <div id="question-page0">
                 <div class="my-3 p-3 border border-light bg-white bg-white rounded">
                     <p>1. ハッカソン参加経験</p>
