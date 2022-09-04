@@ -21,7 +21,7 @@ public class HomeController {
 	@GetMapping("/")
 	public ModelAndView showHome(ModelAndView mav) {
 		
-		List<Post> postList = postRepository.findAll();
+		List<Post> postList = postRepository.findAllByOrderByIdDesc();
 		
 		mav.setViewName("home");
 		mav.addObject("postList", postList);
