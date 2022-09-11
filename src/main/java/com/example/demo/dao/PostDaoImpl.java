@@ -104,11 +104,11 @@ public class PostDaoImpl implements PostDao {
 		}
 		
 		// SELECT作成
-	    Predicate[] predArray = new Predicate[predicates.size()];
-	    predicates.toArray(predArray);
-	    query = query.select(root).where(predArray).orderBy(builder.desc(root.get(Post_.id)));
+		Predicate[] predArray = new Predicate[predicates.size()];
+		predicates.toArray(predArray);
+		query = query.select(root).where(predArray).orderBy(builder.desc(root.get(Post_.id)));
 		   
-		    // 検索
+		// 検索
 		List<Post> list = entityManager.createQuery(query).getResultList();
 		
 		return list;
