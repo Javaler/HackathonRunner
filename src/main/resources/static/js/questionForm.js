@@ -14,10 +14,11 @@ for(const form of forms){
     form.addEventListener('submit',(e)=>{
         console.log('validation');
         if(!form.checkValidity()){
+            form.classList.add('was-validated');
+            alert.style.display = 'block'
+            
             e.preventDefault();
             e.stopPropagation();
         }
-        form.classList.add('was-validated');
-        alert.style.display = 'block'
     }, false);
 }
