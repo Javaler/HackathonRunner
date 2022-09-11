@@ -13,7 +13,7 @@ public class QuestionForm {
 	private int git;
 	private int design;
 	private int movie;
-	private int machineLearning;
+	private int machinelearning;
 	private int portfolio;
 	private int presentation;
 	

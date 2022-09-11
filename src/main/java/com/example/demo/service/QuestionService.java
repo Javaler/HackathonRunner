@@ -24,7 +24,7 @@ public class QuestionService {
 		int frontend = questionForm.getFrontend();
 		int backend = questionForm.getBackend();
 		int infrastructure = questionForm.getInfrastructure();
-		int machinelearning = questionForm.getMachineLearning();
+		int machinelearning = questionForm.getMachinelearning();
 		
 		
 		//アルゴリズム0
@@ -131,7 +131,7 @@ public class QuestionService {
 		int git = questionForm.getGit();
 		int frontend = questionForm.getFrontend();
 		int backend = questionForm.getBackend();
-		int machinelearning = questionForm.getMachineLearning();
+		int machinelearning = questionForm.getMachinelearning();
 		
 		
 		//プログラミング経験値算出
