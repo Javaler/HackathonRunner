@@ -47,6 +47,7 @@ public class PostController {
 		somePost
 			.ifPresentOrElse(post -> {
 				mav.setViewName("postDetail");
+				mav.addObject("post", post);
 			}, () -> {
 				mav.setViewName("redirect:/");
 			});
