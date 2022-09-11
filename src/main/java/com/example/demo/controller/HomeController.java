@@ -43,7 +43,7 @@ public class HomeController {
 	
 	
 	@GetMapping("/")
-	public ModelAndView showPost(ModelAndView mav) {
+	public ModelAndView showHome(ModelAndView mav) {
 		
 		List<Post> postList = postRepository.findAllByOrderByIdDesc();
 		
