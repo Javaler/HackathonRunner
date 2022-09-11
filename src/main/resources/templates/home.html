@@ -157,35 +157,37 @@
 	</div>
 
     <div class="card w-75 mx-auto my-4" th:each="post : ${postList}">
-        <div class="card-body">
-            <div class="mb-3">
-                <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-                <span class="fw-bold fs-3 ms-2" th:text="${post.name}">user name</span>
+        <a>
+            <div class="card-body">
+                <div class="mb-3">
+                    <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                    <span class="fw-bold fs-3 ms-2" th:text="${post.name}">user name</span>
+                </div>
+                <table class="table table-borderless">
+                    <tr th:switch="${post.hackathon}">
+                        <th class="w-50">ハッカソン参加経験</th>
+                        <td th:case=0>なし</td>
+                        <td th:case=1>1, 2回</td>
+                        <td th:case=2>3回以上</td>
+                    </tr>
+                    <tr th:switch="${post.portfolio}">
+                        <th class="w-50">ツール（アプリ）<br>開発経験</th>
+                        <td th:case=0>なし</td>
+                        <td th:case=1>簡単なツール（アプリ）を作ったことがある</td>
+                        <td th:case=2>ツール（アプリ）を公開したことがある</td>
+                        <td th:case=3>ツール（アプリ）開発で、設計・実装・テストを経験したがある</td>
+                    </tr>
+                    <tr>
+                        <th class="w-50">参加したハッカソン</th>
+                        <td th:text="${post.event}"></td>
+                    </tr>
+                    <tr>
+                        <th class="w-50">作品名</th>
+                        <td th:text="${post.work}"></td>
+                    </tr>
+                </table>
             </div>
-            <table class="table table-borderless">
-                <tr th:switch="${post.hackathon}">
-                    <th class="w-50">ハッカソン参加経験</th>
-                    <td th:case=0>なし</td>
-                    <td th:case=1>1, 2回</td>
-                    <td th:case=2>3回以上</td>
-                </tr>
-                <tr th:switch="${post.portfolio}">
-                    <th class="w-50">ツール（アプリ）<br>開発経験</th>
-                    <td th:case=0>なし</td>
-                    <td th:case=1>簡単なツール（アプリ）を作ったことがある</td>
-                    <td th:case=2>ツール（アプリ）を公開したことがある</td>
-                    <td th:case=3>ツール（アプリ）開発で、設計・実装・テストを経験したがある</td>
-                </tr>
-                <tr>
-                    <th class="w-50">参加したハッカソン</th>
-                    <td th:text="${post.event}"></td>
-                </tr>
-                <tr>
-                    <th class="w-50">作品名</th>
-                    <td th:text="${post.work}"></td>
-                </tr>
-            </table>
-        </div>
+        </a>
     </div>
     
     <!--bootstrap js-->
