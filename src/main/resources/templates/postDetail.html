@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="mb-3">
                     <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-                    <span class="fw-bold fs-3 ms-2">user name</span>
+                    <span class="fw-bold fs-3 ms-2" th:text="{$post.name}"></span>
                 </div>
                 <div class="col-12 col-sm-6">
                     <h2>作品情報</h2>
