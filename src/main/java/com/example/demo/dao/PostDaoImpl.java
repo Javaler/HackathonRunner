@@ -10,96 +10,96 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import com.example.demo.entity.Post;
 import com.example.demo.entity.Post_;
-import com.example.demo.form.HomeQuery;
+import com.example.demo.form.PostQuery;
 import lombok.AllArgsConstructor;
 
 
 @AllArgsConstructor
-public class HomeDaoImpl implements HomeDao {
+public class PostDaoImpl implements PostDao {
   private final EntityManager entityManager;
 
 
   // Criteria APIによる検索
   @Override
-  public List<Post> findByCriteria(HomeQuery homeQuery) {
+  public List<Post> findByCriteria(PostQuery postQuery) {
     CriteriaBuilder builder = entityManager.getCriteriaBuilder();
     CriteriaQuery<Post> query = builder.createQuery(Post.class);
     Root<Post> root = query.from(Post.class);
     List<Predicate> predicates = new ArrayList<>();
 
     // ハッカソン経験
-    if (homeQuery.getHackathon() != -1) {
-    	predicates.add(builder.and(builder.equal(root.get(Post_.HACKATHON), homeQuery.getHackathon())));
+    if (postQuery.getHackathon() != -1) {
+    	predicates.add(builder.and(builder.equal(root.get(Post_.HACKATHON), postQuery.getHackathon())));
     }
     
     // チーム開発
-    if (homeQuery.getTeam() != -1) {
+    if (postQuery.getTeam() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.TEAM), homeQuery.getTeam())));
+          builder.equal(root.get(Post_.TEAM), postQuery.getTeam())));
     }
 
     // ツール開発
-    if (homeQuery.getPortfolio() != -1) {
+    if (postQuery.getPortfolio() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.PORTFOLIO), homeQuery.getPortfolio())));
+          builder.equal(root.get(Post_.PORTFOLIO), postQuery.getPortfolio())));
     }
     
     // git経験
-    if (homeQuery.getGit() != -1) {
+    if (postQuery.getGit() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.GIT), homeQuery.getGit())));
+          builder.equal(root.get(Post_.GIT), postQuery.getGit())));
     }
     
     // 動画編集経験
-    if (homeQuery.getMovie() != -1) {
+    if (postQuery.getMovie() != -1) {
       predicates.add(
         builder.and(
-         builder.equal(root.get(Post_.MOVIE), homeQuery.getMovie())));
+         builder.equal(root.get(Post_.MOVIE), postQuery.getMovie())));
     }
     
     // プレゼン経験
-    if (homeQuery.getPresentation() != -1) {
+    if (postQuery.getPresentation() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.PRESENTATION), homeQuery.getPresentation())));
+          builder.equal(root.get(Post_.PRESENTATION), postQuery.getPresentation())));
     }
     
     // デザイン
-    if (homeQuery.getDesign() != -1) {
+    if (postQuery.getDesign() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.DESIGN), homeQuery.getDesign())));
+          builder.equal(root.get(Post_.DESIGN), postQuery.getDesign())));
     }
     
     // フロントエンド
-    if (homeQuery.getFrontend() != -1) {
+    if (postQuery.getFrontend() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.FRONTEND), homeQuery.getFrontend())));
+          builder.equal(root.get(Post_.FRONTEND), postQuery.getFrontend())));
     }
     
     // バックエンド開発
-    if (homeQuery.getBackend() != -1) {
+    if (postQuery.getBackend() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.BACKEND), homeQuery.getBackend())));
+          builder.equal(root.get(Post_.BACKEND), postQuery.getBackend())));
     }
     
     // インフラ
-    if (homeQuery.getInfrastructure() != -1) {
+    if (postQuery.getInfrastructure() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.INFRASTRUCTURE), homeQuery.getInfrastructure())));
+          builder.equal(root.get(Post_.INFRASTRUCTURE), postQuery.getInfrastructure())));
     }
     
     // データ解析
-    if (homeQuery.getMachineLearning() != -1) {
+    if (postQuery.getMachineLearning() != -1) {
       predicates.add(
         builder.and(
-          builder.equal(root.get(Post_.MACHINELEARNING), homeQuery.getMachineLearning())));
+          builder.equal(root.get(Post_.MACHINELEARNING), postQuery.getMachineLearning())));
     }
 
     // SELECT作成

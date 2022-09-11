@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.entity.Post;
-import com.example.demo.form.HomeQuery;
+import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
-import com.example.demo.dao.HomeDaoImpl;
+import com.example.demo.dao.PostDaoImpl;
 import com.example.demo.entity.Post;
-import com.example.demo.form.HomeQuery;
+import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
 
 import lombok.AllArgsConstructor;
@@ -34,39 +34,37 @@ public class HomeController {
 	
 	@PersistenceContext
 	private EntityManager entityManager;
-	HomeDaoImpl homeDaoImpl;
+	PostDaoImpl postDaoImpl;
 
 	@PostConstruct
 	public void init() {
-	homeDaoImpl = new HomeDaoImpl(entityManager);
+		postDaoImpl = new PostDaoImpl(entityManager);
 	}
 	
 	
 	@GetMapping("/")
-	public ModelAndView showHome(ModelAndView mav) {
+	public ModelAndView showPost(ModelAndView mav) {
 		
 		List<Post> postList = postRepository.findAllByOrderByIdDesc();
 		
 		mav.setViewName("home");
 		mav.addObject("postList", postList);
-		mav.addObject("homeQuery", new HomeQuery());
+		mav.addObject("postQuery", new PostQuery());
 		
 		return mav;
 	}
 	
 	
 	@PostMapping("/")
-	public ModelAndView queryTodo(@ModelAttribute HomeQuery homeQuery, 
+	public ModelAndView queryPost(@ModelAttribute PostQuery postQuery, 
 	                                BindingResult result,
-	                                ModelAndView mv) {
-	    mv.setViewName("home");
+	                                ModelAndView mav) {
+	    mav.setViewName("home");
 
-	    List<Post> homeList = null;
-	    homeList = homeDaoImpl.findByCriteria(homeQuery);
+	    List<Post> postList = postDaoImpl.findByCriteria(postQuery);
 
-	    // mv.addObject("homeQuery", homeQuery);
-	    mv.addObject("postList", homeList);
+	    mav.addObject("postList", postList);
 
-	    return mv;
+	    return mav;
 	  }
 }

@@ -3,7 +3,7 @@ package com.example.demo.form;
 import lombok.Data;
 
 @Data
-public class HomeQuery {
+public class PostQuery {
 	private int hackathon;
 	private int team;
 	private int frontend;
@@ -16,7 +16,7 @@ public class HomeQuery {
 	private int portfolio;
 	private int presentation;
 	
-	public HomeQuery() {
+	public PostQuery() {
 		hackathon = -1;
 		team = -1;
 		frontend = -1;
