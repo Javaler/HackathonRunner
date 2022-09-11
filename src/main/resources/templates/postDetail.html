@@ -15,89 +15,92 @@
 <body class="bg-light">
     <nav th:replace="fragments :: navbar_area"></nav>
     <div class="m-3">
-        <div>
-            <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-            <span class="fw-bold fs-3 ms-2">user name</span>
-        </div>
-        <div class="mb-5">
-            <h2>作品名</h1>
-            <p>内容</p>
-            <h2>参加したハッカソン</h1>
-            <p>内容</p>
-            <h2>ハッカソン成果物</h1>
-            <p>内容</p>
-            <h2>コメント</h1>
-            <p>内容</p>
-        </div>
-
-        <div class="border border-secondary">
-            <table class="table table-borderless">
-                <tr>
-                    <th class="w-50">ハッカソン参加経験</th>
-                    <td>なし</td>
-                    <!--<td>1, 2回</td>
-                    <td>3回以上</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">チーム開発経験</th>
-                    <td>なし</td>
-                    <!--<td>知人(友人、研究室の仲間)との開発経験あり</td>
-                    <td>インターン・アルバイトでのチーム開発経験あり</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">ツール（アプリ）<br>開発経験</th>
-                    <td>なし</td>
-                    <!--<td>簡単なツール（アプリ）を作ったことがある</td>
-                    <td>ツール（アプリ）を公開したことがある</td>
-                    <td>ツール（アプリ）開発で、設計・実装・テストを経験したがある</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">Git,GitHub使用経験</th>
-                    <td>なし</td>
-                    <!--<td>clone または fork をしたことがある</td>
-                    <td>push したことがある</td>
-                    <td>add, commit したことがある</td>
-                    <td>pull, branch, checkout, merge や pull request をしたことがある</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">動画編集経験</th>
-                    <td>なし</td>
-                    <!--<td>あり</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">プレゼン経験</th>
-                    <td>なし</td>
-                    <!--<td>あり</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">デザインスキル</th>
-                    <td>なし</td>
-                    <!--<td>あり(Figma, AdobeXDの基礎レベルorデザイン知識あり)</td>
-                    <td>あり(コンポーネント機能を使いこなせる)</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">フロントエンド言語</th>
-                    <td>なし</td>
-                    <!--<td>JavaScript基礎レベル</td>
-                    <td>JavaScriptのフレームワーク(React.js, Vue.js, Angular.js)</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">バックエンド言語の基礎</th>
-                    <td>なし</td>
-                    <!--<td>あり(Go, Java, PHP, Python, Ruby,...)</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">インフラ経験</th>
-                    <td>なし</td>
-                    <!--<td>あり(Heroku, Firebase, AWS, GCP, Azure)</td>-->
-                </tr>
-                <tr>
-                    <th class="w-50">データ分析・画像処理経験</th>
-                    <td>なし</td>
-                    <!--<td>画像処理ライブラリ(OpenCV)の利用したことがある</td>
-                    <td>機械学習を用いたAPI(AWS, Azure, GCP)の利用したことがある</td>-->
-                </tr>
-            </table>
+        <div class="container">
+            <div class="row">
+                <div class="mb-3">
+                    <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                    <span class="fw-bold fs-3 ms-2">user name</span>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <h2>作品名</h2>
+                    <p>内容</p>
+                    <h2>参加したハッカソン</h2>
+                    <p>内容</p>
+                    <h2>ハッカソン成果物</h2>
+                    <p>内容</p>
+                    <h2>コメント</h2>
+                    <p>内容</p>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="w-50">ハッカソン参加経験</th>
+                            <td>なし</td>
+                            <!--<td>1, 2回</td>
+                            <td>3回以上</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">チーム開発経験</th>
+                            <td>なし</td>
+                            <!--<td>知人(友人、研究室の仲間)との開発経験あり</td>
+                            <td>インターン・アルバイトでのチーム開発経験あり</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">ツール（アプリ）<br>開発経験</th>
+                            <td>なし</td>
+                            <!--<td>簡単なツール（アプリ）を作ったことがある</td>
+                            <td>ツール（アプリ）を公開したことがある</td>
+                            <td>ツール（アプリ）開発で、設計・実装・テストを経験したがある</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">Git,GitHub使用経験</th>
+                            <td>なし</td>
+                            <!--<td>clone または fork をしたことがある</td>
+                            <td>push したことがある</td>
+                            <td>add, commit したことがある</td>
+                            <td>pull, branch, checkout, merge や pull request をしたことがある</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">動画編集経験</th>
+                            <td>なし</td>
+                            <!--<td>あり</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">プレゼン経験</th>
+                            <td>なし</td>
+                            <!--<td>あり</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">デザインスキル</th>
+                            <td>なし</td>
+                            <!--<td>あり(Figma, AdobeXDの基礎レベルorデザイン知識あり)</td>
+                            <td>あり(コンポーネント機能を使いこなせる)</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">フロントエンド言語</th>
+                            <td>なし</td>
+                            <!--<td>JavaScript基礎レベル</td>
+                            <td>JavaScriptのフレームワーク(React.js, Vue.js, Angular.js)</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">バックエンド言語の基礎</th>
+                            <td>なし</td>
+                            <!--<td>あり(Go, Java, PHP, Python, Ruby,...)</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">インフラ経験</th>
+                            <td>なし</td>
+                            <!--<td>あり(Heroku, Firebase, AWS, GCP, Azure)</td>-->
+                        </tr>
+                        <tr>
+                            <th class="w-50">データ分析・画像処理経験</th>
+                            <td>なし</td>
+                            <!--<td>画像処理ライブラリ(OpenCV)の利用したことがある</td>
+                            <td>機械学習を用いたAPI(AWS, Azure, GCP)の利用したことがある</td>-->
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
