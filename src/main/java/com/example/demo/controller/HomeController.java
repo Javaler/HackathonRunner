@@ -34,11 +34,11 @@ public class HomeController {
 	
 	@PersistenceContext
 	private EntityManager entityManager;
-	TodoDaoImpl todoDaoImpl;
+	HomeDaoImpl homeDaoImpl;
 
 	@PostConstruct
 	public void init() {
-	todoDaoImpl = new TodoDaoImpl(entityManager);
+	homeDaoImpl = new HomeDaoImpl(entityManager);
 	}
 	
 	
@@ -54,17 +54,18 @@ public class HomeController {
 		return mav;
 	}
 	
-	@PostMapping("/home/query")
+	
+	@PostMapping("/")
 	public ModelAndView queryTodo(@ModelAttribute HomeQuery homeQuery, 
 	                                BindingResult result,
 	                                ModelAndView mv) {
-	    mv.setViewName("homeList");
+	    mv.setViewName("home");
 
 	    List<Post> homeList = null;
 	    homeList = homeDaoImpl.findByCriteria(homeQuery);
 
 	    // mv.addObject("homeQuery", homeQuery);
-	    mv.addObject("homeList", homeList);
+	    mv.addObject("postList", homeList);
 
 	    return mv;
 	  }
