@@ -1,8 +1,11 @@
 package com.example.demo.controller;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,5 +37,20 @@ public class PostController {
 		postRepository.saveAndFlush(post);
 		
 		return "redirect:/";
+	}
+	
+	@GetMapping("/Post/{post_id}")
+	public ModelAndView showPostDetail(ModelAndView mav, 
+			@PathVariable(name = "post_id") int postId) {
+		
+		Optional<Post> somePost = postRepository.findById(postId);
+		somePost
+			.ifPresentOrElse(post -> {
+				mav.setViewName("postDetail");
+			}, () -> {
+				mav.setViewName("redirect:/");
+			});
+		
+		return mav;
 	}
 }
