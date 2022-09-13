@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.Optional;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -43,12 +41,12 @@ public class PostController {
 	public ModelAndView showPostDetail(ModelAndView mav, 
 			@PathVariable(name = "post_id") int postId) {
 		
-		Optional<Post> somePost = postRepository.findById(postId);
-		if(somePost.isEmpty()) {
-			mav.setViewName("redirect:/");
-		} else {
+		try {
+			Post post = postRepository.findById(postId).get();
 			mav.setViewName("postDetail");
-			mav.addObject("post", somePost.get());
+			mav.addObject("post", post);
+		} catch(Exception e) {
+			mav.setViewName("redirect:/");			
 		}
 		
 		return mav;
