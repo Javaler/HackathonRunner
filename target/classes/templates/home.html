@@ -39,99 +39,99 @@
 					    <div class="my-3">
 			                <label for="select-hackathon" th:text="#{label.hackathon}"></label>
 			                <select class="form-select" name="hackathon" id="select-hackathon">
-								<option th:text="#{option.not_select}" selected></option>
-								<option value="0" th:text="#{option.no}"></option>
-								<option value="1" th:text="#{option.hackathon_yes_1}"></option>
-								<option value="2" th:text="#{option.hackathon_yes_2}"></option>
+								<option th:value="-1" th:text="#{option.not_select}" th:field="*{hackathon}" th:selected="${hackathon == -1 ? 'true' : 'flase'}"></option>
+								<option th:value="0" th:text="#{option.no}" th:field="*{hackathon}" th:selected="${hackathon == 0 ? 'true' : 'flase'}"></option>
+								<option th:value="1" th:text="#{option.hackathon_yes_1}" th:field="*{hackathon}" th:selected="${hackathon == 1 ? 'true' : 'flase'}"></option>
+								<option th:value="2" th:text="#{option.hackathon_yes_2}" th:field="*{hackathon}" th:selected="${hackathon == 2 ? 'true' : 'flase'}"></option>
 							</select>
 					    </div>
 					    <div class="my-3">
 			                <label for="select-team" th:text="#{label.team}"></label>
 			                <select class="form-select" name="team" id="select-team">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.team_yes_1}"></option>
-	                            <option value="2" th:text="#{option.team_yes_2}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{team}" th:selected="${team == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{team}" th:selected="${team == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.team_yes_1}" th:field="*{team}" th:selected="${team == 1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="2" th:text="#{option.team_yes_2}" th:field="*{team}" th:selected="${team == 2 ? 'true' : 'flase'}"></option>
 	                        </select>
 	                    </div>
 			            <div class="my-3">
 	                        <label for="select-portfolio" th:text="#{label.portfolio}"></label>
 	                        <select class="form-select" name="portfolio" id="select-portfolio">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.portfolio_yes_1}"></option>
-	                            <option value="2" th:text="#{option.portfolio_yes_2}"></option>
-	                            <option value="3" th:text="#{option.portfolio_yes_3}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{portfolio}" th:selected="${portfolio == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{portfolio}" th:selected="${portfolio == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.portfolio_yes_1}" th:field="*{portfolio}" th:selected="${portfolio == 1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="2" th:text="#{option.portfolio_yes_2}" th:field="*{portfolio}" th:selected="${portfolio == 2 ? 'true' : 'flase'}"></option>
+	                            <option th:value="3" th:text="#{option.portfolio_yes_3}" th:field="*{portfolio}" th:selected="${portfolio == 3 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 	                        <label for="select-git" th:text="#{label.git}"></label>
 	                        <select class="form-select" name="git" id="select-git">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.git_yes_1}"></option>
-	                            <option value="2" th:text="#{option.git_yes_2}"></option>
-	                            <option value="3" th:text="#{option.git_yes_3}"></option>
-	                            <option value="4" th:text="#{option.git_yes_4}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{git}" th:selected="${git == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{git}" th:selected="${git == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.git_yes_1}" th:field="*{git}" th:selected="${git == 1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="2" th:text="#{option.git_yes_2}" th:field="*{git}" th:selected="${git == 2 ? 'true' : 'flase'}"></option>
+	                            <option th:value="3" th:text="#{option.git_yes_3}" th:field="*{git}" th:selected="${git == 3 ? 'true' : 'flase'}"></option>
+	                            <option th:value="4" th:text="#{option.git_yes_4}" th:field="*{git}" th:selected="${git == 4 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 			                <label for="select-movie" th:text="#{label.movie}"></label>
 	                        <select class="form-select" name="movie" id="select-movie">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.yes}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{movie}" th:selected="${movie == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{movie}" th:selected="${movie == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.yes}" th:field="*{movie}" th:selected="${movie == 1 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 			                <label for="select-presentation" th:text="#{label.presentation}"></label>
 	                        <select class="form-select" name="presentation" id="select-presentation">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.yes}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{presentation}" th:selected="${presentation == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{presentation}" th:selected="${presentation == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.yes}" th:field="*{presentation}" th:selected="${presentation == 1 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 			                <label for="select-design" th:text="#{label.design}"></label>
 	                        <select class="form-select" name="design" id="select-design">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.design_yes_1}"></option>
-	                            <option value="2" th:text="#{option.design_yes_2}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{design}" th:selected="${design == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{design}" th:selected="${design == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.design_yes_1}" th:field="*{design}" th:selected="${design == 1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="2" th:text="#{option.design_yes_2}" th:field="*{design}" th:selected="${design == 2 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 			                <label for="select-frontend" th:text="#{label.frontend}"></label>
 	                        <select class="form-select" name="frontend" id="select-frontend">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.frontend_yes_1}"></option>
-	                            <option value="2" th:text="#{option.frontend_yes_2}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{frontend}" th:selected="${frontend == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{frontend}" th:selected="${frontend == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.frontend_yes_1}" th:field="*{frontend}" th:selected="${frontend == 1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="2" th:text="#{option.frontend_yes_2}" th:field="*{frontend}" th:selected="${frontend == 2 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 			                <label for="select-backend" th:text="#{label.backend}"></label>
 	                        <select class="form-select" name="backend" id="select-backend">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.backend_yes}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{backend}" th:selected="${backend == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{backend}" th:selected="${backend == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.backend_yes}" th:field="*{backend}" th:selected="${backend == -1 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 			                <label for="select-infrastructure" th:text="#{label.infrastructure}"></label>
 	                        <select class="form-select" name="infrastructure" id="select-infrastructure">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.infrastructure_yes}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{infrastructure}" th:selected="${infrastructure == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{infrastructure}" th:selected="${infrastructure == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.infrastructure_yes}" th:field="*{infrastructure}" th:selected="${infrastructure == 1 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
 			                <label for="select-machinelearning" th:text="#{label.machinelearning}"></label>
 	                        <select class="form-select" name="machinelearning" id="select-machinelearning">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0" th:text="#{option.no}"></option>
-	                            <option value="1" th:text="#{option.machinelearning_yes_1}"></option>
-	                            <option value="2" th:text="#{option.machinelearning_yes_2}"></option>
+	                            <option th:value="-1" th:text="#{option.not_select}" th:field="*{machinelearning}" th:selected="${machinelearning == -1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="0" th:text="#{option.no}" th:field="*{machinelearning}" th:selected="${machinelearning == 0 ? 'true' : 'flase'}"></option>
+	                            <option th:value="1" th:text="#{option.machinelearning_yes_1}" th:field="*{machinelearning}" th:selected="${machinelearning == 1 ? 'true' : 'flase'}"></option>
+	                            <option th:value="2" th:text="#{option.machinelearning_yes_2}" th:field="*{machinelearning}" th:selected="${machinelearning == 2 ? 'true' : 'flase'}"></option>
 	                        </select>
 			            </div>
 			            <!-- 
@@ -139,10 +139,10 @@
 			            <div class="my-3">
 	                        <label for="select-event">参加したハッカソン</label>
 	                        <select class="form-select" name="event" id="select-event">
-	                            <option th:text="#{option.not_select}" selected></option>
-	                            <option value="0">技育CAMP</option>
-	                            <option value="1">KDG HACKS</option>
-	                            <option value="2">JPHACKS</option>
+	                            <option th:value="-1" th:text="#{option.not_select}" selected></option>
+	                            <option th:value="0">技育CAMP</option>
+	                            <option th:value="1">KDG HACKS</option>
+	                            <option th:value="2">JPHACKS</option>
 	                        </select>
 	                    </div>
 	                     -->
