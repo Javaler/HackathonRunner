@@ -3,7 +3,6 @@ package com.example.demo.dao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -97,10 +96,10 @@ public class PostDaoImpl implements PostDao {
 		}
 		
 		// データ解析
-		if (postQuery.getMachineLearning() != -1) {
+		if (postQuery.getMachinelearning() != -1) {
 		    predicates.add(
 		    	builder.and(
-		    		builder.equal(root.get(Post_.MACHINELEARNING), postQuery.getMachineLearning())));
+		    		builder.equal(root.get(Post_.MACHINELEARNING), postQuery.getMachinelearning())));
 		}
 		
 		// SELECT作成
