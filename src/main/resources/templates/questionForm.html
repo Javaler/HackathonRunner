@@ -16,6 +16,8 @@
 </head>
 <body class="bg-light">
     <nav th:replace="fragments :: navbar_area"></nav>
+    
+    <h1 class="text-center m-5" th:text="#{text.questionform_header}"></h1>
 
     <div class="mx-5">
         <form class="needs-validated" action="/showQuestionResult" method="post" novalidate>
