@@ -156,10 +156,10 @@
 		</div>
 	</div>
 
-    <div class="card w-75 mx-auto my-4" th:each="post : ${postList}">
-        <a>
-            <div class="card-body">
-                <div class="mb-3">
+    <form th:action="@{/}" method="get">
+        <div class="list-group w-75 mx-auto my-4" th:each="post : ${postList}">
+           <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
+                <div class="my-3">
                     <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
                     <span class="fw-bold fs-3 ms-2" th:text="${post.name}">user name</span>
                 </div>
@@ -186,9 +186,9 @@
                         <td th:text="${post.work}"></td>
                     </tr>
                 </table>
-            </div>
-        </a>
-    </div>
+           </button>
+        </div>
+    </form>
     
     <!--bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
