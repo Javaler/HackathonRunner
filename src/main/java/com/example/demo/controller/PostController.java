@@ -44,13 +44,12 @@ public class PostController {
 			@PathVariable(name = "post_id") int postId) {
 		
 		Optional<Post> somePost = postRepository.findById(postId);
-		somePost
-			.ifPresentOrElse(post -> {
-				mav.setViewName("postDetail");
-				mav.addObject("post", post);
-			}, () -> {
-				mav.setViewName("redirect:/");
-			});
+		if(somePost.isEmpty()) {
+			mav.setViewName("redirect:/");
+		} else {
+			mav.setViewName("postDetail");
+			mav.addObject("post", somePost.get());
+		}
 		
 		return mav;
 	}
