@@ -27,29 +27,28 @@
     </div>
 
     <div class="w-75 mx-auto my-5">
-        <div style="height:100px"></div>
-        <p class="fs-2">こんな不安を解決！</p>
+        <p class="fs-2" style="margin-top:100px">こんな不安を解決！</p>
         <hr class="bg-primary" style="height:3px; width:240px">
         <div class="row mb-5">
             <div class="col-12 col-sm-7 mt-sm-5">
-                <p>・自分のレベルでもハッカソンに参加して大丈夫なの？</p>
-                <p>・ハッカソン当日までに何を準備しておけばいいの？</p>
-                <p>・ハッカソン当日にどう振舞えばいいの？</p>
+				<ul>
+					<li>自分のレベルでもハッカソンに参加して大丈夫なの？</li>
+					<li>ハッカソン当日までに何を準備しておけばいいの？</li>
+					<li>ハッカソン当日にどう振舞えばいいの？</li>
+				</ul>
             </div>
             <div class="col-12 col-sm-5">
                 <img th:src="@{/icons/confused-man.svg}" width="250px" height="250px">
             </div>
         </div>
-        <div style="height:100px"></div>
-        <div>
+        <div style="margin-top:100px">
             <p class="fs-1 my-5" style="color:#f18c18">診断</p>
             <p class="fs-2 mb-2">あなたを分析することでぴったりのハッカソンと出逢える！</p>
             <p class="fs-6 mt-3 mb-5">ハッカソン経験やチーム開発経験、Gitの使用経験など、選択式の質問に答えるだけで<br>
             あなたと同じレベルの人が参加したハッカソンを見つけることができます。</p>
             <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center " th:href="@{/showQuestion}">診断する</a>
         </div>
-        <div style="height:100px"></div>
-        <div>
+        <div style="margin-top:200px">
             <p class="fs-1 my-5" style="color:#f18c18">投稿</p>
             <p class="fs-2 mb-2">ハッカソンで開発した作品をアピールしよう！</p>
             <p class="fs-6 mt-3 mb-5">参加したハッカソンの情報や作品の情報を投稿することで、ハッカソンを盛り上げるだけでなく、<br>
@@ -57,8 +56,7 @@
             <em>HackathonRunner</em>は投稿が多くなるほど、ぴったりのハッカソンをおすすめするようになります。</p>
             <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center " th:href="@{/showPostForm}">投稿する</a>
         </div>
-        <div style="height:100px"></div>
-        <div>
+        <div style="margin-top:200px; margin-bottom:200px">
             <p class="fs-2 mt-5 mb-2 text-center">これまでの投稿</p>
             <hr class="bg-primary" style="height:3px; width:90%; margin:auto">
         </div>
