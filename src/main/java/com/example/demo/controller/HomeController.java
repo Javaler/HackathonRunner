@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -18,11 +17,6 @@ import com.example.demo.entity.Post;
 import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
 import com.example.demo.dao.PostDaoImpl;
-import com.example.demo.entity.Post;
-import com.example.demo.form.PostQuery;
-import com.example.demo.repository.PostRepository;
-
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 
