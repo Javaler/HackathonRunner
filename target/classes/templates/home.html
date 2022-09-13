@@ -22,7 +22,7 @@
     <div class="text-end m-2">
 		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filterModal">
 		   <i class="bi bi-funnel"></i>
-		   フィルター
+		   <span th:text="#{button.filter}"></span>
 		</button>
 	</div>
 	
@@ -31,107 +31,107 @@
 		<div class="modal-dialog modal-xl modal-dialog-centered">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="filterModalLabel">フィルター</h5>
+					<h5 class="modal-title" id="filterModalLabel" th:text="#{text.filter}"></h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<form th:action="@{/}" method="post" th:object="${postQuery}">
 					<div class="modal-body">
 					    <div class="my-3">
-			                <label for="select-hackathon">1. ハッカソン参加経験</label>
+			                <label for="select-hackathon" th:text="#{label.hackathon}"></label>
 			                <select class="form-select" name="hackathon" id="select-hackathon">
-								<option selected>・・・</option>
-								<option value="0">なし</option>
-								<option value="1">1, 2回</option>
-								<option value="2">3回以上</option>
+								<option th:text="#{option.not_select}" selected></option>
+								<option value="0" th:text="#{option.no}"></option>
+								<option value="1" th:text="#{option.hackathon_yes_1}"></option>
+								<option value="2" th:text="#{option.hackathon_yes_2}"></option>
 							</select>
 					    </div>
 					    <div class="my-3">
-			                <label for="select-team">2. チーム開発経験</label>
+			                <label for="select-team" th:text="#{label.team}"></label>
 			                <select class="form-select" name="team" id="select-team">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">知人（友人、研究室仲間）との開発経験あり</option>
-	                            <option value="2">インターン・アルバイトでのチーム開発経験あり</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.team_yes_1}"></option>
+	                            <option value="2" th:text="#{option.team_yes_2}"></option>
 	                        </select>
 	                    </div>
 			            <div class="my-3">
-	                        <label for="select-portfolio">3. ツール（アプリ）開発経験</label>
+	                        <label for="select-portfolio" th:text="#{label.portfolio}"></label>
 	                        <select class="form-select" name="portfolio" id="select-portfolio">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">簡単なツール（アプリ）を作ったことがある</option>
-	                            <option value="2">ツール（アプリ）を公開したことがある</option>
-	                            <option value="3">ツール（アプリ）開発で、設計・実装・テストを経験したがある</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.portfolio_yes_1}"></option>
+	                            <option value="2" th:text="#{option.portfolio_yes_2}"></option>
+	                            <option value="3" th:text="#{option.portfolio_yes_3}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-	                        <label for="select-git">4. Git,GitHub使用経験</label>
+	                        <label for="select-git" th:text="#{label.git}"></label>
 	                        <select class="form-select" name="git" id="select-git">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">clone または fork をしたことがある</option>
-	                            <option value="2">push したことがある</option>
-	                            <option value="3">add, commit したことがある</option>
-	                            <option value="4">pull, branch, checkout, merge や pull request をしたことがある</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.git_yes_1}"></option>
+	                            <option value="2" th:text="#{option.git_yes_2}"></option>
+	                            <option value="3" th:text="#{option.git_yes_3}"></option>
+	                            <option value="4" th:text="#{option.git_yes_4}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-			                <label for="select-movie">5. 動画編集経験</label>
+			                <label for="select-movie" th:text="#{label.movie}"></label>
 	                        <select class="form-select" name="movie" id="select-movie">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">あり</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.yes}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-			                <label for="select-presentation">6. プレゼン経験</label>
+			                <label for="select-presentation" th:text="#{label.presentation}"></label>
 	                        <select class="form-select" name="presentation" id="select-presentation">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">あり</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.yes}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-			                <label for="select-design">7. デザインスキル</label>
+			                <label for="select-design" th:text="#{label.design}"></label>
 	                        <select class="form-select" name="design" id="select-design">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">あり(Figma, AdobeXDの基礎レベルorデザイン知識あり)</option>
-	                            <option value="2">あり(コンポーネント機能を使いこなせる)</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.design_yes_1}"></option>
+	                            <option value="2" th:text="#{option.design_yes_2}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-			                <label for="select-frontend">8. フロントエンド言語</label>
+			                <label for="select-frontend" th:text="#{label.frontend}"></label>
 	                        <select class="form-select" name="frontend" id="select-frontend">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">JavaScript基礎レベル</option>
-	                            <option value="2">JavaScriptのフレームワーク(React.js, Vue.js, Angular.js)</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.frontend_yes_1}"></option>
+	                            <option value="2" th:text="#{option.frontend_yes_2}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-			                <label for="select-backend">9. バックエンド言語の基礎</label>
+			                <label for="select-backend" th:text="#{label.backend}"></label>
 	                        <select class="form-select" name="backend" id="select-backend">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">あり(Go, Java, PHP, Python, Ruby,...)</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.backend_yes}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-			                <label for="select-infrastructure">10. インフラ経験</label>
+			                <label for="select-infrastructure" th:text="#{label.infrastructure}"></label>
 	                        <select class="form-select" name="infrastructure" id="select-infrastructure">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">あり(Heroku, Firebase, AWS, GCP, Azure)</option>
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.infrastructure_yes}"></option>
 	                        </select>
 			            </div>
 			            <div class="my-3">
-			                <label for="select-machineLearning">11. データ分析・画像処理経験</label>
-	                        <select class="form-select" name="machineLearning" id="select-machineLearning">
-	                            <option selected>・・・</option>
-	                            <option value="0">なし</option>
-	                            <option value="1">画像処理ライブラリ(OpenCV)の利用したことがある</option>
-	                            <option value="2">機械学習を用いたAPI(AWS, Azure, GCP)の利用したことがある</option>
+			                <label for="select-machinelearning" th:text="#{label.machinelearning}"></label>
+	                        <select class="form-select" name="machinelearning" id="select-machinelearning">
+	                            <option th:text="#{option.not_select}" selected></option>
+	                            <option value="0" th:text="#{option.no}"></option>
+	                            <option value="1" th:text="#{option.machinelearning_yes_1}"></option>
+	                            <option value="2" th:text="#{option.machinelearning_yes_2}"></option>
 	                        </select>
 			            </div>
 			            <!-- 
@@ -139,7 +139,7 @@
 			            <div class="my-3">
 	                        <label for="select-event">参加したハッカソン</label>
 	                        <select class="form-select" name="event" id="select-event">
-	                            <option selected>・・・</option>
+	                            <option th:text="#{option.not_select}" selected></option>
 	                            <option value="0">技育CAMP</option>
 	                            <option value="1">KDG HACKS</option>
 	                            <option value="2">JPHACKS</option>
@@ -148,8 +148,8 @@
 	                     -->
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-						<button type="submit" th:formaction="@{/}" class="btn btn-primary">適用</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" th:text="#{button.cancel}"></button>
+						<button type="submit" th:formaction="@{/}" class="btn btn-primary" th:text="#{button.apply}"></button>
 					</div>
 				</form>
 			</div>
@@ -165,24 +165,24 @@
                 </div>
                 <table class="table table-borderless">
                     <tr th:switch="${post.hackathon}">
-                        <th class="w-50">ハッカソン参加経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>1, 2回</td>
-                        <td th:case=2>3回以上</td>
+                        <th class="w-50" th:text="#{text.hackathon}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.portfolio}">
-                        <th class="w-50">ツール（アプリ）<br>開発経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>簡単なツール（アプリ）を作ったことがある</td>
-                        <td th:case=2>ツール（アプリ）を公開したことがある</td>
-                        <td th:case=3>ツール（アプリ）開発で、設計・実装・テストを経験したがある</td>
+                        <th class="w-50" th:utext="#{text.portfolio}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
+                        <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
                     </tr>
                     <tr>
-                        <th class="w-50">参加したハッカソン</th>
+                        <th class="w-50" th:text="#{label.event}"></th>
                         <td th:text="${post.event}"></td>
                     </tr>
                     <tr>
-                        <th class="w-50">作品名</th>
+                        <th class="w-50" th:text="#{label.work}"></th>
                         <td th:text="${post.work}"></td>
                     </tr>
                 </table>
