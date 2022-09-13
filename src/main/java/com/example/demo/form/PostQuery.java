@@ -12,7 +12,7 @@ public class PostQuery {
 	private int git;
 	private int design;
 	private int movie;
-	private int machineLearning;
+	private int machinelearning;
 	private int portfolio;
 	private int presentation;
 	
@@ -25,7 +25,7 @@ public class PostQuery {
 		git = -1;
 		design = -1;
 		movie = -1;
-		machineLearning = -1;
+		machinelearning = -1;
 		portfolio = -1;
 		presentation = -1;
 	}

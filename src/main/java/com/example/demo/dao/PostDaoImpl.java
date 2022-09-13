@@ -96,10 +96,10 @@ public class PostDaoImpl implements PostDao {
 		}
 		
 		// データ解析
-		if (postQuery.getMachineLearning() != -1) {
+		if (postQuery.getMachinelearning() != -1) {
 		    predicates.add(
 		    	builder.and(
-		    		builder.equal(root.get(Post_.MACHINELEARNING), postQuery.getMachineLearning())));
+		    		builder.equal(root.get(Post_.MACHINELEARNING), postQuery.getMachinelearning())));
 		}
 		
 		// SELECT作成
