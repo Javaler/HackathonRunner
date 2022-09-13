@@ -21,7 +21,7 @@
 	<nav th:replace="fragments :: navbar_area"></nav>
 
 	<div class="mx-auto" style="max-width:860px">
-		<h1 class="text-center m-4">診断結果</h1>
+		<h1 class="text-center m-5">診断結果</h1>
 
 		<ul class="list-group mb-5">
 			<li class="list-group-item" th:each="result : ${analysisResult}" th:text="${result}"></li>
@@ -33,7 +33,7 @@
 	<h2 class="text-center fw-bold">あなたに似ているユーザーはこんな投稿をしています！</h2>
 	
 	<!--bootstrap Carousel-->
-	<div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
+	<div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-interval="false" data-bs-wrap="false">
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
