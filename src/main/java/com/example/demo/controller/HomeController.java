@@ -59,11 +59,12 @@ public class HomeController {
 	public ModelAndView queryPost(@ModelAttribute PostQuery postQuery, 
 	                                BindingResult result,
 	                                ModelAndView mav) {
-	    mav.setViewName("home");
 
 	    List<Post> postList = postDaoImpl.findByCriteria(postQuery);
 
+	    mav.setViewName("home");
 	    mav.addObject("postList", postList);
+	    mav.addObject("postQuery", postQuery);
 
 	    return mav;
 	  }
