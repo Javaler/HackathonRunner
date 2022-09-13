@@ -18,6 +18,51 @@
 <body>
     <nav th:replace="fragments :: navbar_area"></nav>
 
+    <div class="bg-image" style="background-image:url(/icons/hr-women.png); height:100vh; background-repeat:no-repeat; background-size:cover; color:white;">
+        <div class="text-center" style="padding-top:30vh">
+            <span class="fs-1">Welcome<br>to<br><em>HackathonRunner</em></span>
+            <p class="fs-6">あなたにぴったりのハッカソンを見つけませんか？</p>
+            <a class="btn rounded-pill btn-primary mx-2 btn-sm text-center" th:href="@{/showQuestion}">さっそく診断する</a>
+        </div>
+    </div>
+
+    <div class="w-75 mx-auto my-5">
+        <p class="fs-2">こんな不安を解決！</p>
+        <hr class="bg-primary" style="height:3px; width:240px">
+        <div class="row mb-5">
+            <div class="col-12 col-sm-7 mt-sm-5">
+                <p>・自分のレベルでもハッカソンに参加して大丈夫なの？</p>
+                <p>・ハッカソン当日までに何を準備しておけばいいの？</p>
+                <p>・ハッカソン当日にどう振舞えばいいの？</p>
+            </div>
+            <div class="col-12 col-sm-5">
+                <img th:src="@{/icons/confused-man-with-question-mark-concept-flat-illustration-free-vector.png}" width="250px" height="250px">
+            </div>
+        </div>
+
+        <div>
+            <p class="fs-1 mt-5 mb-2" style="color:#f18c18">診断</p>
+            <p class="fs-2 mb-2">あなたを分析することでぴったりの<br>ハッカソンと出逢える</p>
+            <p class="fs-6 mt-3 mb-5">ハッカソン経験やチーム開発経験、Gitの使用経験など、選択式の質問に答えるだけで<br>
+            あなたにおすすめの投稿に出逢うことができます。</p>
+            <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center " th:href="@{/showQuestion}">診断する</a>
+        </div>
+
+        <div>
+            <p class="fs-1 mt-5 mb-2" style="color:#f18c18">投稿</p>
+            <p class="fs-2 mb-2">成果物で活動をアピールしよう！</p>
+            <p class="fs-6 mt-3 mb-5">参加したハッカソンの情報や作品の情報を投稿することで、ハッカソンを盛り上げるだけでなく、<br>
+            自分の作品を宣伝することができます。<br>
+            <em>HackathonRunner</em>は投稿が多くなるほど、ぴったりの投稿をおすすめするようになります。</p>
+            <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center " th:href="@{/showPostForm}">投稿する</a>
+        </div>
+
+        <div>
+            <p class="fs-2 mt-5 mb-2 text-center">これまでの投稿</p>
+            <hr class="bg-primary" style="height:3px; width:90%; margin:auto">
+        </div>
+    </div>
+    
     <!-- Button trigger modal -->
     <div class="text-end m-2">
 		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filterModal">
@@ -153,6 +198,8 @@
 			</div>
 		</div>
 	</div>
+
+
 
     <div class="card w-75 mx-auto my-4" th:each="post : ${postList}">
         <div class="card-body">
