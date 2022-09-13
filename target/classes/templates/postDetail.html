@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>投稿詳細 - HackathonRunner</title>
+    <title th:text="#{title.post_detail}"></title>
     <!--bootstrap css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/bootstrap_hackathon_runner_theme_color.css}"/>
@@ -22,79 +22,79 @@
                 <span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
             </div>
             <div class="col-12 col-sm-6">
-                <h2>作品情報</h2>
-                <p th:text="${post.work}"></p>
-                <h2>参加したハッカソン</h2>
+                <h2 th:text="#{label.event}"></h2>
                 <p th:text="${post.event}"></p>
-                <h2>コメント</h2>
+                <h2 th:text="#{label.work}"></h2>
+                <p th:text="${post.work}"></p>
+                <h2 th:text="#{label.comment}"></h2>
                 <p th:text="${post.comment}"></p>
             </div>
             <div class="col-12 col-sm-6">
                 <table class="table table-bordered">
                     <tr th:switch="${post.hackathon}">
-                        <th class="w-50">ハッカソン参加経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>1, 2回</td>
-                        <td th:case=2>3回以上</td>
+                        <th class="w-50" th:text="#{text.hackathon}" ></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.team}">
-                        <th class="w-50">チーム開発経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>知人(友人、研究室の仲間)との開発経験あり</td>
-                        <td th:case=2>インターン・アルバイトでのチーム開発経験あり</td>
+                        <th class="w-50" th:text="#{text.team}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.team_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.team_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.portfolio}">
-                        <th class="w-50">ツール（アプリ）<br>開発経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>簡単なツール（アプリ）を作ったことがある</td>
-                        <td th:case=2>ツール（アプリ）を公開したことがある</td>
-                        <td th:case=3>ツール（アプリ）開発で、設計・実装・テストを経験したがある</td>
+                        <th class="w-50" th:utext="#{text.portfolio}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
+                        <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
                     </tr>
                     <tr th:switch="${post.git}">
-                        <th class="w-50">Git,GitHub使用経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>clone または fork をしたことがある</td>
-                        <td th:case=2>push したことがある</td>
-                        <td th:case=3>add, commit したことがある</td>
-                        <td th:case=4>pull, branch, checkout, merge や pull request をしたことがある</td>
+                        <th class="w-50" th:text="#{text.git}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.git_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.git_yes_2}"></td>
+                        <td th:case=3 th:text="#{option.git_yes_3}"></td>
+                        <td th:case=4 th:text="#{option.git_yes_4}"></td>
                     </tr>
                     <tr th:switch="${post.movie}">
-                        <th class="w-50">動画編集経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>あり</td>
+                        <th class="w-50" th:text="#{text.movie}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.yes}"></td>
                     </tr>
                     <tr th:switch="${post.presentation}">
-                        <th class="w-50">プレゼン経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>あり</td>
+                        <th class="w-50" th:text="#{text.presentation}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.yes}"></td>
                     </tr>
                     <tr th:switch="${post.design}">
-                        <th class="w-50">デザインスキル</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>あり(Figma, AdobeXDの基礎レベルorデザイン知識あり)</td>
-                        <td th:case=2>あり(コンポーネント機能を使いこなせる)</td>
+                        <th class="w-50" th:text="#{text.design}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.design_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.design_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.frontend}">
-                        <th class="w-50">フロントエンド言語</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>JavaScript基礎レベル</td>
-                        <td th:case=2>JavaScriptのフレームワーク(React.js, Vue.js, Angular.js)</td>
+                        <th class="w-50" th:text="#{text.frontend}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.frontend_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.frontend_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.backend}">
-                        <th class="w-50">バックエンド言語の基礎</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>あり(Go, Java, PHP, Python, Ruby,...)</td>
+                        <th class="w-50" th:text="#{text.backend}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.backend_yes}"></td>
                     </tr>
                     <tr th:switch="${post.infrastructure}">
-                        <th class="w-50">インフラ経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>あり(Heroku, Firebase, AWS, GCP, Azure)</td>
+                        <th class="w-50" th:text="#{text.infrastructure}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.infrastructure_yes}"></td>
                     </tr>
                     <tr th:switch="${post.machinelearning}">
-                        <th class="w-50">データ分析・画像処理経験</th>
-                        <td th:case=0>なし</td>
-                        <td th:case=1>画像処理ライブラリ(OpenCV)の利用したことがある</td>
-                        <td th:case=2>機械学習を用いたAPI(AWS, Azure, GCP)の利用したことがある</td>
+                        <th class="w-50" th:text="#{text.machinelearning}"></th>
+                        <td th:case=0 th:text="#{option.no}"></td>
+                        <td th:case=1 th:text="#{option.machinelearning_yes_1}"></td>
+                        <td th:case=2 th:text="#{option.machinelearning_yes_2}"></td>
                     </tr>
                 </table>
             </div>
