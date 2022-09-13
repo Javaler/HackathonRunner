@@ -17,11 +17,11 @@
     
     <div class="container mt-5" th:object="${post}">
         <div class="row">
-            <div class="mb-3">
+            <div class="mb-5">
                 <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
                 <span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
             </div>
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 mb-3">
                 <h2 th:text="#{label.event}"></h2>
                 <p th:text="${post.event}"></p>
                 <h2 th:text="#{label.work}"></h2>
