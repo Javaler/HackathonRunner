@@ -7,15 +7,9 @@
 <body>
     <nav th:fragment="navbar_area" class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-<<<<<<< HEAD
             <a class="navbar-brand fw-bold fs-4 text-light" th:href="@{/}">
                 <img th:src="@{/icons/app_icon.svg}" class="app-icon" width="42px" height="42px"/>
-                <span><i>HackathonRunner</i></span>
-=======
-            <a class="navbar-brand fw-bold fs-6 text-light" th:href="@{/}">
-                <img th:src="@{/icons/app_icon.svg}" class="app-icon" width="32px" height="32px"/>
                 <span><i th:text="#{text.header}"></i></span>
->>>>>>> a9066b9b04422d56b8b19e1f13978eca40432c52
             </a>
             <div class="d-flex">
                 <a class="btn btn-outline-light mx-2 btn-sm" th:href="@{/showQuestion}" th:text="#{button.question}"></a>
