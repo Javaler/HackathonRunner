@@ -32,26 +32,26 @@
             <div class="col-12 col-sm-6">
                 <table class="table table-bordered">
                     <tr th:switch="${post.hackathon}">
-                        <th class="w-50" th:text="#{text.hackathon}" ></th>
+                        <th class="w-50 table-warning" th:text="#{text.hackathon}" ></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
                         <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.team}">
-                        <th class="w-50" th:text="#{text.team}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.team}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.team_yes_1}"></td>
                         <td th:case=2 th:text="#{option.team_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.portfolio}">
-                        <th class="w-50" th:utext="#{text.portfolio}"></th>
+                        <th class="w-50 table-warning" th:utext="#{text.portfolio}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
                         <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
                         <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
                     </tr>
                     <tr th:switch="${post.git}">
-                        <th class="w-50" th:text="#{text.git}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.git}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.git_yes_1}"></td>
                         <td th:case=2 th:text="#{option.git_yes_2}"></td>
@@ -59,39 +59,39 @@
                         <td th:case=4 th:text="#{option.git_yes_4}"></td>
                     </tr>
                     <tr th:switch="${post.movie}">
-                        <th class="w-50" th:text="#{text.movie}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.movie}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.yes}"></td>
                     </tr>
                     <tr th:switch="${post.presentation}">
-                        <th class="w-50" th:text="#{text.presentation}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.presentation}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.yes}"></td>
                     </tr>
                     <tr th:switch="${post.design}">
-                        <th class="w-50" th:text="#{text.design}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.design}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.design_yes_1}"></td>
                         <td th:case=2 th:text="#{option.design_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.frontend}">
-                        <th class="w-50" th:text="#{text.frontend}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.frontend}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.frontend_yes_1}"></td>
                         <td th:case=2 th:text="#{option.frontend_yes_2}"></td>
                     </tr>
                     <tr th:switch="${post.backend}">
-                        <th class="w-50" th:text="#{text.backend}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.backend}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.backend_yes}"></td>
                     </tr>
                     <tr th:switch="${post.infrastructure}">
-                        <th class="w-50" th:text="#{text.infrastructure}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.infrastructure}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.infrastructure_yes}"></td>
                     </tr>
                     <tr th:switch="${post.machinelearning}">
-                        <th class="w-50" th:text="#{text.machinelearning}"></th>
+                        <th class="w-50 table-warning" th:text="#{text.machinelearning}"></th>
                         <td th:case=0 th:text="#{option.no}"></td>
                         <td th:case=1 th:text="#{option.machinelearning_yes_1}"></td>
                         <td th:case=2 th:text="#{option.machinelearning_yes_2}"></td>
@@ -99,7 +99,7 @@
                 </table>
             </div>
         </div>
-    </dev>
+    </div>
       
 
     <!--bootstrap js-->
