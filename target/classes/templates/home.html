@@ -18,66 +18,12 @@
 <body>
     <nav th:replace="fragments :: navbar_area"></nav>
 
-    <div class="bg-image" style="background-image:url(/icons/hr-women.png); background-position:center; height:100vh; background-repeat:no-repeat; background-size:cover; color:white;">
-        <div class="text-center" style="padding-top:30vh">
-            <span class="fs-1">Welcome<br>to<br><em>HackathonRunner</em></span>
-            <p class="fs-6">あなたにぴったりのハッカソンを見つけませんか？</p>
-            <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center" th:href="@{/showQuestion}">さっそく診断する</a>
-        </div>
-    </div>
-
-    <div class="w-75 mx-auto my-5">
-        <p class="fs-2" style="margin-top:100px">こんな不安を解決！</p>
-        <hr class="bg-primary" style="height:3px; width:240px">
-        <div class="row mb-5">
-            <div class="col-12 col-sm-7 mt-sm-5">
-				<ul>
-					<li>自分のレベルでもハッカソンに参加して大丈夫なの？</li>
-					<li>ハッカソン当日までに何を準備しておけばいいの？</li>
-					<li>ハッカソン当日にどう振舞えばいいの？</li>
-				</ul>
-            </div>
-            <div class="col-12 col-sm-5">
-                <img th:src="@{/icons/confused-man.svg}" width="250px" height="250px">
-            </div>
-        </div>
-        <div style="margin-top:100px">
-            <p class="fs-1 my-5 text-primary">診断</p>
-            <p class="fs-2 mb-2">あなたを分析することでぴったりのハッカソンと出逢える！</p>
-            <p class="fs-6 mt-3 mb-5">ハッカソン経験やチーム開発経験、Gitの使用経験など、選択式の質問に答えるだけで<br>
-            あなたと同じレベルの人が参加したハッカソンを見つけることができます。</p>
-            <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center " th:href="@{/showQuestion}">診断する</a>
-        </div>
-        <div style="margin-top:200px; margin-bottom:200px">
-            <p class="fs-1 my-5 text-primary">投稿</p>
-            <p class="fs-2 mb-2">ハッカソンで開発した作品をアピールしよう！</p>
-            <p class="fs-6 mt-3 mb-5">参加したハッカソンの情報や作品の情報を投稿することで、ハッカソンを盛り上げるだけでなく、<br>
-            自分の作品を宣伝することができます。<br>
-            <em>HackathonRunner</em>は投稿が多くなるほど、ぴったりのハッカソンをおすすめするようになります。</p>
-            <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center " th:href="@{/showPostForm}">投稿する</a>
-        </div>
-        <div style="margin-top:200px">
-            <p class="fs-2 mt-5 mb-2 text-center">これまでの投稿</p>
-            <hr class="bg-primary" style="height:3px; width:90%; margin:auto">
-        </div>
-    </div>
-    
     <!-- Button trigger modal -->
-<<<<<<< HEAD
-	<div class="w-75 mx-auto my-4">
-		<div class="text-end m-2">
-			<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filterModal">
-			   <i class="bi bi-funnel"></i>
-			   フィルター
-			</button>
-		</div>
-=======
     <div class="text-end m-2">
 		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filterModal">
 		   <i class="bi bi-funnel"></i>
 		   <span th:text="#{button.filter}"></span>
 		</button>
->>>>>>> a9066b9b04422d56b8b19e1f13978eca40432c52
 	</div>
 	
 	<!-- Modal -->
