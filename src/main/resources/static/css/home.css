@@ -22,24 +22,25 @@
 
 #question-introduction{
     margin-top:100px;
-    padding-left:60%;
+    padding-left:calc(160%/6);
     padding-right:10%;
     padding-top:50px;
     padding-bottom:50px;
-    transform:translateX(-33.333%);
+    transform:translateX(calc(-100%/7));
     background-color:#D9D9D923;
-    width:150%;
-    border-radius:20px;
+    width:calc(100%*7/6);
+    border-radius:0px 20px 20px 0px;
 }
 
 #post-introduction{
     margin-top:200px;
     padding-left:10%;
+    padding-right:calc(160%/6);
     padding-top:50px;
     padding-bottom:50px;
     background-color:#D9D9D923;
-    width:116.7%; 
-    border-radius:20px;
+    width:calc(100%*7/6);
+    border-radius:20px 0px 0px 20px;
 }
 
 #post-header{
