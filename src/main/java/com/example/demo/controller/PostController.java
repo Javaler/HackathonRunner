@@ -34,7 +34,7 @@ public class PostController {
 		Post post = postForm.toEntity();
 		postRepository.saveAndFlush(post);
 		
-		return "redirect:/";
+		return "redirect:/Post/" + post.getId();
 	}
 	
 	@GetMapping("/Post/{post_id}")
