@@ -7,13 +7,13 @@
 <body>
     <nav th:fragment="navbar_area" class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold fs-4 text-light" th:href="@{/}">
-                <img th:src="@{/icons/app_icon.svg}" class="app-icon" width="42px" height="42px"/>
+            <a class="navbar-brand fw-bold fs-3 text-light" th:href="@{/}">
+                <img th:src="@{/icons/app_icon.svg}" class="app-icon" width="52px" height="52px"/>
                 <span><i th:text="#{text.header}"></i></span>
             </a>
             <div class="d-flex">
-                <a class="btn btn-outline-light mx-2 btn-sm" th:href="@{/showQuestion}" th:text="#{button.question}"></a>
-                <a class="btn btn-outline-light mx-2 btn-sm" th:href="@{/showPostForm}" th:text="#{button.post}"></a>
+                <a class="btn btn-outline-light mx-2 btn-lg" th:href="@{/showQuestion}" th:text="#{button.question}"></a>
+                <a class="btn btn-outline-light mx-2 btn-lg" th:href="@{/showPostForm}" th:text="#{button.post}"></a>
             </div>
         </div>
     </nav>
