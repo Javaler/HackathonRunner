@@ -1,0 +1,55 @@
+#eye-catch{
+    background-image:url(../icons/hr-women.png);
+    background-position:center;
+    height:100vh;
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:white;
+}
+
+#eye-catch-text{
+    padding-top:30vh;
+}
+
+#introduction-text{
+    margin-top:100px;
+}
+
+#introduction-text-hr{
+    height:3px;
+    width:240px;
+}
+
+#question-introduction{
+    margin-top:100px;
+    padding-left:calc(160%/6);
+    padding-right:10%;
+    padding-top:50px;
+    padding-bottom:50px;
+    transform:translateX(calc(-100%/7));
+    background-color:#D9D9D923;
+    width:calc(100%*7/6);
+    border-radius:0px 20px 20px 0px;
+}
+
+#post-introduction{
+    margin-top:200px;
+    padding-left:10%;
+    padding-right:calc(160%/6);
+    padding-top:50px;
+    padding-bottom:50px;
+    background-color:#D9D9D923;
+    width:calc(100%*7/6);
+    border-radius:20px 0px 0px 20px;
+}
+
+#post-header{
+    margin-top:200px;
+    margin-bottom:200px;
+}
+
+#post-header-hr{
+    height:3px;
+    width:90%;
+    margin:auto;
+}
