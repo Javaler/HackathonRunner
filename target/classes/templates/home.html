@@ -24,8 +24,8 @@
         <div class="text-center" id="eye-catch-text">
             <span class="fs-1">Welcome<br>to<br><em>HackathonRunner</em></span>
             <p class="fs-6">あなたにぴったりのハッカソンを見つけませんか？</p>
-			<a class="btn rounded-pill btn-primary mx-2 btn-sm text-center" th:href="@{/showQuestion}">さっそく診断する</a>
-        </div>
+            <a class="btn rounded-pill btn-primary mx-2 p-3 btn-lg text-center" th:href="@{/showQuestion}">さっそく診断する</a>
+		</div>
     </div>
 
     <div class="w-75 mx-auto my-5">
@@ -65,11 +65,13 @@
     </div>
     
     <!-- Button trigger modal -->
-	<div class="text-end m-2">
-		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filterModal">
-		<i class="bi bi-funnel"></i>
-		<span th:text="#{button.filter}"></span>
-		</button>
+	<div class="w-75 mx-auto my-4">
+		<div class="text-end m-2">
+			<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filterModal">
+		   		<i class="bi bi-funnel"></i>
+		   		<span th:text="#{button.filter}"></span>
+			</button>
+		</div>
 	</div>
 	
 	<!-- Modal -->
