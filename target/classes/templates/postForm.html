@@ -204,22 +204,22 @@
 		            <div id="question-page1" style="display:none">
 		                <div class="mb-3">
 		                    <label class="form-label" for="name" th:text="#{label.name}"></label>
-		                    <input class="form-control" id="name" type="text" name="name" required/>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		                <div class="mb-3">
-		                    <label class="form-label" for="work" th:text="#{label.work}"></label>
-		                    <textarea class="form-control" id="work" name="work" rows="3" required></textarea>
+		                    <input class="form-control" id="name" type="text" name="name" th:placeholder="#{placeholder.name}" required/>
 		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
 		                </div>
 		                <div class="mb-3">
 		                    <label class="form-label" for="event" th:text="#{label.event}"></label>
-		                    <textarea class="form-control" id="event" name="event" rows="3" required></textarea>
+		                    <textarea class="form-control" id="event" name="event" rows="3" th:placeholder="#{placeholder.event}" required></textarea>
+		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+		                </div>
+		                <div class="mb-3">
+		                    <label class="form-label" for="work" th:text="#{label.work}"></label>
+		                    <textarea class="form-control" id="work" name="work" rows="3" th:placeholder="#{placeholder.work}" required></textarea>
 		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
 		                </div>
 		                <div class="mb-3">
 		                    <label class="form-label" for="comment" th:text="#{label.comment}"></label>
-		                    <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+		                    <textarea class="form-control" id="comment" name="comment" rows="3" th:placeholder="#{placeholder.comment}" required></textarea>
 		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
 		                </div>
 		                <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
