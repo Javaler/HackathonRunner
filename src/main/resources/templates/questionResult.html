@@ -42,74 +42,74 @@
 			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
 		</div>
 		<form th:action="@{/}" method="get">
-		<div class="carousel-inner">
-			<div th:if="${status.index} == 0" class="carousel-item active" th:each="post, status : ${recommendPostList}">
-                <div class="list-group w-75 mx-auto my-4">
-		           <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
-		                <div class="my-3">
-		                    <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-		                    <span class="fw-bold fs-3 ms-2" th:text="${post.name}">user name</span>
-		                </div>
-		                <table class="table table-borderless">
-		                    <tr th:switch="${post.hackathon}">
-		                        <th class="w-50" th:text="#{text.hackathon}"></th>
-		                        <td th:case=0 th:text="#{option.no}"></td>
-		                        <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
-		                        <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
-		                    </tr>
-		                    <tr th:switch="${post.portfolio}">
-		                        <th class="w-50" th:utext="#{text.portfolio}"></th>
-		                        <td th:case=0 th:text="#{option.no}"></td>
-		                        <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
-		                        <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
-		                        <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
-		                    </tr>
-		                    <tr>
-		                        <th class="w-50" th:text="#{label.event}"></th>
-		                        <td th:text="${post.event}"></td>
-		                    </tr>
-		                    <tr>
-		                        <th class="w-50" th:text="#{label.work}"></th>
-		                        <td th:text="${post.work}"></td>
-		                    </tr>
-		                </table>
-		           </button>
-		        </div>
-            </div>
-			<div th:if="${status.index} != 0" class="carousel-item" th:each="post, status : ${recommendPostList}">
-				<div class="list-group w-75 mx-auto my-4">
-		           <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
-		                <div class="my-3">
-		                    <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-		                    <span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
-		                </div>
-		                <table class="table table-borderless">
-		                    <tr th:switch="${post.hackathon}">
-		                        <th class="w-50" th:text="#{text.hackathon}"></th>
-		                        <td th:case=0 th:text="#{option.no}"></td>
-		                        <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
-		                        <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
-		                    </tr>
-		                    <tr th:switch="${post.portfolio}">
-		                        <th class="w-50" th:utext="#{text.portfolio}"></th>
-		                        <td th:case=0 th:text="#{option.no}"></td>
-		                        <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
-		                        <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
-		                        <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
-		                    </tr>
-		                    <tr>
-		                        <th class="w-50" th:text="#{label.event}"></th>
-		                        <td th:text="${post.event}"></td>
-		                    </tr>
-		                    <tr>
-		                        <th class="w-50" th:text="#{label.work}"></th>
-		                        <td th:text="${post.work}"></td>
-		                    </tr>
-		                </table>
-		           </button>
-		        </div>
+			<div class="carousel-inner">
+				<div th:if="${status.index} == 0" class="carousel-item active" th:each="post, status : ${recommendPostList}">
+	                <div class="list-group w-75 mx-auto my-4">
+			           <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
+			                <div class="my-3">
+			                    <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+			                    <span class="fw-bold fs-3 ms-2" th:text="${post.name}">user name</span>
+			                </div>
+			                <table class="table table-borderless">
+			                    <tr th:switch="${post.hackathon}">
+			                        <th class="w-50" th:text="#{text.hackathon}"></th>
+			                        <td th:case=0 th:text="#{option.no}"></td>
+			                        <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
+			                        <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
+			                    </tr>
+			                    <tr th:switch="${post.portfolio}">
+			                        <th class="w-50" th:utext="#{text.portfolio}"></th>
+			                        <td th:case=0 th:text="#{option.no}"></td>
+			                        <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
+			                        <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
+			                        <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
+			                    </tr>
+			                    <tr>
+			                        <th class="w-50" th:text="#{label.event}"></th>
+			                        <td th:text="${post.event}"></td>
+			                    </tr>
+			                    <tr>
+			                        <th class="w-50" th:text="#{label.work}"></th>
+			                        <td th:text="${post.work}"></td>
+			                    </tr>
+			                </table>
+			           </button>
+			        </div>
+	            </div>
+				<div th:if="${status.index} != 0" class="carousel-item" th:each="post, status : ${recommendPostList}">
+					<div class="list-group w-75 mx-auto my-4">
+			           <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
+			                <div class="my-3">
+			                    <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+			                    <span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
+			                </div>
+			                <table class="table table-borderless">
+			                    <tr th:switch="${post.hackathon}">
+			                        <th class="w-50" th:text="#{text.hackathon}"></th>
+			                        <td th:case=0 th:text="#{option.no}"></td>
+			                        <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
+			                        <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
+			                    </tr>
+			                    <tr th:switch="${post.portfolio}">
+			                        <th class="w-50" th:utext="#{text.portfolio}"></th>
+			                        <td th:case=0 th:text="#{option.no}"></td>
+			                        <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
+			                        <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
+			                        <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
+			                    </tr>
+			                    <tr>
+			                        <th class="w-50" th:text="#{label.event}"></th>
+			                        <td th:text="${post.event}"></td>
+			                    </tr>
+			                    <tr>
+			                        <th class="w-50" th:text="#{label.work}"></th>
+			                        <td th:text="${post.work}"></td>
+			                    </tr>
+			                </table>
+			           </button>
+			        </div>
+				</div>
 			</div>
-		</div>
 		</form>
 		
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
