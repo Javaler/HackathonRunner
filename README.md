@@ -1,4 +1,5 @@
 # HackathonRunner
+ハッカソンに対する不安を解消することで、ハッカソンに参加したい・参加する人たちを支援するためのWebアプリ。
 
 **URL**: [https://infinite-citadel-53332.herokuapp.com](https://infinite-citadel-53332.herokuapp.com)
 
