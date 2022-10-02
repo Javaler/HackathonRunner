@@ -14,6 +14,7 @@
     - **Spring Boot**
 - **インフラ**
   - **Heroku**
+  - **Heroku Postgres**
 - **バージョン/ソースコード管理**
   - **Git, GitHub**
 - その他使用ツール
