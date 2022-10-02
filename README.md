@@ -4,20 +4,20 @@
 # 使用技術(ツール)一覧
 
 - **アプリケーション**
-    - フロントエンド
-        - **Bootstrap**
-        - **Chart.js**
-    - バックエンド
-        - **Java**
-        - **Maven**
-        - **Spring Boot**
+  - フロントエンド
+    - **Bootstrap**
+    - **Chart.js**
+  - バックエンド
+    - **Java**
+    - **Maven**
+    - **Spring Boot**
 - **インフラ**
-    - **Heroku**
+  - **Heroku**
 - **バージョン/ソースコード管理**
-    - **Git, GitHub**
+  - **Git, GitHub**
 - その他使用ツール
-    - Visual Studio Code(フロントエンド, README等)
-    - SpringToolSuite4(バックエンド)
-    - digrams.net(クラス図)
-    - Figma(ワイヤーフレーム, プロトタイプ, アプリアイコン)
-    - Notion(ドキュメント)
+  - Visual Studio Code(フロントエンド, README等)
+  - SpringToolSuite4(バックエンド)
+  - digrams.net(クラス図)
+  - Figma(ワイヤーフレーム, プロトタイプ, アプリアイコン)
+  - Notion(ドキュメント)
