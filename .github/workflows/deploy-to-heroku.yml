@@ -15,3 +15,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "infinite-citadel-53332"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
+
+          #github環境変数設定
