@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.sql.Date;
+import java.sql.Timestamp;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
@@ -8,15 +10,15 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Recruitment.class)
 public abstract class Recruitment_ {
 
-	public static volatile SingularAttribute<Recruitment, Integer> event_info;
-	public static volatile SingularAttribute<Recruitment, Integer> updated_at;
+	public static volatile SingularAttribute<Recruitment, String> event_info;
+	public static volatile SingularAttribute<Recruitment, Timestamp> updated_at;
 	public static volatile SingularAttribute<Recruitment, Integer> member_num;
 	public static volatile SingularAttribute<Recruitment, String> name;
-	public static volatile SingularAttribute<Recruitment, Integer> created_at;
-	public static volatile SingularAttribute<Recruitment, Integer> comment;
+	public static volatile SingularAttribute<Recruitment, Timestamp> created_at;
+	public static volatile SingularAttribute<Recruitment, String> comment;
 	public static volatile SingularAttribute<Recruitment, Integer> id;
-	public static volatile SingularAttribute<Recruitment, Integer> contact_info;
-	public static volatile SingularAttribute<Recruitment, Integer> deadline;
+	public static volatile SingularAttribute<Recruitment, String> contact_info;
+	public static volatile SingularAttribute<Recruitment, Date> deadline;
 
 	public static final String EVENT_INFO = "event_info";
 	public static final String UPDATED_AT = "updated_at";

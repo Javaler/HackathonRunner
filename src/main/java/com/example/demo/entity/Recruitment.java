@@ -20,23 +20,23 @@ public class Recruitment {
 	private String name;
 	
 	@Column(name = "event_info")
-	private Integer event_info;
+	private String event_info;
 	
 	@Column(name = "comment")
-	private Integer comment;
+	private String comment;
 	
 	@Column(name = "member_num")
 	private Integer member_num;
 	
 	@Column(name = "deadline")
-	private Integer deadline;
+	private java.sql.Date deadline;
 	
 	@Column(name = "contact_info")
-	private Integer contact_info;
+	private String contact_info;
 	
 	@Column(name = "created_at")
-	private Integer created_at;
+	private java.sql.Timestamp created_at;
 	
 	@Column(name = "updated_at")
-	private Integer updated_at;
+	private java.sql.Timestamp updated_at;
 }
