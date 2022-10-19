@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.dao.PostDaoImpl;
 import com.example.demo.entity.Post;
 import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
-import com.example.demo.dao.PostDaoImpl;
+import com.example.demo.repository.RecruitmentRepository;
+
 import lombok.RequiredArgsConstructor;
 
 
@@ -25,6 +27,7 @@ import lombok.RequiredArgsConstructor;
 public class HomeController {
 	
 	private final PostRepository postRepository;
+	private final RecruitmentRepository recruitmentRepository;
 	
 	@PersistenceContext
 	private EntityManager entityManager;
