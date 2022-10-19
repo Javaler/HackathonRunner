@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dao.PostDaoImpl;
 import com.example.demo.entity.Post;
+import com.example.demo.entity.Recruitment;
 import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
 import com.example.demo.repository.RecruitmentRepository;
@@ -43,10 +44,12 @@ public class HomeController {
 	public ModelAndView showHome(ModelAndView mav) {
 		
 		List<Post> postList = postRepository.findAllByOrderByIdDesc();
+		List<Recruitment> recruitmentList = recruitmentRepository.findAll();
 		
 		mav.setViewName("home");
 		mav.addObject("postList", postList);
 		mav.addObject("postQuery", new PostQuery());
+		mav.addObject("recruitmentList", recruitmentList);
 		
 		return mav;
 	}
@@ -58,10 +61,12 @@ public class HomeController {
 	                                ModelAndView mav) {
 
 	    List<Post> postList = postDaoImpl.findByCriteria(postQuery);
+	    List<Recruitment> recruitmentList = recruitmentRepository.findAll();
 
 	    mav.setViewName("home");
 	    mav.addObject("postList", postList);
 	    mav.addObject("postQuery", postQuery);
+	    mav.addObject("recruitmentList", recruitmentList);
 
 	    return mav;
 	  }
