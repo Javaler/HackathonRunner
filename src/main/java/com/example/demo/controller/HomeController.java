@@ -26,48 +26,48 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
-	
-	private final PostRepository postRepository;
-	private final RecruitmentRepository recruitmentRepository;
-	
-	@PersistenceContext
-	private EntityManager entityManager;
-	PostDaoImpl postDaoImpl;
 
-	@PostConstruct
-	public void init() {
-		postDaoImpl = new PostDaoImpl(entityManager);
-	}
-	
-	
-	@GetMapping("/")
-	public ModelAndView showHome(ModelAndView mav) {
-		
-		List<Post> postList = postRepository.findAllByOrderByIdDesc();
-		List<Recruitment> recruitmentList = recruitmentRepository.findAll();
-		
-		mav.setViewName("home");
-		mav.addObject("postList", postList);
-		mav.addObject("postQuery", new PostQuery());
-		mav.addObject("recruitmentList", recruitmentList);
-		
-		return mav;
-	}
-	
-	
-	@PostMapping("/")
-	public ModelAndView queryPost(@ModelAttribute PostQuery postQuery, 
-	                                BindingResult result,
-	                                ModelAndView mav) {
+    private final PostRepository postRepository;
+    private final RecruitmentRepository recruitmentRepository;
 
-	    List<Post> postList = postDaoImpl.findByCriteria(postQuery);
-	    List<Recruitment> recruitmentList = recruitmentRepository.findAll();
+    @PersistenceContext
+    private EntityManager entityManager;
+    PostDaoImpl postDaoImpl;
 
-	    mav.setViewName("home");
-	    mav.addObject("postList", postList);
-	    mav.addObject("postQuery", postQuery);
-	    mav.addObject("recruitmentList", recruitmentList);
+    @PostConstruct
+    public void init() {
+        postDaoImpl = new PostDaoImpl(entityManager);
+    }
 
-	    return mav;
-	  }
+
+    @GetMapping("/")
+    public ModelAndView showHome(ModelAndView mav) {
+
+        List<Post> postList = postRepository.findAllByOrderByIdDesc();
+        List<Recruitment> recruitmentList = recruitmentRepository.findAll();
+
+        mav.setViewName("home");
+        mav.addObject("postList", postList);
+        mav.addObject("postQuery", new PostQuery());
+        mav.addObject("recruitmentList", recruitmentList);
+
+        return mav;
+    }
+
+
+    @PostMapping("/")
+    public ModelAndView queryPost(@ModelAttribute PostQuery postQuery,
+                                    BindingResult result,
+                                    ModelAndView mav) {
+
+        List<Post> postList = postDaoImpl.findByCriteria(postQuery);
+        List<Recruitment> recruitmentList = recruitmentRepository.findAll();
+
+        mav.setViewName("home");
+        mav.addObject("postList", postList);
+        mav.addObject("postQuery", postQuery);
+        mav.addObject("recruitmentList", recruitmentList);
+
+        return mav;
+    }
 }
