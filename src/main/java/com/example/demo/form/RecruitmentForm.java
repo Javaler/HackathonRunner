@@ -22,6 +22,7 @@ public class RecruitmentForm {
         recruitment.setName(name);
         recruitment.setEventInfo(eventInfo);
         recruitment.setComment(comment);
+        recruitment.setMemberNum(memberNum);
         recruitment.setDeadline(DateUtils.strToDate(deadline.replace("/", "-")));
         recruitment.setContactInfo(contactInfo);
 
