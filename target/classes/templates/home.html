@@ -218,29 +218,45 @@
 							<img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
 							<span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
 						</div>
-						<table class="table table-borderless">
-							<tr th:switch="${post.hackathon}">
-								<th class="w-50" th:text="#{text.hackathon}"></th>
-								<td th:case=0 th:text="#{option.no}"></td>
-								<td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
-								<td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
-							</tr>
-							<tr th:switch="${post.portfolio}">
-								<th class="w-50" th:utext="#{text.portfolio}"></th>
-								<td th:case=0 th:text="#{option.no}"></td>
-								<td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
-								<td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
-								<td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
-							</tr>
-							<tr>
-								<th class="w-50" th:text="#{label.event}"></th>
-								<td th:text="${post.event}"></td>
-							</tr>
-							<tr>
-								<th class="w-50" th:text="#{label.work}"></th>
-								<td th:text="${post.work}"></td>
-							</tr>
-						</table>
+						<div class="container my-3">
+							<div class="row my-2" th:switch="${post.hackathon}">
+								<div class="col-9 col-sm-6 my-1">
+									<p class="fw-bold" th:text="#{text.hackathon}"></p>
+								</div>
+								<div class="col-15 col-sm-6 my-1">
+									<p th:case=0 th:text="#{option.no}"></p>
+									<p th:case=1 th:text="#{option.hackathon_yes_1}"></p>
+									<p th:case=2 th:text="#{option.hackathon_yes_2}"></p>
+								</div>
+							</div>
+							<div class="row my-2" th:switch="${post.portfolio}">
+								<div class="col-12 col-sm-6 my-1">
+									<p class="fw-bold" th:text="#{text.portfolio}"></p>
+								</div>
+								<div class="col-12 col-sm-6 my-1">
+									<p th:case=0 th:text="#{option.no}"></p>
+									<p th:case=1 th:text="#{option.portfolio_yes_1}"></p>
+									<p th:case=2 th:text="#{option.portfolio_yes_2}"></p>
+									<p th:case=3 th:text="#{option.portfolio_yes_3}"></p>
+								</div>
+							</div>
+							<div class="row my-2">
+								<div class="col-12 col-sm-6 my-1">
+									<p class="fw-bold" th:text="#{label.event}"></p>
+								</div>
+								<div class="col-12 col-sm-6 my-1">
+									<p th:text="${post.event}"></p>
+								</div>
+							</div>
+							<div class="row my-2">
+								<div class="col-12 col-sm-6 my-1">
+									<p class="fw-bold" th:text="#{label.work}"></p>
+								</div>
+								<div class="col-12 col-sm-6 my-1">
+									<p th:text="${post.work}"></p>
+								</div>
+							</div>
+						</div>
 					</button>
 				</div>
 			</form>
@@ -248,62 +264,43 @@
 
 		<div class="tab-pane" id="recruitment" role="tabpanel" aria-labelledby="tab2">
 			<form>
-				<div class="d-sm-none list-group w-75 mx-auto my-4">
+				<div class="list-group w-75 mx-auto my-4">
 					<div class="list-group-item">
-						<div class="my-2 border border-1 border-primary">
-							<p class="my-1 text-center">11/25まで募集中！</p>
-						</div>
-						<div class="my-3">
-							<img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-							<span class="fw-bold fs-3 ms-2">ボ・シュー</span>
-						</div>
-
-						<p class="fw-bold">参加したいハッカソン</p>
-						<p>技育CAMPハッカソンvol. 1</p>
-						<p class="fw-bold">一言コメント</p>
-						<p>バックエンドが得意なのでフロントエンド大好きマンを募集しています。</p>
-						<p class="fw-bold">募集人数</p>
-						<p>2人</p>
-						<p class="fw-bold">連絡先</p>
-						<p>https://yumeno.kuni/happy</p>
-						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							<button type="button" class="btn btn-primary mx-2 btn-lg text-center" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="連絡先から募集者と連絡を取ろう！">応募済み</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			<form>
-				<div class="d-none d-sm-block d-xl-none list-group w-75 mx-auto my-4">
-					<div class="list-group-item">
-						<div class="container-fluid my-3">
+						<div class="container my-3">
 							<div class="row">
-								<div class="col-6">
+								<div class="col-12 col-sm-6">
 									<img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
 									<span class="fw-bold fs-3 ms-2">ボ・シュー</span>
 								</div>
-								<div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end">
+								<div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
 									<p class="my-3 d-flex btn-lg text-center border border-1 border-primary">11/25まで募集中！</p>
 								</div>
 							</div>
+							<div class="row my-3">
+								<div class="col-9 col-sm-6">
+									<p class="fw-bold">参加したいハッカソン</p>
+								</div>
+								<div class="col-15 col-sm-6">技育CAMPハッカソンvol. 1</div>
+							</div>
+							<div class="row my-3">
+								<div class="col-9 col-sm-6">
+									<p class="fw-bold">一言コメント</p>
+								</div>
+								<div class="col-15 col-sm-6">バックエンドが得意なのでフロントエンド大好きマンを募集しています。</div>
+							</div>
+							<div class="row my-3">
+								<div class="col-9 col-sm-6">
+									<p class="fw-bold">募集人数</p>
+								</div>
+								<div class="col-15 col-sm-6">2人</div>
+							</div>
+							<div class="row my-3">
+								<div class="col-9 col-sm-6">
+									<p class="fw-bold">連絡先</p>
+								</div>
+								<div class="col-15 col-sm-6">https://yumeno.kuni/happy</div>
+							</div>
 						</div>
-						<table class="my-3 table table-borderless">
-							<tr>
-								<th class="w-50">参加したいハッカソン</th>
-								<td case=0>技育CAMPハッカソンvol. 1</td>
-							</tr>
-							<tr>
-								<th class="w-50">一言コメント</th>
-								<td case=0>バックエンドが得意なのでフロントエンド大好きマンを募集しています。</td>
-							</tr>
-							<tr>
-								<th class="w-50">募集人数</th>
-								<td>2人</td>
-							</tr>
-							<tr>
-								<th class="w-50">連絡先</th>
-								<td>https://yumeno.kuni/happy</td>
-							</tr>
-						</table>
 						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 							<button type="button" class="btn btn-primary mx-2 btn-lg text-center" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="連絡先から募集者と連絡を取ろう！">応募済み</button>
 						</div>
@@ -311,130 +308,39 @@
 				</div>
 			</form>
 			<form>
-				<div class="d-none d-xl-block list-group w-50 mx-auto my-4">
+				<div class="list-group w-75 mx-auto my-4">
 					<div class="list-group-item">
-						<div class="container-fluid my-3">
+						<div class="container my-3">
 							<div class="row">
-								<div class="col-6">
-									<img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-									<span class="fw-bold fs-3 ms-2">ボ・シュー</span>
-								</div>
-								<div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end">
-									<p class="my-3 d-flex btn-lg text-center border border-1 border-primary">11/25まで募集中！</p>
-								</div>
-							</div>
-						</div>
-						<table class="table table-borderless">
-							<tr>
-								<th class="w-50">参加したいハッカソン</th>
-								<td case=0>技育CAMPハッカソンvol. 1</td>
-							</tr>
-							<tr>
-								<th class="w-50">一言コメント</th>
-								<td case=0>バックエンドが得意なのでフロントエンド大好きマンを募集しています。</td>
-							</tr>
-							<tr>
-								<th class="w-50">募集人数</th>
-								<td>2人</td>
-							</tr>
-							<tr>
-								<th class="w-50">連絡先</th>
-								<td>https://yumeno.kuni/happy</td>
-							</tr>
-						</table>
-						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							<button type="button" class="btn btn-primary mx-2 btn-lg text-center" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="連絡先から募集者と連絡を取ろう！">応募済み</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			<form>
-				<div class="d-sm-none list-group w-75 mx-auto my-4">
-					<div class="list-group-item">
-						<div class="my-2 border border-1 border-primary">
-							<p class="my-1 text-center">1/4まで募集中！</p>
-						</div>
-						<div class="my-3">
-							<img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-							<span class="fw-bold fs-3 ms-2">李 徴</span>
-						</div>
-
-						<p class="fw-bold">参加したいハッカソン</p>
-						<p>JPHACKS 2022</p>
-						<p class="fw-bold">一言コメント</p>
-						<p>機械学習ができる方を募集しています！活動頻度は週3程度を想定しています！宜しくお願いいたします！</p>
-						<p class="fw-bold">募集人数</p>
-						<p>1人</p>
-						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							<button type="button" class="btn btn-primary mx-2 btn-lg text-center" style="background: transparent; color: #f18c18" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			<form>
-				<div class="d-none d-sm-block d-xl-none list-group w-75 mx-auto my-4">
-					<div class="list-group-item">
-						<div class="container-fluid my-3">
-							<div class="row">
-								<div class="col-6">
+								<div class="col-12 col-sm-6">
 									<img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
 									<span class="fw-bold fs-3 ms-2">李 徴</span>
 								</div>
-								<div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end">
+								<div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
 									<p class="my-3 d-flex btn-lg text-center border border-1 border-primary">1/4まで募集中！</p>
 								</div>
 							</div>
-						</div>
-						<table class="my-3 table table-borderless">
-							<tr>
-								<th class="w-50">参加したいハッカソン</th>
-								<td case=0>JPHACKS 2022</td>
-							</tr>
-							<tr>
-								<th class="w-50">一言コメント</th>
-								<td case=0>機械学習ができる方を募集しています！活動頻度は週3程度を想定しています！宜しくお願いいたします！</td>
-							</tr>
-							<tr>
-								<th class="w-50">募集人数</th>
-								<td>1人</td>
-							</tr>
-						</table>
-						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							<button type="button" class="btn btn-primary mx-2 btn-lg text-center" style="background: transparent; color: #f18c18" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			<form>
-				<div class="d-none d-xl-block list-group w-50 mx-auto my-4">
-					<div class="list-group-item">
-						<div class="container-fluid my-3">
-							<div class="row">
-								<div class="col-6">
-									<img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-									<span class="fw-bold fs-3 ms-2">李 徴</span>
+							<div class="row my-3">
+								<div class="col-9 col-sm-6">
+									<p class="fw-bold">参加したいハッカソン</p>
 								</div>
-								<div class="col-6 d-grid gap-2 d-md-flex justify-content-md-end">
-									<p class="my-3 d-flex btn-lg text-center border border-1 border-primary">1/4まで募集中！</p>
+								<div class="col-15 col-sm-6">JPHACKS 2022</div>
+							</div>
+							<div class="row my-3">
+								<div class="col-9 col-sm-6">
+									<p class="fw-bold">一言コメント</p>
 								</div>
+								<div class="col-15 col-sm-6">機械学習ができる方を募集しています！活動頻度は週3程度を想定しています！宜しくお願いいたします！</div>
+							</div>
+							<div class="row my-3">
+								<div class="col-9 col-sm-6">
+									<p class="fw-bold">募集人数</p>
+								</div>
+								<div class="col-15 col-sm-6">1人</div>
 							</div>
 						</div>
-						<table class="table table-borderless">
-							<tr>
-								<th class="w-50">参加したいハッカソン</th>
-								<td case=0>JPHACKS 2022</td>
-							</tr>
-							<tr>
-								<th class="w-50">一言コメント</th>
-								<td case=0>機械学習ができる方を募集しています！活動頻度は週3程度を想定しています！宜しくお願いいたします！</td>
-							</tr>
-							<tr>
-								<th class="w-50">募集人数</th>
-								<td>1人</td>
-							</tr>
-						</table>
 						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							<button type="button" class="btn btn-primary mx-2 btn-lg text-center" style="background: transparent; color: #f18c18" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
+							<button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
 						</div>
 					</div>
 				</div>
