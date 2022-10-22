@@ -270,7 +270,7 @@
 		</div>
 
 		<div class="tab-pane" id="recruitment" role="tabpanel" aria-labelledby="tab2">
-            <div class="list-group w-75 mx-auto my-4" th:each="recruitment : ${recruitmentList}">
+            <div class="list-group w-75 mx-auto my-4" th:each="recruitment : ${recruitmentList}" th:if="${#dates.format(recruitment.deadline, 'yyyy/MM/dd') ge #dates.format(#dates.createNow(), 'yyyy/MM/dd')}">
                 <div class="list-group-item">
                     <div class="container my-3">
                         <div class="row">
