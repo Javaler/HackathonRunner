@@ -53,3 +53,14 @@
     width:90%;
     margin:auto;
 }
+
+.nav-link{
+    color: #f18c18;
+}
+
+.nav-tabs{
+    background-color: #D9D9D923;
+}
+.nav-link:hover{
+    color: #cd2acd
+}
