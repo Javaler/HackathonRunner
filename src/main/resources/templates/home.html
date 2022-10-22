@@ -280,7 +280,7 @@
                             </div>
                             <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
                                 <p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
-                                    <span th:text="${recruitment.deadline}"></span>まで募集中！
+                                    <span th:text="${#dates.format(recruitment.deadline, 'yyyy/MM/dd')}"></span>まで募集中！
                                 </p>
                             </div>
                         </div>
