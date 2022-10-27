@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'HackathonRunner'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_35AB96EC50BF424580BCEA4477B45F76 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0B2EEAB9258C4DF5878D0E7C3D1A7169 }}
           package: '*.jar'
