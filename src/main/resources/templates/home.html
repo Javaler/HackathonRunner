@@ -231,9 +231,9 @@
                                     <p class="fw-bold" th:text="#{text.hackathon}"></p>
                                 </div>
                                 <div class="col-15 col-sm-6 my-1">
-                                    <p th:case=0 th:text="#{option.no}"></p>
-                                    <p th:case=1 th:text="#{option.hackathon_yes_1}"></p>
-                                    <p th:case=2 th:text="#{option.hackathon_yes_2}"></p>
+                                    <p th:case="0" th:text="#{option.no}"></p>
+                                    <p th:case="1" th:text="#{option.hackathon_yes_1}"></p>
+                                    <p th:case="2" th:text="#{option.hackathon_yes_2}"></p>
                                 </div>
                             </div>
                             <div class="row my-2" th:switch="${post.portfolio}">
@@ -241,10 +241,10 @@
                                     <p class="fw-bold" th:text="#{text.portfolio}"></p>
                                 </div>
                                 <div class="col-12 col-sm-6 my-1">
-                                    <p th:case=0 th:text="#{option.no}"></p>
-                                    <p th:case=1 th:text="#{option.portfolio_yes_1}"></p>
-                                    <p th:case=2 th:text="#{option.portfolio_yes_2}"></p>
-                                    <p th:case=3 th:text="#{option.portfolio_yes_3}"></p>
+                                    <p th:case="0" th:text="#{option.no}"></p>
+                                    <p th:case="1" th:text="#{option.portfolio_yes_1}"></p>
+                                    <p th:case="2" th:text="#{option.portfolio_yes_2}"></p>
+                                    <p th:case="3" th:text="#{option.portfolio_yes_3}"></p>
                                 </div>
                             </div>
                             <div class="row my-2">
