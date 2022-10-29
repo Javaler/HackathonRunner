@@ -9,6 +9,7 @@ import com.example.demo.entity.Recruitment;
 
 @Repository
 public interface RecruitmentRepository extends JpaRepository<Recruitment, Integer> {
-	
-	List<Recruitment> findAllByOrderByIdDesc();
+
+    List<Recruitment> findAllByOrderByIdDesc();
+    List<Recruitment> findAllByOrderByDeadlineAsc();
 }
