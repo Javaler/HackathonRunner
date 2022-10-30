@@ -64,3 +64,11 @@
 .nav-link:hover{
     color: #cd2acd
 }
+
+.hidden{
+    display: none;
+}
+
+#recruitment{
+    margin-bottom: 70px;
+}
