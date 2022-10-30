@@ -64,3 +64,7 @@
 .nav-link:hover{
     color: #cd2acd
 }
+
+.hidden{
+    display: none;
+}
