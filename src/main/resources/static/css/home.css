@@ -20,7 +20,7 @@
     width:240px;
 }
 
-#question-introduction{
+.left-side-introduction{
     margin-top:100px;
     padding-left:calc(160%/6);
     padding-right:10%;
@@ -72,3 +72,4 @@
 #recruitment{
     margin-bottom: 70px;
 }
+

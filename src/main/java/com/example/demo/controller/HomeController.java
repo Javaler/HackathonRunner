@@ -44,7 +44,7 @@ public class HomeController {
     public ModelAndView showHome(ModelAndView mav) {
 
         List<Post> postList = postRepository.findAllByOrderByIdDesc();
-        List<Recruitment> recruitmentList = recruitmentRepository.findAll();
+        List<Recruitment> recruitmentList = recruitmentRepository.findAllByOrderByDeadlineAsc();
 
         mav.setViewName("home");
         mav.addObject("postList", postList);
@@ -61,7 +61,7 @@ public class HomeController {
                                     ModelAndView mav) {
 
         List<Post> postList = postDaoImpl.findByCriteria(postQuery);
-        List<Recruitment> recruitmentList = recruitmentRepository.findAll();
+        List<Recruitment> recruitmentList = recruitmentRepository.findAllByOrderByDeadlineAsc();
 
         mav.setViewName("home");
         mav.addObject("postList", postList);
