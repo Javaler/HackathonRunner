@@ -25,8 +25,8 @@ public class QuestionService {
         int infrastructure = questionForm.getInfrastructure();
         int machinelearning = questionForm.getMachinelearning();
 
-        //アルゴリズム0
         if(git==0) {
+            //アルゴリズム0
             analysisResult.add("Git, GitHubの勉強をしましょう。");
         }
 
@@ -49,61 +49,62 @@ public class QuestionService {
             analysisResult.add("どんどん次のハッカソンに参加して、賞を目指しましょう！");
             analysisResult.add("今までリーダーの経験がなければリーダーの役割を担ってPMしてみましょう。");
         }
-        //アルゴリズム5　成果物ありでGit,GitHub経験なし
+
         if(portfolio==1 && git==0) {
+            //アルゴリズム5　成果物ありでGit,GitHub経験なし
             analysisResult.add("チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。");
         }
 
-        //アルゴリズム6　動画編集経験あり
         if(movie==1) {
+            //アルゴリズム6　動画編集経験あり
             analysisResult.add("動画編集できることを伝えましょう。プレゼン資料作成などで役に立つはずです。");
         }
 
-        //アルゴリズム7　プレゼン経験あり
         if(presentation==1) {
+            //アルゴリズム7　プレゼン経験あり
             analysisResult.add("プレゼン資料の作成や発表を積極的に担当しましょう。ハッカソンではプレゼンの出来も評価対象です。");
         }
 
-        //アルゴリズム8　デザインツールの基礎知識あり
         if(design==1) {
+            //アルゴリズム8　デザインツールの基礎知識あり
             analysisResult.add("チームにデザインツールの応用レベルの人がいれば、その人のサポート役を担いましょう。");
         }
 
-        //アルゴリズム9　デザインツールの応用レベル
         if(design==2) {
+            //アルゴリズム9　デザインツールの応用レベル
             analysisResult.add("デザイン作成ができることを伝えましょう。");
         }
 
-        //アルゴリズム10　JavaScriptの基礎
         if(frontend==1) {
+            //アルゴリズム10　JavaScriptの基礎
             analysisResult.add("JavaScriptのフレームワークを使える人がいれば、その人のサポート役を担いましょう。");
         }
 
-        //アルゴリズム11 JavaScriptのフレームワークを使える
         if(frontend==2) {
+            //アルゴリズム11 JavaScriptのフレームワークを使える
             analysisResult.add("フロントエンドの開発を行えることを伝えましょう。");
         }
 
-        //アルゴリズム12 バックエンド言語の基礎あり
         if(backend==1) {
+            //アルゴリズム12 バックエンド言語の基礎あり
             analysisResult.add("使えるバックエンド言語を伝えましょう。");
         }
 
-        //アルゴリズム13 インフラ経験あり
         if(infrastructure==1) {
+            //アルゴリズム13 インフラ経験あり
             analysisResult.add("使えるインフラツールを伝えましょう。");
         }
 
-        //アルゴリズム14 機械学習 API 利用経験orモデル作成経験あり
         if(machinelearning==1) {
+            //アルゴリズム14 機械学習 API 利用経験orモデル作成経験あり
             analysisResult.add("機械学習を組み込めることを伝えましょう。");
         }
 
-        //アルゴリズム15 技術的技能なし
         if(movie==0 && presentation==0
                 && design==0 && frontend==0
                     && backend==0 && infrastructure==0
                         && machinelearning==0) {
+            //アルゴリズム15 技術的技能なし
             analysisResult.add("プログラミング言語(JavaScript, PHP, Rubyなどから1つ)を勉強しておきましょう。");
         }
 
