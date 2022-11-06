@@ -22,188 +22,188 @@
     <div class="container">
         <div class="row">
             <div class="col-10 col-md-6 mx-auto">
-		        <form class="needs-validated" action="/showQuestionResult" method="post" novalidate>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.hackathon}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input" id="hackathon-no" value=0 name="hackathon" required/>
-		                    <label for="hackathon-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input" id="hackathon-yes-1" value=1 name="hackathon" required/>
-		                    <label for="hackathon-yes-1" th:text="#{option.hackathon_yes_1}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input" id="hackathon-yes-2" value=2 name="hackathon" required/>
-		                    <label for="hackathon-yes-2" th:text="#{option.hackathon_yes_2}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.team}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input" required id="team-no" value=0 name="team"/>
-		                    <label for="team-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input" required id="team-yes-1" value=1 name="team"/>
-		                    <label for="team-yes-1" th:text="#{option.team_yes_1}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input" required id="team-yes-2" value=2 name="team"/>
-		                    <label for="team-yes-2" th:text="#{option.team_yes_2}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.portfolio}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="deliverable-no" value=0 name="portfolio"/>
-		                    <label for="deliverable-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="deliverable-yes-1" value=1 name="portfolio"/>
-		                    <label for="deliverable-yes-1" th:text="#{option.portfolio_yes_1}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="deliverable-yes-2" value=2 name="portfolio"/>
-		                    <label for="deliverable-yes-2" th:text="#{option.portfolio_yes_2}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="deliverable-yes-3" value=3 name="portfolio"/>
-		                    <label for="deliverable-yes-3" th:text="#{option.portfolio_yes_3}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.git}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="git-no" value=0 name="git"/>
-		                    <label for="git-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="git-yes-1" value=1 name="git"/>
-		                    <label for="git-yes-1" th:text="#{option.git_yes_1}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="git-yes-2" value=2 name="git"/>
-		                    <label for="git-yes-2" th:text="#{option.git_yes_2}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="git-yes-3" value=3 name="git"/>
-		                    <label for="git-yes-3" th:text="#{option.git_yes_3}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="git-yes-4" value=4 name="git"/>
-		                    <label for="git-yes-4" th:text="#{option.git_yes_4}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.movie}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="movie-no" value=0 name="movie"/>
-		                    <label for="movie-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="movie-yes" value=1 name="movie"/>
-		                    <label for="movie-yes" th:text="#{option.yes}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.presentation}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="presentation-no" value=0 name="presentation"/>
-		                    <label for="presentation-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="presentation-yes" value=1 name="presentation"/>
-		                    <label for="presentation-yes" th:text="#{option.yes}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.design}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="design-no" value=0 name="design"/>
-		                    <label for="design-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="design-yes-1" value=1 name="design"/>
-		                    <label for="design-yes-1" th:text="#{option.design_yes_1}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="design-yes-2" value=2 name="design"/>
-		                    <label for="design-yes-2" th:text="#{option.design_yes_2}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.frontend}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="frontend-no" value=0 name="frontend"/>
-		                    <label for="frontend-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="frontend-yes-1" value=1 name="frontend"/>
-		                    <label for="frontend-yes-1" th:text="#{option.frontend_yes_1}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="frontend-yes-2" value=2 name="frontend"/>
-		                    <label for="frontend-yes-2" th:text="#{option.frontend_yes_2}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.backend}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="backend-no" value=0 name="backend"/>
-		                    <label for="backend-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="backend-yes" value=1 name="backend"/>
-		                    <label for="backend-yes" th:text="#{option.backend_yes}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.infrastructure}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="infrastructure-no" value=0 name="infrastructure"/>
-		                    <label for="infrastructure-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="infrastructure-yes" value=1 name="infrastructure"/>
-		                    <label for="infrastructure-yes" th:text="#{option.infrastructure_yes}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="my-3 p-3 border border-light bg-white bg-white rounded">
-		                <p th:text="#{label.machinelearning}"></p>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="machine-learning-no" value=0 name="machineLearning"/>
-		                    <label for="machine-learning-no" th:text="#{option.no}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="machine-learning-yes-1" value=1 name="machineLearning"/>
-		                    <label for="machine-learning-yes-1" th:text="#{option.machinelearning_yes_1}"></label>
-		                </div>
-		                <div class="form-check">
-		                    <input type="radio" class="form-check-input"  required id="machine-learning-yes-2" value=2 name="machineLearning"/>
-		                    <label for="machine-learning-yes-2" th:text="#{option.machinelearning_yes_2}"></label>
-		                    <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
-		                </div>
-		            </div>
-		            <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
-		                <strong th:text="#{text.not_entered_alart}"></strong>
-		            </div>
-		            <div class="text-center">
-		                <button type="submit" class="btn btn-primary px-4 mt-3 mb-5" th:text="#{button.question_form}"></button>
-		            </div>
-		        </form>
-		    </div>
-	    </div>
+                <form class="needs-validated" action="/showQuestionResult" method="post" novalidate>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.hackathon}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="hackathon-no" value=0 name="hackathon" required/>
+                            <label for="hackathon-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="hackathon-yes-1" value=1 name="hackathon" required/>
+                            <label for="hackathon-yes-1" th:text="#{option.hackathon_yes_1}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="hackathon-yes-2" value=2 name="hackathon" required/>
+                            <label for="hackathon-yes-2" th:text="#{option.hackathon_yes_2}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.team}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" required id="team-no" value=0 name="team"/>
+                            <label for="team-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" required id="team-yes-1" value=1 name="team"/>
+                            <label for="team-yes-1" th:text="#{option.team_yes_1}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" required id="team-yes-2" value=2 name="team"/>
+                            <label for="team-yes-2" th:text="#{option.team_yes_2}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.portfolio}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="deliverable-no" value=0 name="portfolio"/>
+                            <label for="deliverable-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="deliverable-yes-1" value=1 name="portfolio"/>
+                            <label for="deliverable-yes-1" th:text="#{option.portfolio_yes_1}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="deliverable-yes-2" value=2 name="portfolio"/>
+                            <label for="deliverable-yes-2" th:text="#{option.portfolio_yes_2}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="deliverable-yes-3" value=3 name="portfolio"/>
+                            <label for="deliverable-yes-3" th:text="#{option.portfolio_yes_3}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.git}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="git-no" value=0 name="git"/>
+                            <label for="git-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="git-yes-1" value=1 name="git"/>
+                            <label for="git-yes-1" th:text="#{option.git_yes_1}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="git-yes-2" value=2 name="git"/>
+                            <label for="git-yes-2" th:text="#{option.git_yes_2}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="git-yes-3" value=3 name="git"/>
+                            <label for="git-yes-3" th:text="#{option.git_yes_3}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="git-yes-4" value=4 name="git"/>
+                            <label for="git-yes-4" th:text="#{option.git_yes_4}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.movie}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="movie-no" value=0 name="movie"/>
+                            <label for="movie-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="movie-yes" value=1 name="movie"/>
+                            <label for="movie-yes" th:text="#{option.yes}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.presentation}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="presentation-no" value=0 name="presentation"/>
+                            <label for="presentation-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="presentation-yes" value=1 name="presentation"/>
+                            <label for="presentation-yes" th:text="#{option.yes}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.design}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="design-no" value=0 name="design"/>
+                            <label for="design-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="design-yes-1" value=1 name="design"/>
+                            <label for="design-yes-1" th:text="#{option.design_yes_1}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="design-yes-2" value=2 name="design"/>
+                            <label for="design-yes-2" th:text="#{option.design_yes_2}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.frontend}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="frontend-no" value=0 name="frontend"/>
+                            <label for="frontend-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="frontend-yes-1" value=1 name="frontend"/>
+                            <label for="frontend-yes-1" th:text="#{option.frontend_yes_1}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="frontend-yes-2" value=2 name="frontend"/>
+                            <label for="frontend-yes-2" th:text="#{option.frontend_yes_2}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.backend}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="backend-no" value=0 name="backend"/>
+                            <label for="backend-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="backend-yes" value=1 name="backend"/>
+                            <label for="backend-yes" th:text="#{option.backend_yes}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.infrastructure}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="infrastructure-no" value=0 name="infrastructure"/>
+                            <label for="infrastructure-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="infrastructure-yes" value=1 name="infrastructure"/>
+                            <label for="infrastructure-yes" th:text="#{option.infrastructure_yes}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                        <p th:text="#{label.machinelearning}"></p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="machine-learning-no" value=0 name="machineLearning"/>
+                            <label for="machine-learning-no" th:text="#{option.no}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="machine-learning-yes-1" value=1 name="machineLearning"/>
+                            <label for="machine-learning-yes-1" th:text="#{option.machinelearning_yes_1}"></label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input"  required id="machine-learning-yes-2" value=2 name="machineLearning"/>
+                            <label for="machine-learning-yes-2" th:text="#{option.machinelearning_yes_2}"></label>
+                            <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
+                        <strong th:text="#{text.not_entered_alart}"></strong>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-4 mt-3 mb-5" th:text="#{button.question_form}"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script th:src="@{/js/questionForm.js}"></script>
