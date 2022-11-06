@@ -53,16 +53,16 @@
                             <table class="table table-borderless">
                                 <tr th:switch="${post.hackathon}">
                                     <th class="w-50" th:text="#{text.hackathon}"></th>
-                                    <td th:case=0 th:text="#{option.no}"></td>
-                                    <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
-                                    <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.hackathon_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.hackathon_yes_2}"></td>
                                 </tr>
                                 <tr th:switch="${post.portfolio}">
                                     <th class="w-50" th:utext="#{text.portfolio}"></th>
-                                    <td th:case=0 th:text="#{option.no}"></td>
-                                    <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
-                                    <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
-                                    <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.portfolio_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.portfolio_yes_2}"></td>
+                                    <td th:case="3" th:text="#{option.portfolio_yes_3}"></td>
                                 </tr>
                                 <tr>
                                     <th class="w-50" th:text="#{label.event}"></th>
@@ -86,16 +86,16 @@
                             <table class="table table-borderless">
                                 <tr th:switch="${post.hackathon}">
                                     <th class="w-50" th:text="#{text.hackathon}"></th>
-                                    <td th:case=0 th:text="#{option.no}"></td>
-                                    <td th:case=1 th:text="#{option.hackathon_yes_1}"></td>
-                                    <td th:case=2 th:text="#{option.hackathon_yes_2}"></td>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.hackathon_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.hackathon_yes_2}"></td>
                                 </tr>
                                 <tr th:switch="${post.portfolio}">
                                     <th class="w-50" th:utext="#{text.portfolio}"></th>
-                                    <td th:case=0 th:text="#{option.no}"></td>
-                                    <td th:case=1 th:text="#{option.portfolio_yes_1}"></td>
-                                    <td th:case=2 th:text="#{option.portfolio_yes_2}"></td>
-                                    <td th:case=3 th:text="#{option.portfolio_yes_3}"></td>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.portfolio_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.portfolio_yes_2}"></td>
+                                    <td th:case="3" th:text="#{option.portfolio_yes_3}"></td>
                                 </tr>
                                 <tr>
                                     <th class="w-50" th:text="#{label.event}"></th>
