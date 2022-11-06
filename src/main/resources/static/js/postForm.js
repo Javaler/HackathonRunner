@@ -1,4 +1,4 @@
-const changePage=(pageNum)=>{ 
+const changePage=(pageNum)=>{
     const n=2;
     for(let i=0;i<n;i++){
         const questionPage=document.getElementById(`question-page${i}`);
