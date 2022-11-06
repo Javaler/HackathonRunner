@@ -18,33 +18,32 @@ import lombok.AllArgsConstructor;
 @Controller
 @AllArgsConstructor
 public class QuestionController {
-	
-	private final QuestionService questionService;
-	private final PostService postService;
-		
-	@GetMapping("/showQuestion")
-	public ModelAndView showQuestion(ModelAndView mav) {
-		
-		mav.setViewName("questionForm");
-		mav.addObject("questionForm", new QuestionForm());
-		
-		return mav;
-	}
-	
-	@PostMapping("/showQuestionResult")
-	public ModelAndView showQuestionResult(ModelAndView mav,
-			@ModelAttribute QuestionForm questionForm) {
-					
-		List<String> analysisResult = questionService.createAnalysisResult(questionForm);
-		int[] hackathonScore = questionService.createHackathonScore(questionForm);
-		List<Post> recommendPostList = postService.createRecommendPostList(questionForm);
-		
-		mav.setViewName("questionResult");
-		mav.addObject("analysisResult", analysisResult);
-		mav.addObject("hackathonScore", hackathonScore);
-		mav.addObject("recommendPostList", recommendPostList);
-		
-		return mav;
-		
-	}
+
+    private final QuestionService questionService;
+    private final PostService postService;
+
+    @GetMapping("/showQuestion")
+    public ModelAndView showQuestion(ModelAndView mav) {
+
+        mav.setViewName("questionForm");
+        mav.addObject("questionForm", new QuestionForm());
+
+        return mav;
+    }
+
+    @PostMapping("/showQuestionResult")
+    public ModelAndView showQuestionResult(ModelAndView mav,
+            @ModelAttribute QuestionForm questionForm) {
+
+        List<String> analysisResult = questionService.createAnalysisResult(questionForm);
+        int[] hackathonScore = questionService.createHackathonScore(questionForm);
+        List<Post> recommendPostList = postService.createRecommendPostList(questionForm);
+
+        mav.setViewName("questionResult");
+        mav.addObject("analysisResult", analysisResult);
+        mav.addObject("hackathonScore", hackathonScore);
+        mav.addObject("recommendPostList", recommendPostList);
+
+        return mav;
+    }
 }
