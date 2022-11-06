@@ -5,6 +5,6 @@ import com.example.demo.entity.Post;
 import com.example.demo.form.PostQuery;
 
 public interface PostDao {
-	// Criteria APIによる検索
-	  List<Post> findByCriteria(PostQuery postQuery);
+    // Criteria APIによる検索
+    List<Post> findByCriteria(PostQuery postQuery);
 }
