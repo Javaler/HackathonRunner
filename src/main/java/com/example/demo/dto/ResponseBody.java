@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class ResponseBody {
 
-	private int[] recom_res;
+    private int[] recom_res;
 }
