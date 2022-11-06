@@ -54,7 +54,11 @@ public class PostService {
 
         ResponseBody responseBody = responseEntity.getBody();
 
-        return responseBody.getRecom_res();
+        if (responseBody == null) {
+            return null;
+        } else {
+            return responseBody.getRecom_res();
+        }
     }
 
 }
