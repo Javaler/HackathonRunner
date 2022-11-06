@@ -111,10 +111,6 @@ public class QuestionService {
 
     public int[] createHackathonScore(QuestionForm questionForm) {
 
-        int[] score = new int[3];
-        int programpoint = 0;
-        int teampoint = 0;
-        int gitpoint = 0;
         int hackathon = questionForm.getHackathon();
         int team = questionForm.getTeam();
         int portfolio = questionForm.getPortfolio();
@@ -124,13 +120,15 @@ public class QuestionService {
         int machinelearning = questionForm.getMachinelearning();
 
         //プログラミング経験値
+        int programmingScore = 0;
+
         if(portfolio == 0) {
             if (frontend == 0 && backend == 0 && machinelearning == 0) {
                 // なし
-                programpoint = 0;
+                programmingScore = 0;
             } else {
                 // 授業、趣味、独学でプログラミングの基礎を学んだことがある
-                programpoint = 1;
+                programmingScore = 1;
             }
         }
 
@@ -138,35 +136,31 @@ public class QuestionService {
             // 簡単なツール（アプリ）を作ったことがある
             // ツール（アプリ）を公開したことがある
             // ツール（アプリ）開発で、設計・実装・テストを経験したがある
-            programpoint = portfolio + 1;
+            programmingScore = portfolio + 1;
         }
 
         // チーム開発経験値
+        int teamScore = 0;
+
         if(hackathon == 0) {
             if(team == 0) {
                 // なし
-                teampoint = 0;
+                teamScore = 0;
             } else {
                 // 知人（友人、研究室仲間）との開発経験
-                teampoint = 1;
+                teamScore = 1;
             }
         } else {
             if(team == 2) {
                 // インターン・アルバイトでのチーム開発経験
-                teampoint = 4;
+                teamScore = 4;
             } else {
                 // ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
-                teampoint = hackathon + 1;
+                teamScore = hackathon + 1;
             }
         }
 
-        // Git, GitHub使用経験値
-        gitpoint = git;
-
-        // 算出値格納
-        score[0] = programpoint;
-        score[1] = teampoint;
-        score[2] = gitpoint;
+        int[] score = {programmingScore, teamScore, git};
 
         return score;
     }
