@@ -17,38 +17,38 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class PostController {
 
-	private final PostRepository postRepository;
-	
-	@GetMapping("/showPostForm")
-	public ModelAndView showPostForm(ModelAndView mav) {
-		
-		mav.setViewName("postForm");
-		mav.addObject("postForm", new PostForm());
-		
-		return mav;
-	}
-	
-	@PostMapping("/post")
-	public String post(@ModelAttribute PostForm postForm) {
-		
-		Post post = postForm.toEntity();
-		postRepository.saveAndFlush(post);
-		
-		return "redirect:/Post/" + post.getId();
-	}
-	
-	@GetMapping("/Post/{post_id}")
-	public ModelAndView showPostDetail(ModelAndView mav, 
-			@PathVariable(name = "post_id") int postId) {
-		
-		try {
-			Post post = postRepository.findById(postId).get();
-			mav.setViewName("postDetail");
-			mav.addObject("post", post);
-		} catch(Exception e) {
-			mav.setViewName("redirect:/");			
-		}
-		
-		return mav;
-	}
+    private final PostRepository postRepository;
+
+    @GetMapping("/showPostForm")
+    public ModelAndView showPostForm(ModelAndView mav) {
+
+        mav.setViewName("postForm");
+        mav.addObject("postForm", new PostForm());
+
+        return mav;
+    }
+
+    @PostMapping("/post")
+    public String post(@ModelAttribute PostForm postForm) {
+
+        Post post = postForm.toEntity();
+        postRepository.saveAndFlush(post);
+
+        return "redirect:/Post/" + post.getId();
+    }
+
+    @GetMapping("/Post/{post_id}")
+    public ModelAndView showPostDetail(ModelAndView mav,
+            @PathVariable(name = "post_id") int postId) {
+
+        try {
+            Post post = postRepository.findById(postId).get();
+            mav.setViewName("postDetail");
+            mav.addObject("post", post);
+        } catch(Exception e) {
+            mav.setViewName("redirect:/");
+        }
+
+        return mav;
+    }
 }
