@@ -26,77 +26,77 @@ public class QuestionService {
         int machinelearning = questionForm.getMachinelearning();
 
         if(git==0) {
-            //アルゴリズム0
+            // 0: Git, GitHub使用経験なし
             analysisResult.add("Git, GitHubの勉強をしましょう。");
         }
 
         if(hackathon==0) {
             if(team==0) {
                 if(portfolio==0) {
-                    //アルゴリズム1 ハッカソン、チーム開発、成果物全てなしと成果物がなくハッカソン経験がない人
+                    // 1: ハッカソン参加経験なし、チーム開発経験なし、ツール（アプリ）開発経験なし
                     analysisResult.add("当日はスライド作成やアイデアを2、3個出せるように準備しておきましょう。");
                 }else {
-                    //アルゴリズム4　ハッカソン経験とチーム開発経験なしだが成果物はある
+                    // 4: ハッカソン参加経験なし、チーム開発経験なし、ツール（アプリ）開発経験あり
                     analysisResult.add("Git, GitHubを使ったチーム開発方法を調べましょう。");
-                    analysisResult.add("チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。");
+                    analysisResult.add("チーム内にハッカソン参加経験者やチーム開発経験者がいなくて、ツール（アプリ）開発経験のある人が他にいない場合は、リーダーの役割を検討しましょう。");
                 }
             }else {
-                //アルゴリズム2　ハッカソン経験なしだがチーム開発経験あり
-                analysisResult.add("チームにハッカソン経験者がいないならリーダーの役割を担いましょう。");
+                // 2: ハッカソン参加経験なし、チーム開発経験あり
+                analysisResult.add("チームにハッカソン参加経験者がいないならリーダーの役割を担いましょう。");
             }
         }else {
-            //アルゴリズム3　ハッカソン経験あり
+            // 3: ハッカソン参加経験あり
             analysisResult.add("どんどん次のハッカソンに参加して、賞を目指しましょう！");
             analysisResult.add("今までリーダーの経験がなければリーダーの役割を担ってPMしてみましょう。");
         }
 
         if(portfolio==1 && git==0) {
-            //アルゴリズム5　成果物ありでGit,GitHub経験なし
-            analysisResult.add("チーム内にハッカソン経験者やチーム開発経験者がいなくて、成果物のある人が他にいない場合は、リーダーの役割を検討しましょう。");
+            // 5: ツール（アプリ）開発経験あり、Git, GitHub使用経験なし
+            analysisResult.add("チーム内にハッカソン参加経験者やチーム開発経験者がいなくて、ツール（アプリ）開発経験のある人が他にいない場合は、リーダーの役割を検討しましょう。");
         }
 
         if(movie==1) {
-            //アルゴリズム6　動画編集経験あり
+            // 6: 動画編集経験あり
             analysisResult.add("動画編集できることを伝えましょう。プレゼン資料作成などで役に立つはずです。");
         }
 
         if(presentation==1) {
-            //アルゴリズム7　プレゼン経験あり
+            // 7: プレゼン経験あり
             analysisResult.add("プレゼン資料の作成や発表を積極的に担当しましょう。ハッカソンではプレゼンの出来も評価対象です。");
         }
 
         if(design==1) {
-            //アルゴリズム8　デザインツールの基礎知識あり
+            // 8: デザインツールの基礎知識あり
             analysisResult.add("チームにデザインツールの応用レベルの人がいれば、その人のサポート役を担いましょう。");
         }
 
         if(design==2) {
-            //アルゴリズム9　デザインツールの応用レベル
+            // 9: デザインツールの応用レベル
             analysisResult.add("デザイン作成ができることを伝えましょう。");
         }
 
         if(frontend==1) {
-            //アルゴリズム10　JavaScriptの基礎
+            // 10: JavaScriptの基礎
             analysisResult.add("JavaScriptのフレームワークを使える人がいれば、その人のサポート役を担いましょう。");
         }
 
         if(frontend==2) {
-            //アルゴリズム11 JavaScriptのフレームワークを使える
+            // 11: JavaScriptのフレームワークを使える
             analysisResult.add("フロントエンドの開発を行えることを伝えましょう。");
         }
 
         if(backend==1) {
-            //アルゴリズム12 バックエンド言語の基礎あり
+            // 12: バックエンド言語の基礎あり
             analysisResult.add("使えるバックエンド言語を伝えましょう。");
         }
 
         if(infrastructure==1) {
-            //アルゴリズム13 インフラ経験あり
+            // 13: インフラ経験あり
             analysisResult.add("使えるインフラツールを伝えましょう。");
         }
 
         if(machinelearning==1) {
-            //アルゴリズム14 機械学習 API 利用経験orモデル作成経験あり
+            // 14: データ分析・画像処理経験あり
             analysisResult.add("機械学習を組み込めることを伝えましょう。");
         }
 
@@ -104,7 +104,7 @@ public class QuestionService {
                 && design==0 && frontend==0
                     && backend==0 && infrastructure==0
                         && machinelearning==0) {
-            //アルゴリズム15 技術的技能なし
+            // 15: 技術的技能なし
             analysisResult.add("プログラミング言語(JavaScript, PHP, Rubyなどから1つ)を勉強しておきましょう。");
         }
 
@@ -125,43 +125,47 @@ public class QuestionService {
         int backend = questionForm.getBackend();
         int machinelearning = questionForm.getMachinelearning();
 
-        //プログラミング経験値算出
-        //なし
-        //授業、趣味、独学でプログラミングの基礎を学んだことがある
+        //プログラミング経験値
         if(portfolio == 0) {
-            if(frontend == 0 && backend == 0 && machinelearning == 0) {
+            if (frontend == 0 && backend == 0 && machinelearning == 0) {
+                // なし
                 programpoint = 0;
             } else {
+                // 授業、趣味、独学でプログラミングの基礎を学んだことがある
                 programpoint = 1;
             }
         }
 
-        //簡単なツール（アプリ）を作ったことがある
-        //ツール（アプリ）を公開したことがある
-        //ツール（アプリ）開発で、設計・実装・テストを経験したがある
         if(portfolio > 0) {
+            // 簡単なツール（アプリ）を作ったことがある
+            // ツール（アプリ）を公開したことがある
+            // ツール（アプリ）開発で、設計・実装・テストを経験したがある
             programpoint = portfolio + 1;
         }
 
-        //チーム開発経験値算出
+        // チーム開発経験値
         if(hackathon == 0) {
             if(team == 0) {
-                teampoint = 0;                //なし
+                // なし
+                teampoint = 0;
             } else {
-                teampoint = 1;                //知人（友人、研究室仲間）との開発経験
+                // 知人（友人、研究室仲間）との開発経験
+                teampoint = 1;
             }
         } else {
             if(team == 2) {
-                teampoint = 4;                //インターン・アルバイトでのチーム開発経験
+                // インターン・アルバイトでのチーム開発経験
+                teampoint = 4;
             } else {
-                teampoint = hackathon + 1;    //ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
+                // ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
+                teampoint = hackathon + 1;
             }
         }
 
-        //Git, GitHub経験値算出
+        // Git, GitHub使用経験値
         gitpoint = git;
 
-        //算出値格納
+        // 算出値格納
         score[0] = programpoint;
         score[1] = teampoint;
         score[2] = gitpoint;
