@@ -23,39 +23,38 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class PostService {
-	
-	private final PostRepository postRepository;
-    
-    private static final String API_REQUEST_URL = "https://hackathonrunner-test-api.herokuapp.com/hr-api/";
-    
-    public List<Post> createRecommendPostList(QuestionForm questionForm) {
-    	
-    	int[] recommendPostIds = callAPI(questionForm);
-    	int[] recommendPostIdsTop5 = Arrays.copyOf(recommendPostIds, 5);
-    	List<Integer> recommmendPostIdList = Arrays.stream(recommendPostIdsTop5).boxed().collect(Collectors.toList());;
-    	List<Post> recommendPostList = postRepository.findAllById(recommmendPostIdList);
-    	
-    	return recommendPostList;
-	}
-    
-    private int[] callAPI(QuestionForm questionForm) {
-    	
-    	HttpHeaders headers = new HttpHeaders();
-    	headers.setContentType(MediaType.APPLICATION_JSON);
-    	
-    	HttpEntity<QuestionForm> entity = new HttpEntity<>(questionForm, headers);
 
-    	// リクエストの送信
-    	RestTemplate restTemplate = new RestTemplate();
-    	ResponseEntity<ResponseBody> responseEntity = restTemplate.exchange(API_REQUEST_URL, HttpMethod.POST, entity, ResponseBody.class);
-    	
-    	// 結果の取得
-    	HttpStatus status = responseEntity.getStatusCode();
-    	System.out.println(status);
-    	
-    	ResponseBody responseBody = responseEntity.getBody();
-    	
-    	return responseBody.getRecom_res();
-	}
+    private final PostRepository postRepository;
+    private static final String API_REQUEST_URL = "https://hackathonrunner-test-api.herokuapp.com/hr-api/";
+
+    public List<Post> createRecommendPostList(QuestionForm questionForm) {
+
+        int[] recommendPostIds = callAPI(questionForm);
+        int[] recommendPostIdsTop5 = Arrays.copyOf(recommendPostIds, 5);
+        List<Integer> recommmendPostIdList = Arrays.stream(recommendPostIdsTop5).boxed().collect(Collectors.toList());;
+        List<Post> recommendPostList = postRepository.findAllById(recommmendPostIdList);
+
+        return recommendPostList;
+    }
+
+    private int[] callAPI(QuestionForm questionForm) {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<QuestionForm> entity = new HttpEntity<>(questionForm, headers);
+
+        // リクエストの送信
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<ResponseBody> responseEntity = restTemplate.exchange(API_REQUEST_URL, HttpMethod.POST, entity, ResponseBody.class);
+
+        // 結果の取得
+        HttpStatus status = responseEntity.getStatusCode();
+        System.out.println(status);
+
+        ResponseBody responseBody = responseEntity.getBody();
+
+        return responseBody.getRecom_res();
+    }
 
 }
