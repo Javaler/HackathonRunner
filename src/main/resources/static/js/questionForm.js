@@ -16,7 +16,7 @@ for(const form of forms){
         if(!form.checkValidity()){
             form.classList.add('was-validated');
             alert.style.display = 'block'
-            
+
             e.preventDefault();
             e.stopPropagation();
         }

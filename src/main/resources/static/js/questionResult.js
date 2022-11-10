@@ -51,7 +51,7 @@ var myRadarChart = new Chart(ctx, {
                 },
                 title: {
                     display: true,
-                    text: 'scaleTitle'                          
+                    text: 'scaleTitle'
                 }
             }
 

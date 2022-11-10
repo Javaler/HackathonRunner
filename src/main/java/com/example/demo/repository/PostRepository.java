@@ -9,6 +9,6 @@ import com.example.demo.entity.Post;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Integer> {
-	
-	List<Post> findAllByOrderByIdDesc();
+
+    List<Post> findAllByOrderByIdDesc();
 }
