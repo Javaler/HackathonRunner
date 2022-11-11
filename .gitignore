@@ -10,7 +10,6 @@ target/**/static/
 target/**/templates/
 HackathonRunnerApplication.class
 target/classes/*.properties
-target/generated-*
 target/test-classes
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
