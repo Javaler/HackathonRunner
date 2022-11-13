@@ -6,11 +6,12 @@ target/**/form/
 target/**/repository/
 target/**/service/
 target/**/utils/
-target/**/static/
-target/**/templates/
 HackathonRunnerApplication.class
+target/classes/static/
+target/classes/templates/
 target/classes/*.properties
-target/test-classes
+target/dependency/
+target/test-classes/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
