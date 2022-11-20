@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,6 +37,16 @@ public class PostController {
         postRepository.saveAndFlush(post);
 
         return "redirect:/Post/" + post.getId();
+    }
+
+    @GetMapping("/showPostList")
+    public ModelAndView showPostList(ModelAndView mav) {
+        List<Post> postList = postRepository.findAllByOrderByIdDesc();
+
+        mav.setViewName("postList");
+        mav.addObject("postList", postList);
+
+        return mav;
     }
 
     @GetMapping("/Post/{post_id}")
