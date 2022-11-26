@@ -66,6 +66,18 @@ public class PostController {
         return mav;
     }
 
+    @PostMapping("/queryPost")
+    public ModelAndView queryPost(@ModelAttribute PostQuery postQuery,
+                                    ModelAndView mav) {
+        List<Post> postList = postDaoImpl.findByCriteria(postQuery);
+
+        mav.setViewName("postList");
+        mav.addObject("postList", postList);
+        mav.addObject("postQuery", postQuery);
+
+        return mav;
+    }
+
     @GetMapping("/Post/{post_id}")
     public ModelAndView showPostDetail(ModelAndView mav,
             @PathVariable(name = "post_id") int postId) {
