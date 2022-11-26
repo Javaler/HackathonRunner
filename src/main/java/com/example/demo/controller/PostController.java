@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.entity.Post;
 import com.example.demo.form.PostForm;
+import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
 
 import lombok.AllArgsConstructor;
@@ -45,6 +46,7 @@ public class PostController {
 
         mav.setViewName("postList");
         mav.addObject("postList", postList);
+        mav.addObject("postQuery", new PostQuery());
 
         return mav;
     }
