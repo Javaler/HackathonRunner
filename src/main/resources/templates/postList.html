@@ -39,7 +39,7 @@
                         <h5 class="modal-title" id="filterModalLabel" th:text="#{text.filter}"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <!--<form th:action="@{/}" method="post" th:object="${postQuery}">
+                    <form th:action="@{/queryPost}" method="post" th:object="${postQuery}">
                         <div class="modal-body">
                             <div class="my-3">
                                 <label for="select-hackathon" th:text="#{label.hackathon}"></label>
@@ -144,7 +144,7 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" th:text="#{button.cancel}"></button>
                             <button type="submit" th:formaction="@{/}" class="btn btn-primary" th:text="#{button.apply}"></button>
                         </div>
-                    </form>-->
+                    </form>
                 </div>
             </div>
         </div>
