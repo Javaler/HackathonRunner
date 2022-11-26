@@ -12,11 +12,11 @@ import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
 import com.example.demo.repository.RecruitmentRepository;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
 
 @Controller
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class HomeController {
 
     private final PostRepository postRepository;
