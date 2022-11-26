@@ -2,6 +2,9 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.dao.PostDaoImpl;
 import com.example.demo.entity.Post;
 import com.example.demo.form.PostForm;
 import com.example.demo.form.PostQuery;
@@ -21,6 +25,10 @@ import lombok.AllArgsConstructor;
 public class PostController {
 
     private final PostRepository postRepository;
+
+    @PersistenceContext
+    private EntityManager entityManager;
+    PostDaoImpl postDaoImpl;
 
     @GetMapping("/showPostForm")
     public ModelAndView showPostForm(ModelAndView mav) {
