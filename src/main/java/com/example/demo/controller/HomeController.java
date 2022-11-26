@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -30,11 +29,6 @@ public class HomeController {
     @PersistenceContext
     private EntityManager entityManager;
     PostDaoImpl postDaoImpl;
-
-    @PostConstruct
-    public void init() {
-        postDaoImpl = new PostDaoImpl(entityManager);
-    }
 
 
     @GetMapping("/")
