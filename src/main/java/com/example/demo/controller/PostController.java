@@ -19,10 +19,10 @@ import com.example.demo.form.PostForm;
 import com.example.demo.form.PostQuery;
 import com.example.demo.repository.PostRepository;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PostController {
 
     private final PostRepository postRepository;
