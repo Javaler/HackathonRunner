@@ -11,4 +11,5 @@ import com.example.demo.entity.Post;
 public interface PostRepository extends JpaRepository<Post, Integer> {
 
     List<Post> findAllByOrderByIdDesc();
+    List<Post> findTop3ByOrderByIdDesc();
 }
