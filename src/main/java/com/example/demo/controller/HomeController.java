@@ -2,14 +2,10 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.dao.PostDaoImpl;
 import com.example.demo.entity.Post;
 import com.example.demo.entity.Recruitment;
 import com.example.demo.form.PostQuery;
@@ -25,11 +21,6 @@ public class HomeController {
 
     private final PostRepository postRepository;
     private final RecruitmentRepository recruitmentRepository;
-
-    @PersistenceContext
-    private EntityManager entityManager;
-    PostDaoImpl postDaoImpl;
-
 
     @GetMapping("/")
     public ModelAndView showHome(ModelAndView mav) {
