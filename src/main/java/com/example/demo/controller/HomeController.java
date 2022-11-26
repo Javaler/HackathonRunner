@@ -7,10 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dao.PostDaoImpl;
@@ -54,20 +51,4 @@ public class HomeController {
         return mav;
     }
 
-
-    @PostMapping("/")
-    public ModelAndView queryPost(@ModelAttribute PostQuery postQuery,
-                                    BindingResult result,
-                                    ModelAndView mav) {
-
-        List<Post> postList = postDaoImpl.findByCriteria(postQuery);
-        List<Recruitment> recruitmentList = recruitmentRepository.findAllByOrderByDeadlineAsc();
-
-        mav.setViewName("home");
-        mav.addObject("postList", postList);
-        mav.addObject("postQuery", postQuery);
-        mav.addObject("recruitmentList", recruitmentList);
-
-        return mav;
-    }
 }
