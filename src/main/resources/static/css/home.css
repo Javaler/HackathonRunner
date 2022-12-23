@@ -73,3 +73,6 @@
     margin-bottom: 70px;
 }
 
+hr:not([size]){
+    height: 3px;
+}
