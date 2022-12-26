@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -25,12 +26,11 @@ public class HomeController {
     @GetMapping("/")
     public ModelAndView showHome(ModelAndView mav) {
 
-        List<Post> postList = postRepository.findAllByOrderByIdDesc();
-        List<Recruitment> recruitmentList = recruitmentRepository.findAllByOrderByDeadlineAsc();
+        List<Post> postList = postRepository.findTop3ByOrderByIdDesc();
+        List<Recruitment> recruitmentList = recruitmentRepository.findTop3ByDeadlineAfterOrderByDeadlineAsc(new Date());
 
         mav.setViewName("home");
         mav.addObject("postList", postList);
-        mav.addObject("postQuery", new PostQuery());
         mav.addObject("recruitmentList", recruitmentList);
 
         return mav;
