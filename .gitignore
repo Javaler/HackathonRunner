@@ -16,6 +16,8 @@ target/test-classes/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+*.sql
+*.db
 
 ### STS ###
 .apt_generated
