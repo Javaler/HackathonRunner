@@ -121,7 +121,7 @@
                             </div>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="presentation-yes" value="1" name="presentation"/>
-                                <label for="presentation-yes" th:text="#{option.yes}"></label>
+                                <label for="presentation-yes" th:text="#{option.presentation_yes}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
@@ -164,8 +164,13 @@
                                 <label for="backend-no" th:text="#{option.no}"></label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" class="form-check-input"  required id="backend-yes" value="1" name="backend"/>
-                                <label for="backend-yes" th:text="#{option.backend_yes}"></label>
+                                <input type="radio" class="form-check-input"  required id="backend-yes-1" value="1" name="backend"/>
+                                <label for="backend-yes-1" th:text="#{option.backend_yes_1}"></label>
+                                <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input"  required id="backend-yes-2" value="2" name="backend"/>
+                                <label for="backend-yes-1" th:text="#{option.backend_yes_2}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
