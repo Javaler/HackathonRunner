@@ -1,5 +1,5 @@
 const changePage=(pageNum)=>{
-    const n=2;
+    const n=12;
     for(let i=0;i<n;i++){
         const questionPage=document.getElementById(`question-page${i}`);
         questionPage.style.display='none';
