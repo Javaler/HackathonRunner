@@ -73,7 +73,7 @@
 
     <!-- bootstrap Carousel -->
     <!-- Post -->
-    <div id="carouselExampleIndicators1" class="carousel slide mb-5" data-bs-interval="false" data-bs-wrap="false">
+    <div id="carouselExampleIndicators1" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -159,13 +159,16 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <div class="text-center">
+        <a class="btn rounded-pill mb-5 btn-primary btn-lg" th:href="@{/showPostList}">もっと見る</a>
+    </div>
 
     <!-- Recruitment -->
     <div class="w-75 text-center mx-auto my-5">
         <p class="fs-3">チームメンバー募集</p>
         <hr class="bg-primary">
     </div>
-    <div id="carouselExampleIndicators2" class="carousel slide mb-5" data-bs-interval="false" data-bs-wrap="false">
+    <div id="carouselExampleIndicators2" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -176,85 +179,85 @@
                 <div th:if="${status.index} == 0" class="carousel-item active" th:each="recruitment, status : ${recruitmentList}">
                     <div class="list-group w-75 mx-auto my-4">
                         <div class="list-group-item list-group-item-action">
-                        	<div class="container my-3">
-                            	<div class="row">
-		                            <div class="col-12 col-sm-6">
-		                                <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-		                                <span class="fw-bold fs-3 ms-2" th:text="${recruitment.name}"></span>
-		                            </div>
-		                            <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
-		                            	<p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
-		                                    <span th:text="${recruitment.deadline}"></span>
-		                                    まで募集中！
-		                                </p>
-		                            </div>
-		                            <table class="table table-borderless">
-		                                <tr>
-		                                    <th class="w-50" th:text="#{label.eventInfo}"></th>
-		                                    <td th:text="${recruitment.eventInfo}"></td>
-		                                </tr>
-		                                <tr>
-		                                    <th class="w-50" th:text="#{label.comment}"></th>
-		                                    <td th:text="${recruitment.comment}"></td>
-		                                </tr>
-		                                <tr>
-		                                    <th class="w-50" th:text="#{label.memberNum}"></th>
-		                                    <td th:text="${recruitment.memberNum} + 人"></td>
-		                                </tr>
-		                                <tr>
-		                                    <th class="w-50" th:text="#{label.contactInfo}"></th>
-		                                    <td th:text="${recruitment.contactInfo}"></td>
-		                                </tr>
-		                            </table>
-                        		</div>
-                       		</div>
-	                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-	                            <button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center popover-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
-	                        </div>
-                    	</div>
-                	</div>
-               	</div>
+                            <div class="container my-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                                        <span class="fw-bold fs-3 ms-2" th:text="${recruitment.name}"></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
+                                            <span th:text="${recruitment.deadline}"></span>
+                                            まで募集中！
+                                        </p>
+                                    </div>
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.eventInfo}"></th>
+                                            <td th:text="${recruitment.eventInfo}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.comment}"></th>
+                                            <td th:text="${recruitment.comment}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.memberNum}"></th>
+                                            <td th:text="${recruitment.memberNum} + 人"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.contactInfo}"></th>
+                                            <td th:text="${recruitment.contactInfo}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center popover-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div th:if="${status.index} != 0" class="carousel-item" th:each="recruitment, status : ${recruitmentList}">
                     <div class="list-group w-75 mx-auto my-4">
-                    	<div class="list-group-item list-group-item-action">
-                        	<div class="container my-3">
-                        		<div class="row">
-			                        <div class="col-12 col-sm-6">
-			                            <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-			                            <span class="fw-bold fs-3 ms-2" th:text="${recruitment.name}"></span>
-			                        </div>
-			                        <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
-			                            <p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
-			                                <span th:text="${recruitment.deadline}"></span>
-			                                まで募集中！
-			                            </p>
-			                        </div>		                    
-			                        <table class="table table-borderless">
-			                            <tr>
-			                                <th class="w-50" th:text="#{label.eventInfo}"></th>
-			                                <td th:text="${recruitment.eventInfo}"></td>
-			                            </tr>
-			                            <tr>
-			                                <th class="w-50" th:text="#{label.comment}"></th>
-			                                <td th:text="${recruitment.comment}"></td>
-			                            </tr>
-			                            <tr>
-			                                <th class="w-50" th:text="#{label.memberNum}"></th>
-			                                <td th:text="${recruitment.memberNum} + 人"></td>
-			                            </tr>
-			                            <tr>
-			                                <th class="w-50" th:text="#{label.contactInfo}"></th>
-			                                <td th:text="${recruitment.contactInfo}"></td>
-			                            </tr>
-			                        </table>
-	                        	</div>
-			                </div>
-	                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-	                            <button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center popover-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
-	                        </div>
-                    	</div>
-                	</div>
-            	</div>
+                        <div class="list-group-item list-group-item-action">
+                            <div class="container my-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                                        <span class="fw-bold fs-3 ms-2" th:text="${recruitment.name}"></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
+                                            <span th:text="${recruitment.deadline}"></span>
+                                            まで募集中！
+                                        </p>
+                                    </div>
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.eventInfo}"></th>
+                                            <td th:text="${recruitment.eventInfo}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.comment}"></th>
+                                            <td th:text="${recruitment.comment}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.memberNum}"></th>
+                                            <td th:text="${recruitment.memberNum} + 人"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.contactInfo}"></th>
+                                            <td th:text="${recruitment.contactInfo}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center popover-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
@@ -265,6 +268,9 @@
             <span class="carousel-control-next-icon bg-secondary" aria-hidden="false"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    </div>
+    <div class="text-center">
+        <a class="btn rounded-pill mb-5 btn-primary btn-lg" th:href="@{/showRecruiList}">もっと見る</a>
     </div>
 
     <!--bootstrap js-->
