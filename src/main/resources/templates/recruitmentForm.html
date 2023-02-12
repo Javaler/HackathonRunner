@@ -38,7 +38,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="comment" th:text="#{label.comment}"></label>
-                        <textarea class="form-control" name="comment" rows="3" placeholder="バックエンドを担当するので、フロントエンドのつよつよを募集してます！"  maxlength="90" required></textarea>
+                        <textarea class="form-control" name="comment" rows="3" th:placeholder="#{placeholder.recruitment_comment}"  maxlength="90" required></textarea>
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="mb-3">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="work" th:text="#{label.contactInfo}"></label>
-                        <textarea class="form-control" name="contactInfo" rows="3" placeholder="TwitterのURLなど、チームに応募してきた人との連絡を取る手段"  maxlength="90" required></textarea>
+                        <textarea class="form-control" name="contactInfo" rows="3" th:placeholder="#{placeholder.contactInfo_comment}"  maxlength="90" required></textarea>
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
