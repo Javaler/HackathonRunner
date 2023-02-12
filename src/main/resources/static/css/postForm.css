@@ -1,3 +1,9 @@
 .bg-form{
     background-color: #FFD5A4;
 }
+
+.question-page {
+    display: none;
+    min-height: 60vh;
+    flex-direction: column;
+}

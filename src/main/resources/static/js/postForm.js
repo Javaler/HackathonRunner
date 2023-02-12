@@ -31,3 +31,5 @@ const getRadioValue = (radioName)=> {
 const showChangePageAlert = ()=> { 
     changePageAlert.style.display = 'block';
 }
+
+changePage(0);
