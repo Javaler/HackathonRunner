@@ -4,6 +4,6 @@
 
 .question-page {
     display: none;
-    min-height: 60vh;
+    min-height: 50vh;
     flex-direction: column;
 }

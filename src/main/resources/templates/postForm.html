@@ -43,10 +43,6 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('hackathon')?changePage(1):showChangePageAlert()" th:text="#{button.next}"></button>
-                        </div>
                     </div>
                     <div id="question-page1"  class="question-page" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
@@ -64,11 +60,6 @@
                                 <label for="team-yes-2" th:text="#{option.team_yes_2}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
-                        </div>
-                        
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(0)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('team')?changePage(2):showChangePageAlert()" th:text="#{button.next}"></button>
                         </div>
                     </div>
                     
@@ -92,11 +83,6 @@
                                 <label for="deliverable-yes-3" th:text="#{option.portfolio_yes_3}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
-                        </div>
-                            
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(1)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('portfolio')?changePage(3):showChangePageAlert()" th:text="#{button.next}"></button>
                         </div>
                     </div>
                     <div id="question-page3"  class="question-page" data-page-display="flex">
@@ -124,11 +110,6 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                            
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(2)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('git')?changePage(4):showChangePageAlert()" th:text="#{button.next}"></button>
-                        </div>
                     </div>
                         
                     <div id="question-page4"  class="question-page" data-page-display="flex">
@@ -144,10 +125,6 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(3)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('movie')?changePage(5):showChangePageAlert()" th:text="#{button.next}"></button>
-                        </div>
                     </div>
                         
                     <div id="question-page5"  class="question-page" data-page-display="flex">
@@ -162,10 +139,6 @@
                                 <label for="presentation-yes" th:text="#{option.presentation_yes}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
-                        </div>
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(4)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('presentation')?changePage(6):showChangePageAlert()" th:text="#{button.next}"></button>
                         </div>
                     </div>
                         
@@ -186,10 +159,6 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(5)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('design')?changePage(7):showChangePageAlert()" th:text="#{button.next}"></button>
-                        </div>
                     </div>
                         
                     <div id="question-page7"  class="question-page" data-page-display="flex">
@@ -208,10 +177,6 @@
                                 <label for="frontend-yes-2" th:text="#{option.frontend_yes_2}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
-                        </div>
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(6)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('frontend')?changePage(8):showChangePageAlert()" th:text="#{button.next}"></button>
                         </div>
                     </div>
                         
@@ -233,10 +198,6 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(7)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('backend')?changePage(9):showChangePageAlert()" th:text="#{button.next}"></button>
-                        </div>
                     </div>
                         
                     <div id="question-page9"  class="question-page" data-page-display="flex">
@@ -251,10 +212,6 @@
                                 <label for="infrastructure-yes" th:text="#{option.infrastructure_yes}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
-                        </div>
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(8)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('infrastructure')?changePage(10):showChangePageAlert()" th:text="#{button.next}"></button>
                         </div>
                     </div>
                         
@@ -274,10 +231,6 @@
                                 <label for="machine-learning-yes-2" th:text="#{option.machinelearning_yes_2}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
-                        </div>
-                        <div class="text-center mt-auto">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(9)" th:text="#{button.prev}"></button>
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('machinelearning')?changePage(11):showChangePageAlert()" th:text="#{button.next}"></button>
                         </div>
                     </div>
                     <div id="question-page11" style="display:none" data-page-display="block">
@@ -304,10 +257,17 @@
                         <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
                             <strong th:text="#{text.not_entered_alart}"></strong>
                         </div>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-secondary px-4 m-3" onclick="changePage(10)" th:text="#{button.prev}"></button>
-                            <button type="submit" class="btn btn-primary px-4 m-3" th:text="#{button.post_form}"></button>
-                        </div>
+                    </div>
+                    <div id="buttons-first" class="buttons text-center mt-auto">
+                        <button type="button" class="btn btn-primary px-4 m-3" onclick="nextPage()" th:text="#{button.next}"></button>
+                    </div>
+                    <div id="buttons-normal" class="buttons text-center mt-auto">
+                        <button type="button" class="btn btn-secondary px-4 m-3" onclick="prevPage()" th:text="#{button.prev}"></button>
+                        <button type="button" class="btn btn-primary px-4 m-3" onclick="nextPage()" th:text="#{button.next}"></button>
+                    </div>
+                    <div id="buttons-last" class="buttons text-center">
+                        <button type="button" class="btn btn-secondary px-4 m-3" onclick="prevPage()" th:text="#{button.prev}"></button>
+                        <button type="submit" class="btn btn-primary px-4 m-3" th:text="#{button.post_form}"></button>
                     </div>
                 </form>
                 

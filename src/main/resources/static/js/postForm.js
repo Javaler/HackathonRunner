@@ -1,26 +1,23 @@
 const changePageAlert = document.getElementById('change-page-alert');
 
-const changePage=(pageNum)=>{
-    changePageAlert.style.display = 'none';
-    const n=12;
-    for(let i=0;i<n;i++){
-        const questionPage=document.getElementById(`question-page${i}`);
-        questionPage.style.display='none';
-    }
-    const shownQuestionPage=document.getElementById(`question-page${pageNum}`);
-    shownQuestionPage.style.display=shownQuestionPage.dataset.pageDisplay;
+const firstPageButtons = document.getElementById('buttons-first');
+const middlePageButtons = document.getElementById('buttons-normal');
+const lastPageButtons = document.getElementById('buttons-last');
 
-    const progressBar=document.getElementById('progress-bar');
-    scrollTo(0,0);
-    progressBar.style.width=`${100*pageNum/n}%`;
-};
+let pageNumber = 0;
 
-const getRadiosByName = (name)=> {
-    return document.querySelectorAll(`.form-check-input[name=${name}]`);
+const endPageNumber = 12;
+
+const getPage = (pageNumber)=> {
+    return document.getElementById(`question-page${pageNumber}`);
 }
 
-const getRadioValue = (radioName)=> {
-    const radios = getRadiosByName(radioName);
+const getRadios = (pageNumber)=> {
+    return getPage(pageNumber).querySelectorAll('input[type=radio]');
+}
+
+const getRadioValue = (pageNumber)=> {
+    const radios = getRadios(pageNumber);
     for(const radio of radios) {
         if(radio.checked)
             return radio.value;
@@ -28,8 +25,65 @@ const getRadioValue = (radioName)=> {
     return null;
 }
 
-const showChangePageAlert = ()=> { 
-    changePageAlert.style.display = 'block';
+const getPageButtons = (pageNumber)=> {
+    switch(pageNumber) {
+        case 0:
+            return firstPageButtons;
+        case endPageNumber - 1:
+            return lastPageButtons;
+        default:
+            return middlePageButtons;
+    }
 }
 
-changePage(0);
+const showPageButtons = (pageNumber)=> {
+    for(const buttons of document.getElementsByClassName('buttons')) {
+        buttons.style.display = 'none';
+    }
+    getPageButtons(pageNumber).style.display = 'block';
+}
+
+const nextPage = ()=> {
+    if(getRadioValue(pageNumber) === null) {
+        changePageAlert.style.display = 'block';
+        return;
+    }
+    changePageAlert.style.display = 'none';
+
+    getPage(pageNumber).style.display = 'none';
+    const nextPageEl = getPage(++pageNumber);
+    console.log(nextPageEl);
+    nextPageEl.style.display = nextPageEl.dataset.pageDisplay;
+
+    showPageButtons(pageNumber);
+
+    const progressBar=document.getElementById('progress-bar');
+    scrollTo(0,0);
+    progressBar.style.width=`${100*pageNumber/endPageNumber}%`;
+}
+
+const prevPage = ()=> {
+    getPage(pageNumber).style.display = 'none';
+    const prevPageEl = getPage(--pageNumber);
+    prevPageEl.style.display = prevPageEl.dataset.pageDisplay;
+
+    showPageButtons(pageNumber);
+
+    const progressBar=document.getElementById('progress-bar');
+    scrollTo(0,0);
+    progressBar.style.width=`${100*pageNumber/endPageNumber}%`;
+}
+
+{
+    const firstPage = getPage(0);
+    firstPage.style.display = firstPage.dataset.pageDisplay;
+    showPageButtons(0);
+
+    const radios = document.querySelectorAll('input[type=radio]');
+
+    for(const radio of radios) {
+        radio.addEventListener('change',()=> {
+            getPageButtons(pageNumber).lastElementChild.focus();
+        });
+    }
+}
