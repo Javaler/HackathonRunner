@@ -23,7 +23,7 @@
             <div class="col-10 col-md-6 mx-auto">
                 <h4 class="mt-3">投稿</h4>
                 <div class="progress mb-5 bg-white">
-                    <div id="progress-bar" class="progress-bar" style="width:0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="progress-bar" class="progress-bar w-0" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <form class="needs-validated" th:action="@{/post}" th:object="${postForm}" method="post" novalidate>
                     <div id="question-page0" class="question-page" data-page-display="flex">
@@ -280,7 +280,7 @@
                             <button type="button" class="btn btn-primary px-4 m-3" onclick="getRadioValue('machinelearning')?changePage(11):showChangePageAlert()" th:text="#{button.next}"></button>
                         </div>
                     </div>
-                    <div id="question-page11" style="display:none" data-page-display="block">
+                    <div id="question-page11" class="d-none" data-page-display="block">
                         <div class="mb-3">
                             <label class="form-label" for="name" th:text="#{label.name}"></label>
                             <input class="form-control" id="name" type="text" name="name" th:placeholder="#{placeholder.name}"  maxlength="30" required/>
@@ -301,7 +301,7 @@
                             <textarea class="form-control" id="comment" name="comment" rows="3" th:placeholder="#{placeholder.comment}"  maxlength="90" required></textarea>
                             <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                         </div>
-                        <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
+                        <div class="alert alert-danger alert-dismissible fade show d-none" id="not-entered-alert" role="alert">
                             <strong th:text="#{text.not_entered_alart}"></strong>
                         </div>
                         <div class="text-center">
@@ -311,7 +311,7 @@
                     </div>
                 </form>
                 
-                <div class="alert alert-danger alert-dismissible fade show" id="change-page-alert" role="alert" style="display: none;">
+                <div class="alert alert-danger alert-dismissible fade show d-none" id="change-page-alert" role="alert">
                     <strong th:text="#{text.not_entered_alart}"></strong>
                 </div>
             </div>
