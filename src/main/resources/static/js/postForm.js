@@ -74,16 +74,16 @@ const prevPage = ()=> {
     progressBar.style.width=`${100*pageNumber/endPageNumber}%`;
 }
 
+// エンターキーを押されると、次のページに行く処理
+addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' && pageNumber !== endPageNumber-1) {
+        e.preventDefault();
+        nextPage();
+    }
+});
+
 {
     const firstPage = getPage(0);
     firstPage.style.display = firstPage.dataset.pageDisplay;
     showPageButtons(0);
-
-    const radios = document.querySelectorAll('input[type=radio]');
-
-    for(const radio of radios) {
-        radio.addEventListener('change',()=> {
-            getPageButtons(pageNumber).lastElementChild.focus();
-        });
-    }
 }
