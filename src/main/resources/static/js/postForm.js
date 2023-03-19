@@ -4,6 +4,9 @@ const firstPageButtons = document.getElementById('buttons-first');
 const middlePageButtons = document.getElementById('buttons-normal');
 const lastPageButtons = document.getElementById('buttons-last');
 
+const progressBar=document.getElementById('progress-bar');
+
+
 let pageNumber = 0;
 
 const endPageNumber = 12;
@@ -57,7 +60,6 @@ const nextPage = ()=> {
 
     showPageButtons(pageNumber);
 
-    const progressBar=document.getElementById('progress-bar');
     scrollTo(0,0);
     progressBar.style.width=`${100*pageNumber/endPageNumber}%`;
 }
@@ -87,3 +89,7 @@ addEventListener('keydown', (e)=>{
     firstPage.style.display = firstPage.dataset.pageDisplay;
     showPageButtons(0);
 }
+
+
+// 一度progressBarのwidthを変更しておかないと、アニメーションされない。
+progressBar.style.width='0%';
