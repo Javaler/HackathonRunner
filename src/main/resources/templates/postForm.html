@@ -26,7 +26,7 @@
                     <div id="progress-bar" class="progress-bar w-0" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <form class="needs-validated" th:action="@{/post}" th:object="${postForm}" method="post" novalidate>
-                    <div id="question-page0" class="question-page" data-page-display="flex">
+                    <div id="question-page0" class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.hackathon}"></p>
                             <div class="form-check">
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="question-page1"  class="question-page" data-page-display="flex">
+                    <div id="question-page1"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.team}"></p>
                             <div class="form-check">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     
-                    <div id="question-page2"  class="question-page" data-page-display="flex">
+                    <div id="question-page2"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.portfolio}"></p>
                             <div class="form-check">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="question-page3"  class="question-page" data-page-display="flex">
+                    <div id="question-page3"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.git}"></p>
                             <div class="form-check">
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                         
-                    <div id="question-page4"  class="question-page" data-page-display="flex">
+                    <div id="question-page4"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.movie}"></p>
                             <div class="form-check">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                         
-                    <div id="question-page5"  class="question-page" data-page-display="flex">
+                    <div id="question-page5"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.presentation}"></p>
                             <div class="form-check">
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                         
-                    <div id="question-page6"  class="question-page" data-page-display="flex">
+                    <div id="question-page6"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.design}"></p>
                             <div class="form-check">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                         
-                    <div id="question-page7"  class="question-page" data-page-display="flex">
+                    <div id="question-page7"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.frontend}"></p>
                             <div class="form-check">
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                         
-                    <div id="question-page8"  class="question-page" data-page-display="flex">
+                    <div id="question-page8"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.backend}"></p>
                             <div class="form-check">
@@ -200,7 +200,7 @@
                         </div>
                     </div>
                         
-                    <div id="question-page9"  class="question-page" data-page-display="flex">
+                    <div id="question-page9"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.infrastructure}"></p>
                             <div class="form-check">
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                         
-                    <div id="question-page10"  class="question-page" data-page-display="flex">
+                    <div id="question-page10"  class="question-page question-page-select" data-page-display="flex">
                         <div class="p-3 w-75 mx-auto bg-white rounded">
                             <p th:text="#{label.machinelearning}"></p>
                             <div class="form-check">
@@ -233,7 +233,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="question-page11" class="d-none" data-page-display="block">
+                    <div id="question-page11" class="question-page" data-page-display="block">
                         <div class="mb-3">
                             <label class="form-label" for="name" th:text="#{label.name}"></label>
                             <input class="form-control" id="name" type="text" name="name" th:placeholder="#{placeholder.name}"  maxlength="30" required/>
@@ -271,7 +271,7 @@
                     </div>
                 </form>
                 
-                <div class="alert alert-danger alert-dismissible fade show d-none" id="change-page-alert" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" id="change-page-alert" role="alert">
                     <strong th:text="#{text.not_entered_alart}"></strong>
                 </div>
             </div>
