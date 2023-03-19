@@ -4,6 +4,13 @@
 
 .question-page {
     display: none;
-    min-height: 60vh;
+}
+
+.question-page-select {
+    min-height: 50vh;
     flex-direction: column;
+}
+
+#change-page-alert {
+    display: none;
 }
