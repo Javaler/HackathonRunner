@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -25,7 +26,10 @@ import lombok.RequiredArgsConstructor;
 public class PostService {
 
     private final PostRepository postRepository;
-    private static final String API_REQUEST_URL = "https://hackathonrunner-test-api.herokuapp.com/hr-api/";
+    private static final String API_REQUEST_URL = "https://hackathonrunner-analysis-api.azurewebsites.net/api/hello?code=IthH2RAQ_z3DRtzglmAVSnPPI5p8NER2vJFZN3ucy0NpAzFuzYtrmw%3D%3D";
+
+    @Value("${azure.functions.master-key}")
+    private String MASTER_KEY;
 
     public List<Post> createRecommendPostList(QuestionForm questionForm) {
 
@@ -41,6 +45,7 @@ public class PostService {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.add("x-functions-key", MASTER_KEY);
 
         HttpEntity<QuestionForm> entity = new HttpEntity<>(questionForm, headers);
 
