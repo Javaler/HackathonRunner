@@ -8,24 +8,26 @@
     <!--bootstrap css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/bootstrap_hackathon_runner_theme_color.css}"/>
+    <link rel="stylesheet" th:href="@{/css/postForm.css}"/>
 
     <link rel="icon" th:href="@{/icons/favicon.ico}" id="favicon">
     <link rel="apple-touch-icon" sizes="180x180" th:href="@{/icons/app_icon.svg}">
 </head>
-<body class="bg-light">
+<body class="bg-form">
     <nav th:replace="fragments :: navbar_area"></nav>
 
-    <h1 class="text-center mt-5" th:text="#{text.postform_header}"></h1>
+    <!--<h1 class="text-center mt-5" th:text="#{text.postform_header}"></h1>-->
 
     <div class="container">
         <div class="row">
-            <div class="col-10 col-md-6 mx-auto">
-                <div class="progress my-5">
-                    <div id="progress-bar" class="progress-bar" style="width:0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="col-10 col-md-4 mx-auto">
+                <h4 class="mt-3">投稿</h4>
+                <div class="progress mb-5 bg-white">
+                    <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <form class="needs-validated" th:action="@{/post}" th:object="${postForm}" method="post" novalidate>
-                    <div id="question-page0">
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    <div id="question-page0" class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.hackathon}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input" id="hackathon-no" value="0" name="hackathon" required/>
@@ -41,7 +43,9 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                    <div id="question-page1"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.team}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input" required id="team-no" value="0" name="team"/>
@@ -57,7 +61,10 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                    
+                    <div id="question-page2"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.portfolio}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="deliverable-no" value="0" name="portfolio"/>
@@ -77,7 +84,9 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                    <div id="question-page3"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.git}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="git-no" value="0" name="git"/>
@@ -101,7 +110,10 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                        
+                    <div id="question-page4"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.movie}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="movie-no" value="0" name="movie"/>
@@ -113,7 +125,10 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                        
+                    <div id="question-page5"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.presentation}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="presentation-no" value="0" name="presentation"/>
@@ -121,11 +136,14 @@
                             </div>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="presentation-yes" value="1" name="presentation"/>
-                                <label for="presentation-yes" th:text="#{option.yes}"></label>
+                                <label for="presentation-yes" th:text="#{option.presentation_yes}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                        
+                    <div id="question-page6"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.design}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="design-no" value="0" name="design"/>
@@ -141,7 +159,10 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                        
+                    <div id="question-page7"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.frontend}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="frontend-no" value="0" name="frontend"/>
@@ -157,19 +178,30 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                        
+                    <div id="question-page8"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.backend}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="backend-no" value="0" name="backend"/>
                                 <label for="backend-no" th:text="#{option.no}"></label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" class="form-check-input"  required id="backend-yes" value="1" name="backend"/>
-                                <label for="backend-yes" th:text="#{option.backend_yes}"></label>
+                                <input type="radio" class="form-check-input"  required id="backend-yes-1" value="1" name="backend"/>
+                                <label for="backend-yes-1" th:text="#{option.backend_yes_1}"></label>
+                                <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input"  required id="backend-yes-2" value="2" name="backend"/>
+                                <label for="backend-yes-1" th:text="#{option.backend_yes_2}"></label>
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                        
+                    <div id="question-page9"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.infrastructure}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="infrastructure-no" value="0" name="infrastructure"/>
@@ -181,7 +213,10 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="my-3 p-3 border border-light bg-white bg-white rounded">
+                    </div>
+                        
+                    <div id="question-page10"  class="question-page question-page-select" data-page-display="flex">
+                        <div class="p-3 w-100 mx-auto bg-white rounded">
                             <p th:text="#{label.machinelearning}"></p>
                             <div class="form-check">
                                 <input type="radio" class="form-check-input"  required id="machine-learning-no" value="0" name="machinelearning"/>
@@ -197,11 +232,9 @@
                                 <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary px-4 mb-5" onclick="changePage(1)" th:text="#{button.next}"></button>
-                        </div>
                     </div>
-                    <div id="question-page1" style="display:none">
+
+                    <div id="question-page11" class="question-page" data-page-display="block">
                         <div class="mb-3">
                             <label class="form-label" for="name" th:text="#{label.name}"></label>
                             <input class="form-control" id="name" type="text" name="name" th:placeholder="#{placeholder.name}"  maxlength="30" required/>
@@ -222,15 +255,26 @@
                             <textarea class="form-control" id="comment" name="comment" rows="3" th:placeholder="#{placeholder.comment}"  maxlength="90" required></textarea>
                             <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                         </div>
-                        <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
+                        <div class="alert alert-danger alert-dismissible fade show d-none" id="not-entered-alert" role="alert">
                             <strong th:text="#{text.not_entered_alart}"></strong>
                         </div>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary px-4 m-3" onclick="changePage(0)" th:text="#{button.prev}"></button>
-                            <button type="submit" class="btn btn-primary px-4 m-3" th:text="#{button.post_form}"></button>
-                        </div>
+                    </div>
+                    <div id="buttons-first" class="buttons text-center mt-auto">
+                        <button type="button" class="btn btn-primary px-4 m-3" onclick="nextPage()" th:text="#{button.next}"></button>
+                    </div>
+                    <div id="buttons-normal" class="buttons text-center mt-auto">
+                        <button type="button" class="btn btn-secondary px-4 m-3" onclick="prevPage()" th:text="#{button.prev}"></button>
+                        <button type="button" class="btn btn-primary px-4 m-3" onclick="nextPage()" th:text="#{button.next}"></button>
+                    </div>
+                    <div id="buttons-last" class="buttons text-center">
+                        <button type="button" class="btn btn-secondary px-4 m-3" onclick="prevPage()" th:text="#{button.prev}"></button>
+                        <button type="submit" class="btn btn-primary px-4 m-3" th:text="#{button.post_form}"></button>
                     </div>
                 </form>
+                
+                <div class="alert alert-danger alert-dismissible fade show" id="change-page-alert" role="alert">
+                    <strong th:text="#{text.not_entered_alart}"></strong>
+                </div>
             </div>
         </div>
     </div>

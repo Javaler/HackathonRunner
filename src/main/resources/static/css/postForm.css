@@ -1,0 +1,16 @@
+.bg-form{
+    background-color: #FFD5A4;
+}
+
+.question-page {
+    display: none;
+}
+
+.question-page-select {
+    min-height: 50vh;
+    flex-direction: column;
+}
+
+#change-page-alert {
+    display: none;
+}

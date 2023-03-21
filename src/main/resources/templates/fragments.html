@@ -17,13 +17,23 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item me-3">
-                        <a class="nav-link active fs-5" th:href="@{/showQuestion}">診断</a>
+                        <a class="nav-link active fs-5" th:href="@{/showQuestion}" th:text="#{text.questionform_header}"></a>
                     </li>
-                    <li class="nav-item me-3">
-                        <a class="nav-link active fs-5" th:href="@{/showPostForm}">投稿</a>
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link active fs-5 dropdown-toggle" href="#" id="navbarDropdownPost" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{dropdown.text.post}"></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownPost">
+                            <li><a class="dropdown-item" th:href="@{/showPostForm}" th:text="#{dropdown.menu.post}"></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" th:href="@{/showPostList}" th:text="#{dropdown.menu.postlist}"></a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active fs-5" th:href="@{/showRecruitmentForm}">募集</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active fs-5 dropdown-toggle" href="#" id="navbarDropdownRecruitment" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="#{dropdown.text.recruitment}"></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownRecruitment">
+                            <li><a class="dropdown-item" th:href="@{/showRecruitmentForm}" th:text="#{dropdown.menu.recruitment}"></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" th:href="@{/showRecruitmentList}" th:text="#{dropdown.menu.recruitmentlist}"></a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>チームメンバー募集フォーム - HackathonRunner</title>
+    <title th:text="#{title.recruitment_form}"></title>
 
     <!-- jQuery UI -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -20,31 +20,31 @@
 <body class="bg-light">
     <nav th:replace="fragments :: navbar_area"></nav>
 
-    <h1 class="text-center m-5">チームメンバー募集</h1>
+    <h1 class="text-center m-5" th:text="#{text.recruitment_header}"></h1>
 
     <div class="container">
         <div class="row">
             <div class="col-10 col-md-6 mx-auto">
                 <form class="needs-validated" th:action="@{/createRecruitment}" method="post" novalidate>
                     <div class="mb-3">
-                        <label class="form-label" for="name">募集者名</label>
+                        <label class="form-label" for="name" th:text="#{label.recruiter_name}"></label>
                         <input class="form-control" type="text" name="name" th:placeholder="#{placeholder.name}"  maxlength="30" required/>
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="event">参加したいハッカソン</label>
+                        <label class="form-label" for="event" th:text="#{label.eventInfo}"></label>
                         <textarea class="form-control" name="eventInfo" rows="3" placeholder="JPHACKS 2022 https://jphacks.com/"  maxlength="90" required></textarea>
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="comment" th:text="#{label.comment}"></label>
-                        <textarea class="form-control" name="comment" rows="3" placeholder="バックエンドを担当するので、フロントエンドのつよつよを募集してます！"  maxlength="90" required></textarea>
+                        <textarea class="form-control" name="comment" rows="3" th:placeholder="#{placeholder.recruitment_comment}"  maxlength="90" required></textarea>
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="memberNum">募集人数</label>
+                        <label class="form-label" for="memberNum" th:text="#{label.memberNum}"></label>
                         <select class="form-select" name="memberNum" required>
-                            <option value="" class="selected disabled">選択して下さい</option>
+                            <option value="" class="selected disabled" th:text="#{dropdown.memberNum_choice}"></option>
                             <option th:value="1">1</option>
                             <option th:value="2">2</option>
                             <option th:value="3">3</option>
@@ -54,20 +54,20 @@
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="deadline">締切日</label>
+                        <label class="form-label" for="deadline" th:text="#{label.deadline}"></label>
                         <input type="text" class="form-control" id="datePicker" name="deadline" placeholder="yyyy/MM/dd" required/>
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="work">連絡手段</label>
-                        <textarea class="form-control" name="contactInfo" rows="3" placeholder="TwitterのURLなど、チームに応募してきた人との連絡を取る手段"  maxlength="90" required></textarea>
+                        <label class="form-label" for="work" th:text="#{label.contactInfo}"></label>
+                        <textarea class="form-control" name="contactInfo" rows="3" th:placeholder="#{placeholder.contactInfo_comment}"  maxlength="90" required></textarea>
                         <div class="invalid-feedback" th:text="#{text.invalid_feedback}"></div>
                     </div>
                     <div class="alert alert-danger alert-dismissible fade show" id="not-entered-alert" role="alert" style="display: none;">
                         <strong th:text="#{text.not_entered_alart}"></strong>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary px-4 mt-3 mb-5">募集開始</button>
+                        <button type="submit" class="btn btn-primary px-4 mt-3 mb-5" th:text="#{button.start_recruit}"></button>
                     </div>
                 </form>
             </div>

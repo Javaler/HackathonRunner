@@ -66,247 +66,212 @@
             <a class="btn rounded-pill btn-primary mx-2 btn-lg text-center" th:href="@{/showRecruitmentForm}">募集する</a>
         </div>
     </div>
-    <div class="w-75 mx-auto my-5">
-        <ul class="nav nav-tabs nav-fill justify-content-center">
-            <li class="nav-item">
-            <a class="fs-3 nav-link active" href="#post" id="tab1" role="tab" data-bs-toggle="tab" aria-selected="true">これまでの投稿</a>
-            </li>
-            <li class="nav-item">
-            <a class="fs-3 nav-link" href="#recruitment" id="tab2" role="tab" data-bs-toggle="tab" aria-selected="false">メンバー募集一覧</a>
-            </li>
-        </ul>
+    <div class="w-75 text-center mx-auto my-5">
+        <p class="fs-3">これまでの投稿</p>
+        <hr class="bg-primary">
     </div>
-    <div class="tab-content">
-        <div class="tab-pane active" id="post" role="tabpanel" aria-labelledby="tab1">
-            <!-- Button trigger modal -->
-            <div class="w-75 mx-auto my-4">
-                <div class="text-end m-2">
-                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filterModal">
-                        <i class="bi bi-funnel"></i>
-                        <span th:text="#{button.filter}"></span>
-                    </button>
-                </div>
-            </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="filterModalLabel" th:text="#{text.filter}"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form th:action="@{/}" method="post" th:object="${postQuery}">
-                            <div class="modal-body">
-                                <div class="my-3">
-                                    <label for="select-hackathon" th:text="#{label.hackathon}"></label>
-                                    <select class="form-select" name="hackathon" id="select-hackathon">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{hackathon}" th:selected="${hackathon == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{hackathon}" th:selected="${hackathon == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.hackathon_yes_1}" th:field="*{hackathon}" th:selected="${hackathon == 1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="2" th:text="#{option.hackathon_yes_2}" th:field="*{hackathon}" th:selected="${hackathon == 2 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-team" th:text="#{label.team}"></label>
-                                    <select class="form-select" name="team" id="select-team">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{team}" th:selected="${team == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{team}" th:selected="${team == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.team_yes_1}" th:field="*{team}" th:selected="${team == 1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="2" th:text="#{option.team_yes_2}" th:field="*{team}" th:selected="${team == 2 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-portfolio" th:text="#{label.portfolio}"></label>
-                                    <select class="form-select" name="portfolio" id="select-portfolio">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{portfolio}" th:selected="${portfolio == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{portfolio}" th:selected="${portfolio == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.portfolio_yes_1}" th:field="*{portfolio}" th:selected="${portfolio == 1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="2" th:text="#{option.portfolio_yes_2}" th:field="*{portfolio}" th:selected="${portfolio == 2 ? 'true' : 'flase'}"></option>
-                                        <option th:value="3" th:text="#{option.portfolio_yes_3}" th:field="*{portfolio}" th:selected="${portfolio == 3 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-git" th:text="#{label.git}"></label>
-                                    <select class="form-select" name="git" id="select-git">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{git}" th:selected="${git == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{git}" th:selected="${git == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.git_yes_1}" th:field="*{git}" th:selected="${git == 1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="2" th:text="#{option.git_yes_2}" th:field="*{git}" th:selected="${git == 2 ? 'true' : 'flase'}"></option>
-                                        <option th:value="3" th:text="#{option.git_yes_3}" th:field="*{git}" th:selected="${git == 3 ? 'true' : 'flase'}"></option>
-                                        <option th:value="4" th:text="#{option.git_yes_4}" th:field="*{git}" th:selected="${git == 4 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-movie" th:text="#{label.movie}"></label>
-                                    <select class="form-select" name="movie" id="select-movie">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{movie}" th:selected="${movie == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{movie}" th:selected="${movie == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.yes}" th:field="*{movie}" th:selected="${movie == 1 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-presentation" th:text="#{label.presentation}"></label>
-                                    <select class="form-select" name="presentation" id="select-presentation">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{presentation}" th:selected="${presentation == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{presentation}" th:selected="${presentation == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.yes}" th:field="*{presentation}" th:selected="${presentation == 1 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-design" th:text="#{label.design}"></label>
-                                    <select class="form-select" name="design" id="select-design">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{design}" th:selected="${design == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{design}" th:selected="${design == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.design_yes_1}" th:field="*{design}" th:selected="${design == 1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="2" th:text="#{option.design_yes_2}" th:field="*{design}" th:selected="${design == 2 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-frontend" th:text="#{label.frontend}"></label>
-                                    <select class="form-select" name="frontend" id="select-frontend">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{frontend}" th:selected="${frontend == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{frontend}" th:selected="${frontend == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.frontend_yes_1}" th:field="*{frontend}" th:selected="${frontend == 1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="2" th:text="#{option.frontend_yes_2}" th:field="*{frontend}" th:selected="${frontend == 2 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-backend" th:text="#{label.backend}"></label>
-                                    <select class="form-select" name="backend" id="select-backend">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{backend}" th:selected="${backend == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{backend}" th:selected="${backend == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.backend_yes}" th:field="*{backend}" th:selected="${backend == -1 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-infrastructure" th:text="#{label.infrastructure}"></label>
-                                    <select class="form-select" name="infrastructure" id="select-infrastructure">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{infrastructure}" th:selected="${infrastructure == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{infrastructure}" th:selected="${infrastructure == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.infrastructure_yes}" th:field="*{infrastructure}" th:selected="${infrastructure == 1 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <label for="select-machinelearning" th:text="#{label.machinelearning}"></label>
-                                    <select class="form-select" name="machinelearning" id="select-machinelearning">
-                                        <option th:value="-1" th:text="#{option.not_select}" th:field="*{machinelearning}" th:selected="${machinelearning == -1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="0" th:text="#{option.no}" th:field="*{machinelearning}" th:selected="${machinelearning == 0 ? 'true' : 'flase'}"></option>
-                                        <option th:value="1" th:text="#{option.machinelearning_yes_1}" th:field="*{machinelearning}" th:selected="${machinelearning == 1 ? 'true' : 'flase'}"></option>
-                                        <option th:value="2" th:text="#{option.machinelearning_yes_2}" th:field="*{machinelearning}" th:selected="${machinelearning == 2 ? 'true' : 'flase'}"></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" th:text="#{button.cancel}"></button>
-                                <button type="submit" th:formaction="@{/}" class="btn btn-primary" th:text="#{button.apply}"></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <form th:action="@{/}" method="get">
-                <div class="list-group w-75 mx-auto my-4" th:each="post : ${postList}">
-                    <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
-                        <div class="my-3">
-                            <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-                            <span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
-                        </div>
-                        <div class="container my-3">
-                            <div class="row my-2" th:switch="${post.hackathon}">
-                                <div class="col-9 col-sm-6 my-1">
-                                    <p class="fw-bold" th:text="#{text.hackathon}"></p>
-                                </div>
-                                <div class="col-15 col-sm-6 my-1">
-                                    <p th:case="0" th:text="#{option.no}"></p>
-                                    <p th:case="1" th:text="#{option.hackathon_yes_1}"></p>
-                                    <p th:case="2" th:text="#{option.hackathon_yes_2}"></p>
-                                </div>
-                            </div>
-                            <div class="row my-2" th:switch="${post.portfolio}">
-                                <div class="col-12 col-sm-6 my-1">
-                                    <p class="fw-bold" th:text="#{text.portfolio}"></p>
-                                </div>
-                                <div class="col-12 col-sm-6 my-1">
-                                    <p th:case="0" th:text="#{option.no}"></p>
-                                    <p th:case="1" th:text="#{option.portfolio_yes_1}"></p>
-                                    <p th:case="2" th:text="#{option.portfolio_yes_2}"></p>
-                                    <p th:case="3" th:text="#{option.portfolio_yes_3}"></p>
-                                </div>
-                            </div>
-                            <div class="row my-2">
-                                <div class="col-12 col-sm-6 my-1">
-                                    <p class="fw-bold" th:text="#{label.event}"></p>
-                                </div>
-                                <div class="col-12 col-sm-6 my-1">
-                                    <p th:text="${post.event}"></p>
-                                </div>
-                            </div>
-                            <div class="row my-2">
-                                <div class="col-12 col-sm-6 my-1">
-                                    <p class="fw-bold" th:text="#{label.work}"></p>
-                                </div>
-                                <div class="col-12 col-sm-6 my-1">
-                                    <p th:text="${post.work}"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-            </form>
+    <!-- bootstrap Carousel -->
+    <!-- Post -->
+    <div id="carouselExampleIndicators1" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-
-        <div class="tab-pane" id="recruitment" role="tabpanel" aria-labelledby="tab2">
-            <div class="list-group w-75 mx-auto my-4" th:each="recruitment : ${recruitmentList}" th:if="${#dates.format(recruitment.deadline, 'yyyy/MM/dd') ge #dates.format(#dates.createNow(), 'yyyy/MM/dd')}">
-                <div class="list-group-item">
-                    <div class="container my-3">
-                        <div class="row">
-                            <div class="col-12 col-sm-6">
+        <!-- Post -->
+        <form th:action="@{/}" method="get">
+            <div class="carousel-inner">
+                <div th:if="${status.index} == 0" class="carousel-item active" th:each="post, status : ${postList}">
+                    <div class="list-group w-75 mx-auto my-4">
+                        <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
+                            <div class="my-3">
                                 <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
-                                <span class="fw-bold fs-3 ms-2" th:text="${recruitment.name}"></span>
+                                <span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
                             </div>
-                            <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
-                                <p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
-                                    <span th:text="${#dates.format(recruitment.deadline, 'yyyy/MM/dd')}"></span>まで募集中！
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-9 col-sm-6">
-                                <p class="fw-bold">参加したいハッカソン</p>
-                            </div>
-                            <div class="col-15 col-sm-6" th:text="${recruitment.eventInfo}"></div>
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-9 col-sm-6">
-                                <p class="fw-bold">一言コメント</p>
-                            </div>
-                            <div class="col-15 col-sm-6" th:text="${recruitment.comment}"></div>
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-9 col-sm-6">
-                                <p class="fw-bold">募集人数</p>
-                            </div>
-                            <div class="col-15 col-sm-6">
-                                <span th:text="${recruitment.memberNum}"></span>人
-                            </div>
-                        </div>
-                        <div class="contact-row row my-3">
-                            <div class="col-9 col-sm-6">
-                                <p class="fw-bold">連絡先</p>
-                            </div>
-                            <div class="col-15 col-sm-6" th:text="${recruitment.contactInfo}"></div>
-                        </div>
+                            <table class="table table-borderless">
+                                <tr th:switch="${post.hackathon}">
+                                    <th class="w-50" th:text="#{text.hackathon}"></th>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.hackathon_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.hackathon_yes_2}"></td>
+                                </tr>
+                                <tr th:switch="${post.portfolio}">
+                                    <th class="w-50" th:utext="#{text.portfolio}"></th>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.portfolio_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.portfolio_yes_2}"></td>
+                                    <td th:case="3" th:text="#{option.portfolio_yes_3}"></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-50" th:text="#{label.event}"></th>
+                                    <td th:text="${post.event}"></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-50" th:text="#{label.work}"></th>
+                                    <td th:text="${post.work}"></td>
+                                </tr>
+                            </table>
+                        </button>
                     </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center popover-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
+                </div>
+                <div th:if="${status.index} != 0" class="carousel-item" th:each="post, status : ${postList}">
+                    <div class="list-group w-75 mx-auto my-4">
+                        <button type="submit" th:formaction="@{/Post/__${post.id}__}" class="list-group-item list-group-item-action">
+                            <div class="my-3">
+                                <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                                <span class="fw-bold fs-3 ms-2" th:text="${post.name}"></span>
+                            </div>
+                            <table class="table table-borderless">
+                                <tr th:switch="${post.hackathon}">
+                                    <th class="w-50" th:text="#{text.hackathon}"></th>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.hackathon_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.hackathon_yes_2}"></td>
+                                </tr>
+                                <tr th:switch="${post.portfolio}">
+                                    <th class="w-50" th:utext="#{text.portfolio}"></th>
+                                    <td th:case="0" th:text="#{option.no}"></td>
+                                    <td th:case="1" th:text="#{option.portfolio_yes_1}"></td>
+                                    <td th:case="2" th:text="#{option.portfolio_yes_2}"></td>
+                                    <td th:case="3" th:text="#{option.portfolio_yes_3}"></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-50" th:text="#{label.event}"></th>
+                                    <td th:text="${post.event}"></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-50" th:text="#{label.work}"></th>
+                                    <td th:text="${post.work}"></td>
+                                </tr>
+                            </table>
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-secondary" aria-hidden="false"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="text-center">
+        <a class="btn rounded-pill mb-5 btn-primary btn-lg" th:href="@{/showPostList}">もっと見る</a>
     </div>
 
+    <!-- Recruitment -->
+    <div class="w-75 text-center mx-auto my-5">
+        <p class="fs-3">チームメンバー募集</p>
+        <hr class="bg-primary">
+    </div>
+    <div id="carouselExampleIndicators2" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <form th:action="@{/}" method="get">
+            <div class="carousel-inner">
+                <div th:if="${status.index} == 0" class="carousel-item active" th:each="recruitment, status : ${recruitmentList}">
+                    <div class="list-group w-75 mx-auto my-4">
+                        <div class="list-group-item list-group-item-action">
+                            <div class="container my-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                                        <span class="fw-bold fs-3 ms-2" th:text="${recruitment.name}"></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
+                                            <span th:text="${recruitment.deadline}"></span>
+                                            まで募集中！
+                                        </p>
+                                    </div>
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.eventInfo}"></th>
+                                            <td th:text="${recruitment.eventInfo}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.comment}"></th>
+                                            <td th:text="${recruitment.comment}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.memberNum}"></th>
+                                            <td th:text="${recruitment.memberNum} + 人"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.contactInfo}"></th>
+                                            <td th:text="${recruitment.contactInfo}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center popover-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${status.index} != 0" class="carousel-item" th:each="recruitment, status : ${recruitmentList}">
+                    <div class="list-group w-75 mx-auto my-4">
+                        <div class="list-group-item list-group-item-action">
+                            <div class="container my-3">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img th:src="@{/icons/app_icon.svg}" class="rounded-circle" width="56px" height="56px"/>
+                                        <span class="fw-bold fs-3 ms-2" th:text="${recruitment.name}"></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6 d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <p class="my-3 d-flex btn-lg text-center border border-1 border-primary">
+                                            <span th:text="${recruitment.deadline}"></span>
+                                            まで募集中！
+                                        </p>
+                                    </div>
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.eventInfo}"></th>
+                                            <td th:text="${recruitment.eventInfo}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.comment}"></th>
+                                            <td th:text="${recruitment.comment}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.memberNum}"></th>
+                                            <td th:text="${recruitment.memberNum} + 人"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="w-50" th:text="#{label.contactInfo}"></th>
+                                            <td th:text="${recruitment.contactInfo}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-outline-primary mx-2 btn-lg text-center popover-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom" data-bs-content="連絡先から募集者と連絡を取ろう！">応募する</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-secondary" aria-hidden="false"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="text-center">
+        <a class="btn rounded-pill mb-5 btn-primary btn-lg" th:href="@{/showRecruitmentList}">もっと見る</a>
+    </div>
 
     <!--bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
