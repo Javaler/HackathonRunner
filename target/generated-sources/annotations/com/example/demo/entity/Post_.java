@@ -9,9 +9,12 @@ import javax.persistence.metamodel.StaticMetamodel;
 public abstract class Post_ {
 
 	public static volatile SingularAttribute<Post, Integer> movie;
-	public static volatile SingularAttribute<Post, String> work;
+	public static volatile SingularAttribute<Post, String> workLink;
 	public static volatile SingularAttribute<Post, Integer> team;
+	public static volatile SingularAttribute<Post, String> eventLink;
 	public static volatile SingularAttribute<Post, Integer> presentation;
+	public static volatile SingularAttribute<Post, String> workInfo;
+	public static volatile SingularAttribute<Post, String> eventInfo;
 	public static volatile SingularAttribute<Post, Integer> git;
 	public static volatile SingularAttribute<Post, Integer> portfolio;
 	public static volatile SingularAttribute<Post, Integer> infrastructure;
@@ -22,13 +25,15 @@ public abstract class Post_ {
 	public static volatile SingularAttribute<Post, Integer> backend;
 	public static volatile SingularAttribute<Post, String> comment;
 	public static volatile SingularAttribute<Post, Integer> id;
-	public static volatile SingularAttribute<Post, String> event;
 	public static volatile SingularAttribute<Post, Integer> frontend;
 
 	public static final String MOVIE = "movie";
-	public static final String WORK = "work";
+	public static final String WORK_LINK = "workLink";
 	public static final String TEAM = "team";
+	public static final String EVENT_LINK = "eventLink";
 	public static final String PRESENTATION = "presentation";
+	public static final String WORK_INFO = "workInfo";
+	public static final String EVENT_INFO = "eventInfo";
 	public static final String GIT = "git";
 	public static final String PORTFOLIO = "portfolio";
 	public static final String INFRASTRUCTURE = "infrastructure";
@@ -39,7 +44,6 @@ public abstract class Post_ {
 	public static final String BACKEND = "backend";
 	public static final String COMMENT = "comment";
 	public static final String ID = "id";
-	public static final String EVENT = "event";
 	public static final String FRONTEND = "frontend";
 
 }
