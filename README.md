@@ -11,17 +11,17 @@
 - 選択式の質問約10個に回答すると、ハッカソンに対する技術レベルを診断し、「ハッカソンまでに何を準備しておけば良いか」や「ハッカソンでどう振る舞えば良いか」といった提案をする
 - [HackathonRunner-Analysis-API](https://github.com/Javaler/HackathonRunner-Analysis-API) を叩いて、同じような技術レベルの人の投稿（どんなハッカソンに参加したかなど）を取得・表示する
 - ハッカソンに対する技術レベルをチャートで表示する
-
+- 使用時の画面(2022年10月時点)
 <img src="https://user-images.githubusercontent.com/79685987/197223472-e6814061-015a-48e1-a347-02e690979ba6.mp4">
 
 ### 投稿機能
 - 投稿の新規作成、一覧表示、詳細表示、検索
-
+- 使用時の画面(2022年10月時点)
 <img src="https://user-images.githubusercontent.com/79685987/197227396-ac8907ca-91b9-480f-9b52-e4ebb2113861.mp4">
 
 ### チームメンバー募集機能
 - 開発仲間やハッカソンに一緒に参加できる人を集めるための投稿、表示
-
+- 使用時の画面(2022年10月時点)
 <img src="https://user-images.githubusercontent.com/79685987/197318073-827d3bae-7763-48c1-9e3f-ac4df6ddc05c.mp4">
 
 ## 使用技術(ツール)一覧
@@ -38,7 +38,7 @@
     - **Spring Boot**
     - **[HackathonRunner-Analysis-API](https://github.com/Javaler/HackathonRunner-Analysis-API)**
 - **インフラ**
-  - **Azure app service**
+  - **Azure App Service**
   - **Azure Database for PostgreSQL**
 - **バージョン/ソースコード管理**
   - **Git, GitHub**
