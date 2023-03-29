@@ -48,3 +48,23 @@
   - digrams.net(クラス図)
   - Figma(ワイヤーフレーム, プロトタイプ, アプリアイコン)
   - Notion(ドキュメント)
+
+## 役割分担
+- **リーダー・マネジメント(ドキュメント、タスク等)**
+  1. kmusicsports - Naoki Kajitani
+- **デザイン**
+  1. IkedaAkihira - Ikeda Akihira
+  2. Utricularor
+  3. kmusicsports - Naoki Kajitani
+- **フロントエンド**
+  1. IkedaAkihira - Ikeda Akihira
+  2. kmusicsports - Naoki Kajitani
+  3. Utricularor
+- **バックエンド**
+  1. kmusicsports - Naoki Kajitani
+  2. YutaSugino - Yut@
+- **インフラ**
+  1. YutaSugino - Yut@
+- **類似ユーザーの投稿推薦API([HackathonRunner-Analysis-API](https://github.com/Javaler/HackathonRunner-Analysis-API))**
+  1. Utricularor
+
