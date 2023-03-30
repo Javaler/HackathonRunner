@@ -3,7 +3,7 @@
 
 <img src="https://user-images.githubusercontent.com/79685987/197310366-d45ea75e-e970-441c-88f5-f57601a65ef6.jpg">
 
-**URL**: ~~[https://hackathonrunner.azurewebsites.net](https://hackathonrunner.azurewebsites.net)~~
+**URL(公開終了)**: ~~[https://hackathonrunner.azurewebsites.net](https://hackathonrunner.azurewebsites.net)~~
 
 ## 仕様/機能一覧
 
