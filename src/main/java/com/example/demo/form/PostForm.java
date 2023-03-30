@@ -40,8 +40,10 @@ public class PostForm {
         post.setMachinelearning(machinelearning);
         post.setPortfolio(portfolio);
         post.setPresentation(presentation);
-        post.setWork(work);
-        post.setEvent(event);
+        post.setWorkInfo(work);
+        post.setEventInfo(event);
+        post.setWorkLink(work);
+        post.setEventLink(event);
         post.setComment(comment);
 
         return post;

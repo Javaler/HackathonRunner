@@ -53,11 +53,17 @@ public class Post {
     @Column(name = "presentation")
     private Integer presentation;
 
-    @Column(name = "work")
-    private String work;
+    @Column(name = "work_info")
+    private String workInfo;
 
-    @Column(name = "event")
-    private String event;
+    @Column(name = "event_info")
+    private String eventInfo;
+
+    @Column(name = "work_link")
+    private String workLink;
+
+    @Column(name = "event_link")
+    private String eventLink;
 
     @Column(name = "comment")
     private String comment;
